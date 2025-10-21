@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: ac9c5c9a944530d4b966cca4f4a48eff
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Scripts/View/GameScene/Interfaces/IEventFieldUpdate.cs
+  uploadId: 728913

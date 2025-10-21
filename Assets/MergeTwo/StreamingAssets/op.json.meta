@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 65fca96e964985149a2c1f1d732a4f19
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/StreamingAssets/op.json
+  uploadId: 728913

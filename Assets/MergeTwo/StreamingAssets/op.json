@@ -1,0 +1,614 @@
+[
+    {
+        "Name": "Cake_0_0 Glass_0_1 Broom_0_2 Envelope_0_3 Envelope_0_4 Envelope_0_5 Broom_0_6 ",
+        "Icons": [
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 2,
+                "Pos": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 6,
+                "Pos": {
+                    "x": 0,
+                    "y": 1
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 1,
+                "Pos": {
+                    "x": 0,
+                    "y": 2
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 5,
+                "Pos": {
+                    "x": 0,
+                    "y": 3
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 5,
+                "Pos": {
+                    "x": 0,
+                    "y": 4
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 5,
+                "Pos": {
+                    "x": 0,
+                    "y": 5
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 1,
+                "Pos": {
+                    "x": 0,
+                    "y": 6
+                }
+            }
+        ]
+    },
+    {
+        "Name": "Cake_1_0 Broom_1_1 Envelope_1_2 Glass_1_3 Broom_1_4 Broom_1_5 Energy_1_6 ",
+        "Icons": [
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 2,
+                "Pos": {
+                    "x": 1,
+                    "y": 0
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 1,
+                "Pos": {
+                    "x": 1,
+                    "y": 1
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 5,
+                "Pos": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 6,
+                "Pos": {
+                    "x": 1,
+                    "y": 3
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 1,
+                "Pos": {
+                    "x": 1,
+                    "y": 4
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 1,
+                "Pos": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 4,
+                "Pos": {
+                    "x": 1,
+                    "y": 6
+                }
+            }
+        ]
+    },
+    {
+        "Name": "Energy_2_0 Cake_2_1 Cauldron_2_2 Cake_2_3 None_2_4 Broom_2_5 None_2_6 ",
+        "Icons": [
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 4,
+                "Pos": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 2,
+                "Pos": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 3,
+                "Pos": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 2,
+                "Pos": {
+                    "x": 2,
+                    "y": 3
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 0,
+                "Pos": {
+                    "x": 2,
+                    "y": 4
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 1,
+                "Pos": {
+                    "x": 2,
+                    "y": 5
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 0,
+                "Pos": {
+                    "x": 2,
+                    "y": 6
+                }
+            }
+        ]
+    },
+    {
+        "Name": "Cauldron_3_0 None_3_1 Cauldron_3_2 Energy_3_3 None_3_4 Cauldron_3_5 Energy_3_6 ",
+        "Icons": [
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 3,
+                "Pos": {
+                    "x": 3,
+                    "y": 0
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 0,
+                "Pos": {
+                    "x": 3,
+                    "y": 1
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 3,
+                "Pos": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 4,
+                "Pos": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 0,
+                "Pos": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 3,
+                "Pos": {
+                    "x": 3,
+                    "y": 5
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 4,
+                "Pos": {
+                    "x": 3,
+                    "y": 6
+                }
+            }
+        ]
+    },
+    {
+        "Name": "Cake_4_0 Glass_4_1 Cauldron_4_2 None_4_3 Envelope_4_4 Cauldron_4_5 Cauldron_4_6 ",
+        "Icons": [
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 2,
+                "Pos": {
+                    "x": 4,
+                    "y": 0
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 6,
+                "Pos": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 3,
+                "Pos": {
+                    "x": 4,
+                    "y": 2
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 0,
+                "Pos": {
+                    "x": 4,
+                    "y": 3
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 5,
+                "Pos": {
+                    "x": 4,
+                    "y": 4
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 3,
+                "Pos": {
+                    "x": 4,
+                    "y": 5
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 3,
+                "Pos": {
+                    "x": 4,
+                    "y": 6
+                }
+            }
+        ]
+    },
+    {
+        "Name": "Energy_5_0 Glass_5_1 None_5_2 None_5_3 Cauldron_5_4 Broom_5_5 Envelope_5_6 ",
+        "Icons": [
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 4,
+                "Pos": {
+                    "x": 5,
+                    "y": 0
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 6,
+                "Pos": {
+                    "x": 5,
+                    "y": 1
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 0,
+                "Pos": {
+                    "x": 5,
+                    "y": 2
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 0,
+                "Pos": {
+                    "x": 5,
+                    "y": 3
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 3,
+                "Pos": {
+                    "x": 5,
+                    "y": 4
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 1,
+                "Pos": {
+                    "x": 5,
+                    "y": 5
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 5,
+                "Pos": {
+                    "x": 5,
+                    "y": 6
+                }
+            }
+        ]
+    },
+    {
+        "Name": "Broom_6_0 Envelope_6_1 Cake_6_2 None_6_3 None_6_4 Broom_6_5 Broom_6_6 ",
+        "Icons": [
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 1,
+                "Pos": {
+                    "x": 6,
+                    "y": 0
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 5,
+                "Pos": {
+                    "x": 6,
+                    "y": 1
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 2,
+                "Pos": {
+                    "x": 6,
+                    "y": 2
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 0,
+                "Pos": {
+                    "x": 6,
+                    "y": 3
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 0,
+                "Pos": {
+                    "x": 6,
+                    "y": 4
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 1,
+                "Pos": {
+                    "x": 6,
+                    "y": 5
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 1,
+                "Pos": {
+                    "x": 6,
+                    "y": 6
+                }
+            }
+        ]
+    },
+    {
+        "Name": "None_7_0 Chest_7_1 Glass_7_2 Envelope_7_3 Glass_7_4 Glass_7_5 Energy_7_6 ",
+        "Icons": [
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 0,
+                "Pos": {
+                    "x": 7,
+                    "y": 0
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 1002,
+                "Pos": {
+                    "x": 7,
+                    "y": 1
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 6,
+                "Pos": {
+                    "x": 7,
+                    "y": 2
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 5,
+                "Pos": {
+                    "x": 7,
+                    "y": 3
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 6,
+                "Pos": {
+                    "x": 7,
+                    "y": 4
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 6,
+                "Pos": {
+                    "x": 7,
+                    "y": 5
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 4,
+                "Pos": {
+                    "x": 7,
+                    "y": 6
+                }
+            }
+        ]
+    },
+    {
+        "Name": "Cauldron_8_0 None_8_1 Bag_8_2 None_8_3 Broom_8_4 Envelope_8_5 None_8_6 ",
+        "Icons": [
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 3,
+                "Pos": {
+                    "x": 8,
+                    "y": 0
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 0,
+                "Pos": {
+                    "x": 8,
+                    "y": 1
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 1001,
+                "Pos": {
+                    "x": 8,
+                    "y": 2
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 0,
+                "Pos": {
+                    "x": 8,
+                    "y": 3
+                }
+            },
+            {
+                "Name": "",
+                "Value": 0,
+                "IconType": 1,
+                "Pos": {
+                    "x": 8,
+                    "y": 4
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 5,
+                "Pos": {
+                    "x": 8,
+                    "y": 5
+                }
+            },
+            {
+                "Name": "",
+                "Value": 1,
+                "IconType": 0,
+                "Pos": {
+                    "x": 8,
+                    "y": 6
+                }
+            }
+        ]
+    }
+]

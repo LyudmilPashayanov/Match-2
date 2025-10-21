@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a0e54b64f931b07428a3527591e679f7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Scripts/Core/IEventBus.cs
+  uploadId: 728913

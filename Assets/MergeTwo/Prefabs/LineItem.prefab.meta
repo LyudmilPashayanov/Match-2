@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 73bf4ec9996d4aa4584235e3634ea9a9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Prefabs/LineItem.prefab
+  uploadId: 728913

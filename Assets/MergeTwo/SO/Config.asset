@@ -1,0 +1,2398 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d979b4c677aa04d930ae6f71d97dea, type: 3}
+  m_Name: Config
+  m_EditorClassIdentifier: 
+  IconTypeConfigs:
+  - Name: Broom
+    IconType: 1
+    Sprites:
+    - {fileID: 21300000, guid: 57e9511c13f8814479e3493dc4d0b9d0, type: 3}
+    - {fileID: 21300000, guid: f5ef1687972d1624b85c2788bf5c5571, type: 3}
+    - {fileID: 21300000, guid: 64ef3ac648621cc449cbfafad330dbe6, type: 3}
+    - {fileID: 21300000, guid: 941957747cc58944fab72e8372e495c7, type: 3}
+    - {fileID: 21300000, guid: aa33dae52e9371f468d4cbdd7a9ffe44, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 1001
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Cake
+    IconType: 2
+    Sprites:
+    - {fileID: 21300000, guid: 7625f2b4b65df2849baf0f429bba7b38, type: 3}
+    - {fileID: 21300000, guid: 4a13ba7ebd9b4804c82006add256a4a0, type: 3}
+    - {fileID: 21300000, guid: 5acfc62ae79aba54db493f77ebb1fce5, type: 3}
+    - {fileID: 21300000, guid: 16aeef68cdd4af8458f220c188fe11c0, type: 3}
+    - {fileID: 21300000, guid: b52d2cffbc6894b4b96af3cdb328326f, type: 3}
+    - {fileID: 21300000, guid: 9de6730e8d9c09b449e872f803ed9b32, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 1000
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Cauldron
+    IconType: 3
+    Sprites:
+    - {fileID: 21300000, guid: 36715ea96a8486949866250ada248576, type: 3}
+    - {fileID: 21300000, guid: 3a103b3f05494364da2b176caae922d2, type: 3}
+    - {fileID: 21300000, guid: 28f071b7f547b834b86cd04ee9cab304, type: 3}
+    - {fileID: 21300000, guid: 66ee9dc563fd89e42805609c86d49f65, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 1001
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Energy
+    IconType: 4
+    Sprites:
+    - {fileID: 21300000, guid: 35a10f18712003744ac0796b4ec8840c, type: 3}
+    - {fileID: 21300000, guid: ac3bfc030e5a96c4ab55e912874f9716, type: 3}
+    - {fileID: 21300000, guid: 295b954fa7bb5194fb2d5ceeb6829564, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 0
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Envelope
+    IconType: 5
+    Sprites:
+    - {fileID: 21300000, guid: 14b90d399e3f5234cb2a19e0fe70dcdf, type: 3}
+    - {fileID: 21300000, guid: 6be9e37d5a6d3054887994676be5d630, type: 3}
+    - {fileID: 21300000, guid: c46f81ff894cc064bb78771f42c64e2a, type: 3}
+    - {fileID: 21300000, guid: eb77b8a1387452d4c9b761d967c93f82, type: 3}
+    - {fileID: 21300000, guid: 134a8610813ed8440bf0e57cb6ae36a5, type: 3}
+    - {fileID: 21300000, guid: b3fd13d7f57d1d14e84580ff1a98b3ad, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 1001
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Glass
+    IconType: 6
+    Sprites:
+    - {fileID: 21300000, guid: 3ba6e6dec91b9b642ac013eecb9d3e72, type: 3}
+    - {fileID: 21300000, guid: f49ae98b5ccba654181d79ac4e9087b7, type: 3}
+    - {fileID: 21300000, guid: 7616059b2feb1334888514e3071be875, type: 3}
+    - {fileID: 21300000, guid: b3fd13d7f57d1d14e84580ff1a98b3ad, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 1000
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Bottle
+    IconType: 7
+    Sprites:
+    - {fileID: -4344396794662728995, guid: 4a8066a27dfbe754396b1a4847092919, type: 3}
+    - {fileID: 1675274086623107637, guid: 15c3079267e2884428b721c154c49de2, type: 3}
+    - {fileID: -5922240628883463978, guid: 226b84a21eda1084b88b662bbccde0f5, type: 3}
+    - {fileID: 5607698785888781828, guid: 9d5d26744ae914f459414786dfe62a00, type: 3}
+    - {fileID: -1365022931362659960, guid: b3777eecc51bb0a4eb7590cf32632e66, type: 3}
+    - {fileID: 8225876483964042515, guid: 0e2817afeefebd949a0e1c8113fa5e61, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 1003
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Cactus
+    IconType: 8
+    Sprites:
+    - {fileID: -6440772429463728919, guid: 4d502eb16f21173449b39dfda89710a6, type: 3}
+    - {fileID: -8031026301718379565, guid: e4b0e0aac309a6f4f842ccc795b3c268, type: 3}
+    - {fileID: -7638378165618284907, guid: f6680aef1ceb80542b963119ead3aebd, type: 3}
+    - {fileID: -6236133975718071995, guid: b4b0fe0eb2045774683765b3082be0b5, type: 3}
+    - {fileID: -8369096793128310386, guid: 67c445a4f37a7ab4eb815d4e6e48eb8c, type: 3}
+    - {fileID: -2116203363918236305, guid: c906797ed79e2b748b5b9948334f0530, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 1004
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Candy
+    IconType: 9
+    Sprites:
+    - {fileID: 3427650649252386793, guid: 674014b84f5e39b4696be7a68ada6185, type: 3}
+    - {fileID: 353971208535904736, guid: 5f523cac3e78f0043aa7101d98e756e4, type: 3}
+    - {fileID: 2975438567591426928, guid: df57cebf4ae932a419bed3ae990869be, type: 3}
+    - {fileID: -8156471053931796151, guid: 3fbd9d6fa99274544a02a9eb84580fb7, type: 3}
+    - {fileID: -241829656253620575, guid: 466e6d6c6a0f71d4895d88b2ee9e2e86, type: 3}
+    - {fileID: -6669859051323283861, guid: f412afd483dc3574c918940baad260c1, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 1000
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Cookie
+    IconType: 10
+    Sprites:
+    - {fileID: -4212220111953063534, guid: 453e2e7565c152244af00a1e47c96961, type: 3}
+    - {fileID: 6312586214812730348, guid: 06eb3c9de757490469f0c97ad6099292, type: 3}
+    - {fileID: 5679751708188552229, guid: 74adf5d344174da4fb9c6865f7cebd4f, type: 3}
+    - {fileID: 3686667614474217139, guid: d6c24a5edc9df1f4f99dcd3d5a2e5020, type: 3}
+    - {fileID: -8705906303363773130, guid: f2bd7620365050a43aef58d5599ad45d, type: 3}
+    - {fileID: -3712738860041923161, guid: 5c9e47982682e9e4591d7d193867a7a6, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 1000
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Plant
+    IconType: 12
+    Sprites:
+    - {fileID: 8583874701562073651, guid: fdbafdb9feef2644bb36b1847ea5494e, type: 3}
+    - {fileID: -7215970094805801958, guid: 5bc3395abba829442b34d9a5e50b0989, type: 3}
+    - {fileID: 3272775918942558263, guid: 498eee750ba0b174aa8b32e16ed60812, type: 3}
+    - {fileID: -5692919942509423975, guid: 5c6a87c65eb5a384eb7e36b3fc6724c9, type: 3}
+    - {fileID: -2000457872392964431, guid: 531363204238d554d8b9ee8b6a7b0068, type: 3}
+    - {fileID: -8254747949895723649, guid: 2cbf52315bb873841a7f1cd389093acf, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 1004
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Seal
+    IconType: 13
+    Sprites:
+    - {fileID: 2354894618809253022, guid: c3f4d5ccb31b2b84b804a5164105b5b0, type: 3}
+    - {fileID: 2724352006787975042, guid: 3e037f1ec0e462947b58ce16b58ba152, type: 3}
+    - {fileID: 3293050637326548208, guid: 5c9e2d2b431e2784490069065d1bfa00, type: 3}
+    - {fileID: -1311660800505460056, guid: 21d704c41ca825e459973e2504574376, type: 3}
+    - {fileID: 5234203962261067583, guid: 6970a45a996e2604eaa9700b8160cf19, type: 3}
+    - {fileID: 222478689351173823, guid: 3fadc6693420cf8469b576cce30dcb8e, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 1003
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Flowerpot
+    IconType: 14
+    Sprites:
+    - {fileID: -2858309156770582040, guid: 2aa2778d56d948b4e9c6259b44ad8407, type: 3}
+    - {fileID: -5523762652627879354, guid: 906bbdeac386c374baf022f51527999e, type: 3}
+    - {fileID: 2598552878896209213, guid: a003de71c0fb7e54b851e934570b6600, type: 3}
+    - {fileID: 8236552744972534926, guid: 38cf078fafc5292429cdfe1c2ec2514a, type: 3}
+    - {fileID: 5194791850336457637, guid: 18be3cb6aced1f24b910fad8a35ed867, type: 3}
+    - {fileID: 6563388645115725718, guid: 88a967835cdf17b46a1373037c87b372, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 1004
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Match
+    IconType: 11
+    Sprites:
+    - {fileID: 1686907053030990839, guid: 395a6bc381ab1944d9cb416ff26cc84c, type: 3}
+    - {fileID: -2802327175036127875, guid: 96143df3623bcc64a9d9c45461bddc8a, type: 3}
+    - {fileID: -3265985689213321732, guid: 5b1f39a1a3b867c4eb2b18a9b2564c0a, type: 3}
+    - {fileID: -8398629575703816722, guid: 42d8abb20f3309e4c87ad878f66bfb45, type: 3}
+    - {fileID: 7729877038835927046, guid: 13a6886975dbc424e9617745d9260331, type: 3}
+    - {fileID: -8197504280235377828, guid: 1266348c574cb61419c25b4cc9dcc5ac, type: 3}
+    IconsToSpawn:
+    - IconType: 8
+      IconValue: 0
+      Weight: 5
+    - IconType: 14
+      IconValue: 0
+      Weight: 5
+    - IconType: 12
+      IconValue: 0
+      Weight: 5
+    CanBeFoundIn: 1003
+    SpawnerCapacities: 02000000
+    EnergyDelay: 300
+  - Name: None
+    IconType: 0
+    Sprites:
+    - {fileID: 21300000, guid: 0ba22cbbcc8def34980552a87de83b3c, type: 3}
+    IconsToSpawn: []
+    CanBeFoundIn: 0
+    SpawnerCapacities: 
+    EnergyDelay: 300
+  - Name: Fridge
+    IconType: 1000
+    Sprites:
+    - {fileID: 21300000, guid: aa5e89ade65fe444984807e631321519, type: 3}
+    IconsToSpawn:
+    - IconType: 6
+      IconValue: 0
+      Weight: 9
+    - IconType: 2
+      IconValue: 0
+      Weight: 9
+    - IconType: 2
+      IconValue: 1
+      Weight: 3
+    CanBeFoundIn: 0
+    SpawnerCapacities: 32000000
+    EnergyDelay: 15
+  - Name: Bag
+    IconType: 1001
+    Sprites:
+    - {fileID: 21300000, guid: 9ef8893d4a5cd5b459f5806c90c1d1cc, type: 3}
+    IconsToSpawn:
+    - IconType: 1
+      IconValue: 0
+      Weight: 9
+    - IconType: 1
+      IconValue: 1
+      Weight: 1
+    - IconType: 3
+      IconValue: 0
+      Weight: 9
+    - IconType: 5
+      IconValue: 0
+      Weight: 9
+    CanBeFoundIn: 0
+    SpawnerCapacities: 21000000
+    EnergyDelay: 20
+  - Name: Chest
+    IconType: 1002
+    Sprites:
+    - {fileID: 21300000, guid: 296b90d6ac1b54b4cafdb3de74c3d8d8, type: 3}
+    IconsToSpawn:
+    - IconType: 4
+      IconValue: 0
+      Weight: 5
+    CanBeFoundIn: 0
+    SpawnerCapacities: 14000000
+    EnergyDelay: 30
+  - Name: YellowBag
+    IconType: 1003
+    Sprites:
+    - {fileID: 3701114428941837849, guid: 66b7fff1505c94344b53dd219ebbef90, type: 3}
+    IconsToSpawn:
+    - IconType: 7
+      IconValue: 0
+      Weight: 5
+    - IconType: 11
+      IconValue: 0
+      Weight: 5
+    - IconType: 13
+      IconValue: 0
+      Weight: 5
+    CanBeFoundIn: 0
+    SpawnerCapacities: 14000000
+    EnergyDelay: 30
+  - Name: Herbology
+    IconType: 1004
+    Sprites:
+    - {fileID: -6546596261570229769, guid: 3a91eefacddde0f4ebaac014419c3fa5, type: 3}
+    IconsToSpawn:
+    - IconType: 8
+      IconValue: 0
+      Weight: 5
+    - IconType: 14
+      IconValue: 0
+      Weight: 5
+    - IconType: 12
+      IconValue: 0
+      Weight: 5
+    CanBeFoundIn: 0
+    SpawnerCapacities: 32000000
+    EnergyDelay: 30
+  InitialState:
+    ListField:
+    - Name: 'Bottle_0_0 Match_0_1 Seal_0_2 Seal_0_3 Seal_0_4 Bottle_0_5 Seal_0_6 '
+      Icons:
+      - Name: 
+        Value: 1
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 11
+        Pos:
+          x: 0
+          y: 1
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 0
+          y: 2
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 0
+          y: 3
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 0
+          y: 4
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 0
+          y: 5
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 0
+          y: 6
+        Capacity: 0
+        RechargeTime: 0
+    - Name: 'None_1_0 Cauldron_1_1 Bottle_1_2 None_1_3 Seal_1_4 Seal_1_5 Seal_1_6 '
+      Icons:
+      - Name: 
+        Value: 0
+        IconType: 0
+        Pos:
+          x: 1
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 3
+        Pos:
+          x: 1
+          y: 1
+        Capacity: 2
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 1
+          y: 2
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 0
+        Pos:
+          x: 1
+          y: 3
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 1
+          y: 4
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 1
+          y: 5
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 1
+          y: 6
+        Capacity: 0
+        RechargeTime: 0
+    - Name: 'Match_2_0 Bottle_2_1 Seal_2_2 Match_2_3 Match_2_4 Match_2_5 Bottle_2_6 '
+      Icons:
+      - Name: 
+        Value: 1
+        IconType: 11
+        Pos:
+          x: 2
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 2
+          y: 1
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 2
+          y: 2
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 11
+        Pos:
+          x: 2
+          y: 3
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 11
+        Pos:
+          x: 2
+          y: 4
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 11
+        Pos:
+          x: 2
+          y: 5
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 2
+          y: 6
+        Capacity: 0
+        RechargeTime: 0
+    - Name: 'Bottle_3_0 Seal_3_1 None_3_2 Match_3_3 Bottle_3_4 Broom_3_5 Match_3_6 '
+      Icons:
+      - Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 3
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 3
+          y: 1
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 0
+        Pos:
+          x: 3
+          y: 2
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 11
+        Pos:
+          x: 3
+          y: 3
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 3
+          y: 4
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 2
+        IconType: 1
+        Pos:
+          x: 3
+          y: 5
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 11
+        Pos:
+          x: 3
+          y: 6
+        Capacity: 0
+        RechargeTime: 0
+    - Name: 'Seal_4_0 Seal_4_1 Bottle_4_2 None_4_3 Energy_4_4 Energy_4_5 YellowBag_4_6 '
+      Icons:
+      - Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 4
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 4
+          y: 1
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 4
+          y: 2
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 0
+        Pos:
+          x: 4
+          y: 3
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 4
+        Pos:
+          x: 4
+          y: 4
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 4
+        Pos:
+          x: 4
+          y: 5
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 1003
+        Pos:
+          x: 4
+          y: 6
+        Capacity: 30
+        RechargeTime: 0
+    - Name: 'Seal_5_0 None_5_1 Bottle_5_2 None_5_3 None_5_4 Bottle_5_5 Bottle_5_6 '
+      Icons:
+      - Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 5
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 0
+        Pos:
+          x: 5
+          y: 1
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 5
+          y: 2
+        Capacity: 2
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 0
+        Pos:
+          x: 5
+          y: 3
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 0
+        Pos:
+          x: 5
+          y: 4
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 5
+          y: 5
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 5
+          y: 6
+        Capacity: 0
+        RechargeTime: 0
+    - Name: 'Cauldron_6_0 Seal_6_1 Energy_6_2 Broom_6_3 Match_6_4 Match_6_5 Chest_6_6 '
+      Icons:
+      - Name: 
+        Value: 0
+        IconType: 3
+        Pos:
+          x: 6
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 6
+          y: 1
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 4
+        Pos:
+          x: 6
+          y: 2
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 1
+        Pos:
+          x: 6
+          y: 3
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 11
+        Pos:
+          x: 6
+          y: 4
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 11
+        Pos:
+          x: 6
+          y: 5
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 1002
+        Pos:
+          x: 6
+          y: 6
+        Capacity: 2
+        RechargeTime: 0
+    - Name: 'YellowBag_7_0 Match_7_1 Seal_7_2 Match_7_3 None_7_4 Match_7_5 None_7_6 '
+      Icons:
+      - Name: 
+        Value: 0
+        IconType: 1003
+        Pos:
+          x: 7
+          y: 0
+        Capacity: 2
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 11
+        Pos:
+          x: 7
+          y: 1
+        Capacity: 3
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 7
+          y: 2
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 11
+        Pos:
+          x: 7
+          y: 3
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 0
+        Pos:
+          x: 7
+          y: 4
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 11
+        Pos:
+          x: 7
+          y: 5
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 0
+        Pos:
+          x: 7
+          y: 6
+        Capacity: 0
+        RechargeTime: 0
+    - Name: 'Seal_8_0 Bottle_8_1 Seal_8_2 Seal_8_3 Bottle_8_4 Seal_8_5 Seal_8_6 '
+      Icons:
+      - Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 8
+          y: 0
+        Capacity: 2
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 8
+          y: 1
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 8
+          y: 2
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 8
+          y: 3
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 8
+          y: 4
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 8
+          y: 5
+        Capacity: 0
+        RechargeTime: 0
+      - Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 8
+          y: 6
+        Capacity: 0
+        RechargeTime: 0
+    ClaimedOrders: 
+    Stars: 0
+    Energy: 100
+    PurchasedPieces: 
+    AnimatedPieces: 
+    CurrentRoom: 0
+    IsRoomCompleted: 0
+    IconToTake: []
+  Orders:
+  - Name: 1 Match 0 |1 Match 2 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 11
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 11
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 1
+    OrderReward: 1
+  - Name: 2 Seal 0 |1 Match 2 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 11
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 2
+    OrderReward: 1
+  - Name: 2 Bottle 0 |1 Seal 5 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    - Name: 
+      Icon:
+        Name: 
+        Value: 5
+        IconType: 13
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 3
+    OrderReward: 1
+  - Name: 2 Bottle 3 |1 Match 2 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 3
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 11
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 4
+    OrderReward: 1
+  - Name: 1 Seal 2 |1 Seal 1 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 13
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 5
+    OrderReward: 1
+  - Name: 1 Match 5 |2 Seal 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 5
+        IconType: 11
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 6
+    OrderReward: 1
+  - Name: 1 Bottle 1 |2 Bottle 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 7
+    OrderReward: 1
+  - Name: 1 Seal 1 |1 Match 2 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 11
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 8
+    OrderReward: 1
+  - Name: 1 Match 1 |1 Seal 2 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 11
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 13
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 9
+    OrderReward: 1
+  - Name: 2 Bottle 0 |1 Seal 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 10
+    OrderReward: 1
+  - Name: 1 Bottle 1 |1 Match 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 11
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 11
+    OrderReward: 1
+  - Name: 1 Seal 0 |2 Seal 1 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 12
+    OrderReward: 1
+  - Name: 1 Match 2 |1 Bottle 2 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 11
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 13
+    OrderReward: 1
+  - Name: 1 Bottle 0 |1 Match 2 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 11
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 14
+    OrderReward: 1
+  - Name: 1 Bottle 5 |1 Match 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 5
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 11
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 15
+    OrderReward: 1
+  - Name: 1 Broom 0 |1 Cauldron 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 1
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 16
+    OrderReward: 1
+  - Name: 1 Cauldron 1 |1 Cauldron 2 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 17
+    OrderReward: 1
+  - Name: 2 Seal 0 |1 Envelope 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 13
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 5
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 18
+    OrderReward: 1
+  - Name: 1 Cauldron 3 |1 Cauldron 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 3
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 19
+    OrderReward: 1
+  - Name: 1 Broom 4 |2 Bottle 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 4
+        IconType: 1
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 20
+    OrderReward: 1
+  - Name: 1 Match 0 |1 Cauldron 1 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 11
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 21
+    OrderReward: 1
+  - Name: 1 Broom 0 |1 Cauldron 1 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 1
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 22
+    OrderReward: 1
+  - Name: 1 Broom 1 |1 Cauldron 1 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 1
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 23
+    OrderReward: 1
+  - Name: 2 Seal 1 |1 Cauldron 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 13
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 24
+    OrderReward: 1
+  - Name: 1 Cauldron 0 |2 Envelope 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 5
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 25
+    OrderReward: 1
+  - Name: 1 Bottle 0 |2 Cauldron 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 26
+    OrderReward: 1
+  - Name: 1 Cauldron 0 |2 Broom 2 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 1
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 27
+    OrderReward: 1
+  - Name: 1 Envelope 0 |1 Envelope 1 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 5
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 5
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 28
+    OrderReward: 1
+  - Name: 1 Cauldron 1 |1 Bottle 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 29
+    OrderReward: 1
+  - Name: 1 Cauldron 2 |1 Broom 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 1
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 30
+    OrderReward: 1
+  - Name: 1 Envelope 5 |2 Match 1 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 5
+        IconType: 5
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 11
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 31
+    OrderReward: 1
+  - Name: 1 Glass 0 |2 Bottle 1 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 6
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 7
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 32
+    OrderReward: 1
+  - Name: 2 Cookie 0 |1 Glass 1 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 10
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 6
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 33
+    OrderReward: 1
+  - Name: 1 Cookie 5 |2 Cauldron 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 5
+        IconType: 10
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 34
+    OrderReward: 1
+  - Name: 1 Cookie 1 |1 Cauldron 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 10
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 35
+    OrderReward: 1
+  - Name: 1 Cookie 2 |1 Cookie 1 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 10
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 10
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 36
+    OrderReward: 1
+  - Name: 1 Cookie 0 |1 Cookie 2 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 10
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 10
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 37
+    OrderReward: 1
+  - Name: 1 Glass 0 |2 Cake 1 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 6
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 2
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 38
+    OrderReward: 1
+  - Name: 1 Glass 0 |2 Candy 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 6
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 9
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 39
+    OrderReward: 1
+  - Name: 1 Cake 5 |1 Candy 2 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 5
+        IconType: 2
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 9
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 40
+    OrderReward: 1
+  - Name: 1 Glass 1 |2 Cake 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 6
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 2
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 41
+    OrderReward: 1
+  - Name: 1 Candy 5 |2 Glass 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 5
+        IconType: 9
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 6
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 42
+    OrderReward: 1
+  - Name: 2 Flowerpot 0 |2 Cactus 2 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 14
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 8
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 43
+    OrderReward: 1
+  - Name: 1 Cactus 0 |2 Plant 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 8
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 12
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 44
+    OrderReward: 1
+  - Name: 1 Plant 0 |1 Flowerpot 2 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 12
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 2
+        IconType: 14
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 45
+    OrderReward: 1
+  - Name: 2 Flowerpot 1 |1 Flowerpot 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 14
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 14
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 46
+    OrderReward: 1
+  - Name: 2 Plant 1 |2 Flowerpot 0 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 12
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    - Name: 
+      Icon:
+        Name: 
+        Value: 0
+        IconType: 14
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 47
+    OrderReward: 1
+  - Name: 2 Cauldron 1 |2 Cactus 1 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 3
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 8
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 2
+    ID: 48
+    OrderReward: 1
+  - Name: 1 Cactus 5 |1 Cactus 1 |
+    IconsToCollect:
+    - Name: 
+      Icon:
+        Name: 
+        Value: 5
+        IconType: 8
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    - Name: 
+      Icon:
+        Name: 
+        Value: 1
+        IconType: 8
+        Pos:
+          x: 0
+          y: 0
+        Capacity: 0
+        RechargeTime: 0
+      Amount: 1
+    ID: 49
+    OrderReward: 1
+  Rooms:
+  - Name: Living Room
+    Pieces:
+    - Name: Frames
+      ID: 1
+      Price: 1
+      Icon: {fileID: 1571335053168144169, guid: ad86e0715480d5740ad162463e2a54c2, type: 3}
+      Text: Paintings
+      Conditions: 
+    - Name: Wardrobe
+      ID: 2
+      Price: 1
+      Icon: {fileID: 2600633080356274756, guid: 9aaa8374744574749b155ab2ab3cbd2d, type: 3}
+      Text: Bookshelf
+      Conditions: 
+    - Name: Kamin
+      ID: 3
+      Price: 1
+      Icon: {fileID: -3051552243836176327, guid: e60e851e01248de41ba952bc5d647eca, type: 3}
+      Text: Fireplace
+      Conditions: 
+    - Name: Decor
+      ID: 4
+      Price: 1
+      Icon: {fileID: 511764447593875616, guid: d14a2fdfafc9ebd48be8b5a93f707c1f, type: 3}
+      Text: Embellish
+      Conditions: 03000000
+    - Name: Broom
+      ID: 5
+      Price: 1
+      Icon: {fileID: -3052707917146578223, guid: 64db36f00316fe447a8f7a1de7e570c2, type: 3}
+      Text: Brooms
+      Conditions: 02000000
+    - Name: Lamp
+      ID: 6
+      Price: 1
+      Icon: {fileID: 7100260105162541840, guid: 24e239f6e17520942831704328fe7059, type: 3}
+      Text: Chandelier
+      Conditions: 
+    - Name: Table
+      ID: 7
+      Price: 1
+      Icon: {fileID: 6149756179642637433, guid: 3798b5486f24b264d89a13c1b1def0a5, type: 3}
+      Text: Book stand
+      Conditions: 
+    - Name: Chairs
+      ID: 8
+      Price: 1
+      Icon: {fileID: 7548146536659175832, guid: 8f3afca956b6d314c9ce3f7431e95ad9, type: 3}
+      Text: Armchair
+      Conditions: 
+    - Name: FrontTable
+      ID: 9
+      Price: 1
+      Icon: {fileID: -7375651702601331997, guid: 094bea01717ee424aa7c946c3d1eea31, type: 3}
+      Text: Cupstand
+      Conditions: 
+    LockedSprite: {fileID: 6158988183965031084, guid: f0ca7f6227025ea43929f2e7e02c5cc9, type: 3}
+    CollectedSprite: {fileID: 649509946455286471, guid: 57133829dcd03dc44a743fb78302b316, type: 3}
+    WorkInProgressSprite: {fileID: 4358488850926109614, guid: a9591acda71adad40aad21cd8a6ae672, type: 3}
+    RewardIcons:
+    - Name: 
+      Value: 0
+      IconType: 1001
+      Pos:
+        x: 0
+        y: 0
+      Capacity: 0
+      RechargeTime: 0
+    - Name: 
+      Value: 1
+      IconType: 4
+      Pos:
+        x: 0
+        y: 0
+      Capacity: 0
+      RechargeTime: 0
+  - Name: Potion Class
+    Pieces:
+    - Name: wardrobe
+      ID: 11
+      Price: 1
+      Icon: {fileID: 6777984347879445492, guid: 6869f58cdf2213a4d8aa08a07407ea0c, type: 3}
+      Text: Wardrobe
+      Conditions: 
+    - Name: board
+      ID: 12
+      Price: 1
+      Icon: {fileID: -2989207582740360730, guid: 06ae9657880d9c4439352a888b1e2d0a, type: 3}
+      Text: Recipe board
+      Conditions: 11000000
+    - Name: shelves
+      ID: 13
+      Price: 1
+      Icon: {fileID: -6420221842102074165, guid: 39672ddfb5fa5c44ebd112309a76dfa9, type: 3}
+      Text: Potions
+      Conditions: 
+    - Name: mop
+      ID: 14
+      Price: 1
+      Icon: {fileID: -1282124764261181375, guid: 163b25aed9cb0374fad7cf6155b42822, type: 3}
+      Text: Sweeper
+      Conditions: 0b000000
+    - Name: lights
+      ID: 15
+      Price: 1
+      Icon: {fileID: -4931334442109959223, guid: 0b28dc49bf208d04cbae2b8e1efc4c01, type: 3}
+      Text: Light
+      Conditions: 
+    - Name: chairs
+      ID: 16
+      Price: 1
+      Icon: {fileID: -2415348808978326990, guid: fcc2f4999e6637644a40f399507811e3, type: 3}
+      Text: "\u0421hair"
+      Conditions: 
+    - Name: cauldrone
+      ID: 17
+      Price: 1
+      Icon: {fileID: -4164425811788062379, guid: a454b81a72cc66d48bbc71a2259e9004, type: 3}
+      Text: Cauldron
+      Conditions: 
+    - Name: chest
+      ID: 18
+      Price: 1
+      Icon: {fileID: 4224763539780698634, guid: 2b1b8b3a015118a48b6d28765fc40044, type: 3}
+      Text: Chest
+      Conditions: 
+    - Name: candles
+      ID: 19
+      Price: 1
+      Icon: {fileID: 3289974862811188028, guid: ca6e96be76c59844d908e15a6c914d9d, type: 3}
+      Text: Candles
+      Conditions: 11000000
+    - Name: weed
+      ID: 20
+      Price: 1
+      Icon: {fileID: 3912155442876163120, guid: 99941445422713f4ab6054a879008603, type: 3}
+      Text: Magic Herbs
+      Conditions: 11000000
+    - Name: scales
+      ID: 21
+      Price: 1
+      Icon: {fileID: -2978653956524333172, guid: c21cc9ee3724e74458c79fc43e8ea125, type: 3}
+      Text: Scales
+      Conditions: 0b000000
+    LockedSprite: {fileID: 6815010875579126108, guid: 5db7e366493221c4bac06c95085c674f, type: 3}
+    CollectedSprite: {fileID: 4860475308982595894, guid: b79ffcb39ac78854398b4c1a10ea3d6a, type: 3}
+    WorkInProgressSprite: {fileID: -7003292886292908736, guid: 80c0102651b6f1d41acb95b5fbc42ce3, type: 3}
+    RewardIcons:
+    - Name: 
+      Value: 1
+      IconType: 4
+      Pos:
+        x: 0
+        y: 0
+      Capacity: 0
+      RechargeTime: 0
+    - Name: 
+      Value: 0
+      IconType: 1003
+      Pos:
+        x: 0
+        y: 0
+      Capacity: 0
+      RechargeTime: 0
+  - Name: Sweet Shop
+    Pieces:
+    - Name: sweet
+      ID: 31
+      Price: 1
+      Icon: {fileID: 344847512208250483, guid: 27af134809beb11449333ce78d731bf5, type: 3}
+      Text: Title
+      Conditions: 20000000
+    - Name: wardrobe
+      ID: 32
+      Price: 1
+      Icon: {fileID: 3356348451801808925, guid: 5a6af78fda44a5f49a4181d6645e2881, type: 3}
+      Text: Closet
+      Conditions: 
+    - Name: shelves
+      ID: 33
+      Price: 1
+      Icon: {fileID: 3356348451801808925, guid: 5a6af78fda44a5f49a4181d6645e2881, type: 3}
+      Text: Shelves
+      Conditions: 20000000
+    - Name: colums
+      ID: 34
+      Price: 1
+      Icon: {fileID: 2207852519981097160, guid: 77836fff92a48684fbda8bd10efcb245, type: 3}
+      Text: Put colums
+      Conditions: 
+    - Name: ball
+      ID: 35
+      Price: 1
+      Icon: {fileID: 8437533195995886889, guid: 54ddd1112705215449940d0d3fdec318, type: 3}
+      Text: Gumball
+      Conditions: 
+    - Name: fireworks
+      ID: 36
+      Price: 1
+      Icon: {fileID: 440310274912030404, guid: 64bde750b1e96a54e9f3c2f9f85686be, type: 3}
+      Text: Barrel firework
+      Conditions: 
+    - Name: lights
+      ID: 37
+      Price: 1
+      Icon: {fileID: 3128615491225041712, guid: 0d6397908547ee84380c0e6025a20b61, type: 3}
+      Text: Flashlights
+      Conditions: 
+    - Name: plates
+      ID: 38
+      Price: 1
+      Icon: {fileID: 4105302383721325959, guid: cee2cbe7da26f42428a8f7dd4d374888, type: 3}
+      Text: Marshmallow
+      Conditions: 
+    LockedSprite: {fileID: -6228581973742199037, guid: 824a121708d0b1d4c891f61fc79c537a, type: 3}
+    CollectedSprite: {fileID: -1221756710963660261, guid: 233bbd3c23d280b41974cd51dab7b124, type: 3}
+    WorkInProgressSprite: {fileID: -989261822604583826, guid: 416cfa57952106f45b89c2a8d0e27c89, type: 3}
+    RewardIcons:
+    - Name: 
+      Value: 1
+      IconType: 4
+      Pos:
+        x: 0
+        y: 0
+      Capacity: 0
+      RechargeTime: 0
+    - Name: 
+      Value: 0
+      IconType: 1004
+      Pos:
+        x: 0
+        y: 0
+      Capacity: 0
+      RechargeTime: 0
+  - Name: Plant Class
+    Pieces:
+    - Name: frame
+      ID: 41
+      Price: 1
+      Icon: {fileID: -7258585220823314169, guid: a8d373a48dc7d4e268a71a9407e196a0, type: 3}
+      Text: Arbor
+      Conditions: 
+    - Name: table
+      ID: 42
+      Price: 1
+      Icon: {fileID: 1277711881191493642, guid: 3e6b41c6c0ea2437b81183a94e845930, type: 3}
+      Text: Table
+      Conditions: 
+    - Name: table_1
+      ID: 43
+      Price: 1
+      Icon: {fileID: 5621174687154371299, guid: 486930f6b926a481e86a790fef99b28b, type: 3}
+      Text: Plant pots
+      Conditions: 2a000000
+    - Name: table_2
+      ID: 44
+      Price: 1
+      Icon: {fileID: 3433079868493485143, guid: 1884751730a1d42c88573f29e392a7be, type: 3}
+      Text: Mandrakes
+      Conditions: 2b000000
+    - Name: table_3
+      ID: 45
+      Price: 1
+      Icon: {fileID: 6496694788802640822, guid: 84f1cc6c8824a4e00ae37b2fd23f02ed, type: 3}
+      Text: Mandrakes
+      Conditions: 2c000000
+    - Name: decore
+      ID: 46
+      Price: 1
+      Icon: {fileID: -7690136030834978441, guid: 3c9de01c6f1a24cb48e80b62d8da45be, type: 3}
+      Text: Mushrooms
+      Conditions: 2d000000
+    - Name: plants
+      ID: 47
+      Price: 1
+      Icon: {fileID: -2529472140945451766, guid: 97a0af02885d641fe8612399dfbf0736, type: 3}
+      Text: Devil's Snare
+      Conditions: 29000000
+    LockedSprite: {fileID: -4048671610942647125, guid: 54e806a8e83c341ce948de6da61ebe73, type: 3}
+    CollectedSprite: {fileID: -8669335225846412655, guid: e7c23f731b13544d48194300c858faee, type: 3}
+    WorkInProgressSprite: {fileID: 5762799878790585216, guid: e55b0795378d34575bc9e03c98ee3b59, type: 3}
+    RewardIcons:
+    - Name: 
+      Value: 1
+      IconType: 1001
+      Pos:
+        x: 0
+        y: 0
+      Capacity: 0
+      RechargeTime: 0
+    - Name: 
+      Value: 1
+      IconType: 1000
+      Pos:
+        x: 0
+        y: 0
+      Capacity: 0
+      RechargeTime: 0
+  InitialStateFile: {fileID: 4900000, guid: 319759af85180314b8b53d6ff22aa250, type: 3}
+  LightPrefab: {fileID: 149486762253092745, guid: bb1f53189b8877748894d7ccc00b8203, type: 3}
+  EnergyIconValues: 03000000090000001b000000
+  IconEnergyDelay: 300

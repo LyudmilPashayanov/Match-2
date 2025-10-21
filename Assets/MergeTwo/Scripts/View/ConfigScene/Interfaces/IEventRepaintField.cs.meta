@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 74bd35bb8e0cb6a47979f925fa85cf77
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Scripts/View/ConfigScene/Interfaces/IEventRepaintField.cs
+  uploadId: 728913

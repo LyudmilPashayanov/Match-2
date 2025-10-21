@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 975a3692878ed0c44bd3767739786f1f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Scripts/View/GameScene/TapController.cs
+  uploadId: 728913

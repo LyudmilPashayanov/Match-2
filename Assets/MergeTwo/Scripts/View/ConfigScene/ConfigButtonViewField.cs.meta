@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9f9f784d00e2fb84a92369da3c0e64ea
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Scripts/View/ConfigScene/ConfigButtonViewField.cs
+  uploadId: 728913

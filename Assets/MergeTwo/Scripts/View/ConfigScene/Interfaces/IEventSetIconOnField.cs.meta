@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a446be2db4abb36488d0a5ecf49c475f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Scripts/View/ConfigScene/Interfaces/IEventSetIconOnField.cs
+  uploadId: 728913

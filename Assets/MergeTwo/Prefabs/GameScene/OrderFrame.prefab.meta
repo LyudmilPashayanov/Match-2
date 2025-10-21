@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2054f8b4f5a147643a727d1a81867771
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Prefabs/GameScene/OrderFrame.prefab
+  uploadId: 728913

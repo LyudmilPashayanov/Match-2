@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 82b50c6b07271494e88f4314c56ae49e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Scripts/View/ConfigScene/ConfigSceneView.cs
+  uploadId: 728913

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b1ad0a5962ed4ec43aa55501b39cf683
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Scripts/View/GameScene/OrdersViewController.cs
+  uploadId: 728913

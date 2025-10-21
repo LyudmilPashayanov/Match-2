@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9772f8cd8babe3d488fc5fae202d4eb7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Art/Animation/ScaleIconAnimator.controller
+  uploadId: 728913

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 56e50c370474fcf4684b0e5825f9c87d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: "Assets/MergeTwo/Settings/Build Profiles/Android\u2122.asset"
+  uploadId: 728913

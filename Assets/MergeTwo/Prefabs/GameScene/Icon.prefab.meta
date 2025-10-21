@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7c41ede6700c1194697e13925ad99923
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Prefabs/GameScene/Icon.prefab
+  uploadId: 728913

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dc45bc645f68cb5469cef763132b1dba
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Prefabs/ButtonInLine.prefab
+  uploadId: 728913

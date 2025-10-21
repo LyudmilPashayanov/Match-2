@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 2ec329eb754a4bcc8348c7f833b3965e
+timeCreated: 1535831433
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Art/Animation/Shine/Mat/Shine01.mat
+  uploadId: 728913

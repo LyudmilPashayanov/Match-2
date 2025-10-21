@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: eba1bee1ca93b964eb0e630a520b80b4
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Scripts/View/GameScene/Interfaces/IEventOrderClaimed.cs
+  uploadId: 728913

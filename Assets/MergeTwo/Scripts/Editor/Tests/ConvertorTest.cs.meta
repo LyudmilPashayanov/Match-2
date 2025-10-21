@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2442271a4d2fcaf478ae7faeacf5aea3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Scripts/Editor/Tests/ConvertorTest.cs
+  uploadId: 728913

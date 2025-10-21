@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 4b02aefe7c3a57549a09a2ee1a0c1384
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Scripts/View/GameScene/Interfaces/IEventIShowInfoPopup.cs
+  uploadId: 728913

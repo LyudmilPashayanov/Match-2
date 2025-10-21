@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 81eef2db88616994d8ea4fdda59eef82
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Prefabs/GameScene/Clock.prefab
+  uploadId: 728913

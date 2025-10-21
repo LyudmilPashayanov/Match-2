@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: fbbc34bbd69c7e24db3641bcf7be9ce8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Scripts/Data/IconType.cs
+  uploadId: 728913

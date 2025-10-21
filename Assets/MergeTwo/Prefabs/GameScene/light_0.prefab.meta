@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bb1f53189b8877748894d7ccc00b8203
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Prefabs/GameScene/light_0.prefab
+  uploadId: 728913

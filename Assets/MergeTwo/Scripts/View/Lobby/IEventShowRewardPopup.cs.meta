@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 676b43392cc81c345ac84d88dc484d12
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Scripts/View/Lobby/IEventShowRewardPopup.cs
+  uploadId: 728913

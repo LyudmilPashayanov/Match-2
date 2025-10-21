@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0b55556168c979a488a68dfc99f75a56
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 306173
+  packageName: MergeTwo
+  packageVersion: 1.1
+  assetPath: Assets/MergeTwo/Prefabs/Button.prefab
+  uploadId: 728913
