@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 82fa78a3611c4daeafcac348935bb60b
+timeCreated: 1700827337
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Editor/Core/EvolutionsEditor/ItemsNodes/EvolutionNode.cs
+  uploadId: 687220

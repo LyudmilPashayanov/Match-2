@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a4286b5f16fb44311964d5c782a40302
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Core/Messages/MessageBus.cs
+  uploadId: 687220

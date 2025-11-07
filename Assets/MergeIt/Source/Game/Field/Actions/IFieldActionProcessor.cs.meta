@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 08d5ae422e9949f5b407d20dabf55013
+timeCreated: 1698345113
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Game/Field/Actions/IFieldActionProcessor.cs
+  uploadId: 687220

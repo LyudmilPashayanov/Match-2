@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5c01796d064528144a599661eaab93a6
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/Plugins/UniTask/Runtime/Linq/UniTask.Linq.asmdef
+  uploadId: 687220

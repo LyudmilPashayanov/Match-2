@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 221b64db51dd469a894c84675804d0ae
+timeCreated: 1701647516
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Game/Effects/Controllers/BaseEffectWithPresenter.cs
+  uploadId: 687220

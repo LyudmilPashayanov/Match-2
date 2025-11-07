@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: ba1832f7469c4d6d8cf46e64d024dfcb
+timeCreated: 1697461294
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Game/Commands/PrepareEnergyCommand.cs
+  uploadId: 687220

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c2fc4dee6fb2343b9aab6e78101979a4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Resources/Prefabs/Elements/Money/WalletIcon.prefab
+  uploadId: 687220

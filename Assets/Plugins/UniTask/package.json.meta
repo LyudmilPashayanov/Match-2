@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d1a9a71f68bb0d04db91ddaa3329abf9
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/Plugins/UniTask/package.json
+  uploadId: 687220

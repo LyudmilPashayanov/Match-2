@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 07602a28ea4884e6c80132f48a795327
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Configs/Elements/Money/SuiteCaseConfig.asset
+  uploadId: 687220

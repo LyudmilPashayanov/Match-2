@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4ddd70dc633b2406d9ae5cbb3e9be137
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Resources/Prefabs/Windows/Inventory/InventoryWindow.prefab
+  uploadId: 687220

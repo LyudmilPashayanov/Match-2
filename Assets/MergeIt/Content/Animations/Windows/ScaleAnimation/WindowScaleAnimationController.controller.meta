@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6ae656bc503544dca872dc2716f05b0f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Content/Animations/Windows/ScaleAnimation/WindowScaleAnimationController.controller
+  uploadId: 687220

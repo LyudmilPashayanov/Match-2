@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c8283e9a2b5649ca896d53147471da4a
+timeCreated: 1696335470
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Core/Services/IInventoryService.cs
+  uploadId: 687220

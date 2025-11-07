@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 8aae4c4bbad74fd6b838a2c628cc785d
+timeCreated: 1695138848
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Game/Messages/CreateElementMessage.cs
+  uploadId: 687220

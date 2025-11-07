@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 78923787576449378489c2d3c2ab95ce
+timeCreated: 1699453600
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Core/WindowSystem/Commands/WindowHideCommand.cs
+  uploadId: 687220

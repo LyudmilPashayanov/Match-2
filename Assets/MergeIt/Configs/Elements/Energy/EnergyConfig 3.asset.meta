@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5760dd4047af04fc190d6163a238d68c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Configs/Elements/Energy/EnergyConfig 3.asset
+  uploadId: 687220

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 80a7001491b6347bd95459248d599007
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Resources/Prefabs/Windows/UserProgress/UserInfoWindow.prefab
+  uploadId: 687220
