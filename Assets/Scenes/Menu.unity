@@ -414,7 +414,7 @@ RectTransform:
   - {fileID: 936866189}
   - {fileID: 628383366}
   - {fileID: 2134954382}
-  m_Father: {fileID: 1623652659}
+  m_Father: {fileID: 550325340}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.9500666}
   m_AnchorMax: {x: 1, y: 1}
@@ -682,6 +682,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 550325340}
+  - component: {fileID: 550325341}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -703,6 +704,7 @@ RectTransform:
   m_Children:
   - {fileID: 1720361680}
   - {fileID: 14013797}
+  - {fileID: 243147948}
   m_Father: {fileID: 1623652659}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -710,6 +712,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &550325341
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550325339}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &628383365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,7 +1433,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19a916b99ef8614ebd95853a7b2f563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneNavigator
-  _startGameButton: {fileID: 1720361681}
+  _changeSceneButton: {fileID: 1720361681}
+  _fadeCanvasGroup: {fileID: 550325341}
 --- !u!4 &1007960023
 Transform:
   m_ObjectHideFlags: 0
@@ -2333,7 +2348,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 666296184}
-  - {fileID: 243147948}
   - {fileID: 550325340}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
