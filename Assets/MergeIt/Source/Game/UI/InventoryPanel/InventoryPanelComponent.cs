@@ -52,6 +52,16 @@ namespace MergeIt.Game.UI.InventoryPanel
             _contentHeight = _itemsContent.rect.height;
         }
 
+        private void Show()
+        {
+            gameObject.SetActive(true);
+        }
+
+        private void Hide()
+        {
+            gameObject.SetActive(false);
+        }
+        
         private void OnDestroy()
         {
             _openButton.onClick.RemoveListener(OnOpenInventoryClick);

@@ -33,15 +33,37 @@ namespace MergeIt.Game.HUD
             _messageBus = DiContainer.Get<IMessageBus>();
             _messageBus.AddListener<LoadedGameMessage>(OnLoadedGameMessageHandler);
             _messageBus.AddListener<LevelUpdatedMessage>(OnLevelUpdatedMessageHandler);
+            
+            _messageBus.AddListener<MenuStartedMessage>(OnMenuStartedMessage);
+
         }
 
         private void OnDestroy()
         {
             _messageBus.RemoveListener<LoadedGameMessage>(OnLoadedGameMessageHandler);
             _messageBus.RemoveListener<LevelUpdatedMessage>(OnLevelUpdatedMessageHandler);
+
+            _messageBus.RemoveListener<MenuStartedMessage>(OnMenuStartedMessage);
         }
 
         private void OnLoadedGameMessageHandler(LoadedGameMessage message)
+        {
+            _userServiceModel = DiContainer.Get<UserServiceModel>();
+            _userProgressService = DiContainer.Get<IUserProgressService>();
+            var windowSystem = DiContainer.Get<IWindowSystem>();
+
+            int maxExp = _userProgressService.GetCurrentLevelMaxExp();
+            _progressComponent.Initialize(windowSystem);   
+            _progressComponent.SetMaxProgress(maxExp);
+            _progressComponent.ApplyModel(_userServiceModel);
+            _progressComponent.UpdateProgress();
+
+            _energyComponent.ApplyModel(_userServiceModel);
+            _softCurrencyComponent.ApplyModel(_userServiceModel);
+            _hardCurrencyComponent.ApplyModel(_userServiceModel);
+        }
+        
+        private void OnMenuStartedMessage(MenuStartedMessage message)
         {
             _userServiceModel = DiContainer.Get<UserServiceModel>();
             _userProgressService = DiContainer.Get<IUserProgressService>();
