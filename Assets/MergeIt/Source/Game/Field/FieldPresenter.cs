@@ -141,6 +141,7 @@ namespace MergeIt.Game.Field
             toCell.AttachObject(fieldElementPresenter);
 
             fieldElementPresenter.Select(true);
+            Debug.Log("merged");
         }
 
         private void OnSplitResultMessageHandler(SplitElementMessage message)
