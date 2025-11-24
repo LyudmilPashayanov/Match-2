@@ -1,13 +1,6 @@
 using System;
-using System.Collections.Generic;
 using MergeIt.Core.FieldElements;
 using MergeIt.Core.Messages;
-using MergeIt.Core.MVP;
-using MergeIt.Core.Services;
-using MergeIt.Game.Effects;
-using MergeIt.Game.Effects.Controllers;
-using MergeIt.Game.Effects.Parameters;
-using MergeIt.Game.Factories.Field;
 using MergeIt.Game.Factories.FieldElement;
 using MergeIt.Game.Messages;
 using MergeIt.SimpleDI;
@@ -18,7 +11,8 @@ namespace MergeIt.Game.Field
     public class OrdersManager : MonoBehaviour, IDisposable
     {
         [SerializeField] private OrderList _orderList;
-
+        [SerializeField] private OrdersView _ordersView;
+        
         private FieldLogicModel _fieldLogicModel;
         private IFieldElementVisualFactory _fieldElementVisualFactory;
         private IMessageBus _messageBus; 
@@ -45,7 +39,10 @@ namespace MergeIt.Game.Field
                     var point = GridPoint.Create(i, j);
                     if (_fieldLogicModel.FieldElements.TryGetValue(point, out var fieldElement))
                     {
+                        // tODO: go through all items and see if they suit an order from the order list.
+                        // todo: if yes, light that order in green. so it can be given in.
                         var fieldElementPresenter = _fieldElementVisualFactory.CreateFieldElement(fieldElement);
+                        
                     }
                 }
             }

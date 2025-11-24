@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd69249f6a459342be5fc5c7afe7c55, type: 3}
   m_Name: Wallet x 1 Order
   m_EditorClassIdentifier: MergeIt.Game::MergeIt.Game.Order
-  Type: {fileID: 0}
-  Amount: 0
+  Type: {fileID: 11400000, guid: 006efc945c9124963b24fe2f2526e1a8, type: 2}
+  Amount: 1
