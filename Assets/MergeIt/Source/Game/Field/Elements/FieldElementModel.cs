@@ -65,5 +65,4 @@ namespace MergeIt.Game.Field.Elements
             _messageBus.Fire(message);
         }
     }
-
 }

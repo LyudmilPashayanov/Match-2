@@ -5,5 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "OrderDefinition", menuName = "Game/OrderDefinition")]
 public class OrderDefinition : ScriptableObject
 {
-    public List<Order> RequiredOrders;
+    public int OrderId;
+    public List<Order> RequiredItems;
 }

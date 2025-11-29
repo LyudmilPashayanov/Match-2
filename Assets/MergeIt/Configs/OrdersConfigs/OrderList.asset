@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: MergeIt.Game::OrderList
   OrderDefinitions:
   - {fileID: 11400000, guid: 4705db2fe24b3f0458f276ab3f65c164, type: 2}
+  - {fileID: 11400000, guid: edd95f7b65fad4b47981a6854e679a3e, type: 2}
+  - {fileID: 11400000, guid: fa47a6f7341810640802108164839a5d, type: 2}
