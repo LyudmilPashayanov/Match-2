@@ -1,4 +1,10 @@
+using System;
 using MergeIt.Core.Configs.Elements;
+using MergeIt.Core.Messages;
+using MergeIt.Core.WindowSystem;
+using MergeIt.Game.Messages;
+using MergeIt.Game.Windows.ElementInfo;
+using MergeIt.SimpleDI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,13 +16,21 @@ namespace MergeIt.Game
         [SerializeField] private Image _itemIcon;
         [SerializeField] private TextMeshProUGUI _itemCurrentAmountText;
         [SerializeField] private TextMeshProUGUI _itemRequiredAmountText;
+        [SerializeField] private Button _infoButton;
         
+        private IWindowSystem _windowSystem;
         public ElementConfig ItemType { get; private set; }
         public bool IsDone { get; private set; }
 
         private int _requiredAmount;
         private int _currentAmount;
-        
+
+        private void Start()
+        {
+            _windowSystem = DiContainer.Get<IWindowSystem>();
+            _infoButton.onClick.AddListener(ItemClicked);
+        }
+
         public void Setup(ElementConfig type, int requiredAmount)
         {
             ItemType = type;
@@ -39,6 +53,12 @@ namespace MergeIt.Game
             {
                 IsDone = false;
             }
-        } 
+        }
+
+        private void ItemClicked()
+        {
+            var infoArgs = new ElementInfoArgs {ElementConfig = ItemType};
+            _windowSystem.OpenWindow<ElementInfoPresenter>(enableBlackout: true, args: infoArgs);
+        }
     }
 }

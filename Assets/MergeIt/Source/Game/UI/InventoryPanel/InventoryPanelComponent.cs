@@ -112,13 +112,14 @@ namespace MergeIt.Game.UI.InventoryPanel
             {
                 CreateItem(element);
 
-                _inventoryService.Add(element);
 
                 var remove = new RemoveElementMessage
                 {
                     RemoveAtPoint = message.FromPoint
                 };
                 _messageBus.Fire(remove);
+                _inventoryService.Add(element);
+
             }
         }
 

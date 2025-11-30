@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using MergeIt.Core.Configs.Inventory;
 using MergeIt.Core.FieldElements;
 using MergeIt.Core.Inventory;
+using MergeIt.Core.Messages;
 using MergeIt.Core.Saves;
 using MergeIt.Core.Services;
 using MergeIt.Core.WindowSystem;
 using MergeIt.Game.Converters;
 using MergeIt.Game.Factories.Inventory;
+using MergeIt.Game.Messages;
 using MergeIt.Game.Windows.Inventory;
 using MergeIt.SimpleDI;
 
@@ -29,15 +31,19 @@ namespace MergeIt.Game.Services
         private InventoryServiceModel _serviceModel;
 
         [Introduce]
-        private IWindowSystem _windowSystem;
-
+        private IWindowSystem _windowSystem;     
+        
+        private IMessageBus _messageBus;
+        
         public void CreateInventory()
         {
+
             InventoryConfig inventoryConfig = _configsService.InventoryConfig;
             var inventoryData = new InventoryData
             {
                 InventorySize = inventoryConfig.InitialCapacity
             };
+
 
             SetupInventory(inventoryData);
 
@@ -46,6 +52,8 @@ namespace MergeIt.Game.Services
 
         public void SetupInventory(IInventoryData inventoryData)
         {
+            _messageBus = DiContainer.Get<IMessageBus>();
+
             _serviceModel.InventorySize = inventoryData.InventorySize;
             var elements = new List<IFieldElement>();
 
@@ -86,6 +94,10 @@ namespace MergeIt.Game.Services
         {
             _serviceModel.InventoryElements.Add(fieldElement);
             _saveService.Save(GameSaveType.Inventory);
+            _messageBus.Fire(new AddToInventoryMessage
+            {
+                FieldElement = fieldElement
+            });
         }
 
         public bool Remove(IFieldElement fieldElement)

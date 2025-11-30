@@ -16,6 +16,7 @@ namespace MergeIt.Game
         [SerializeField] private RectTransform _backgroundCompleted;
         [SerializeField] private TextMeshProUGUI _completedText;
         [SerializeField] private Button _orderCompleteButton;
+        [SerializeField] private Image _orderCompleteButtonImage;
         
         List<OrderItemView> _orderItems = new List<OrderItemView>();
 
@@ -55,6 +56,11 @@ namespace MergeIt.Game
         {
             foreach (var item in _orderItems)
             {
+                item.UpdateCurrentAmount(0);
+            }
+
+            foreach (var item in _orderItems)
+            {
                 if (TypeAmounts.TryGetValue(item.ItemType, out int amount))
                 {
                     item.UpdateCurrentAmount(amount);
@@ -81,6 +87,7 @@ namespace MergeIt.Game
             _backgroundCompleted.gameObject.SetActive(true);
             _completedText.text = "Completed!";
             _orderCompleteButton.interactable = true;
+            _orderCompleteButtonImage.enabled = true;
         }
 
         private void MarkIncompleted()
@@ -89,6 +96,7 @@ namespace MergeIt.Game
             _backgroundCompleted.gameObject.SetActive(false);
             _completedText.text = "Collect:";
             _orderCompleteButton.interactable = false;
+            _orderCompleteButtonImage.enabled = false;
         }
     }
 }

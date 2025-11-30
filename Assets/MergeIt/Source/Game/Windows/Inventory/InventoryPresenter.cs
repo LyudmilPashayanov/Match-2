@@ -116,17 +116,16 @@ namespace MergeIt.Game.Windows.Inventory
                         CreateEmptyCell(index);
 
                         // TODO: animate 
-
-                        MessageBus.Fire(new RemoveFromInventoryMessage
-                        {
-                            FieldElement = itemPair.Element
-                        });
-
+                        
                         MessageBus.Fire(new CreateElementMessage
                         {
                             NewElement = itemPair.Element,
                             FromPosition = null,
                             ToPoint = freeCell.Value
+                        });
+                        MessageBus.Fire(new RemoveFromInventoryMessage
+                        {
+                            FieldElement = itemPair.Element
                         });
                     }
                 }

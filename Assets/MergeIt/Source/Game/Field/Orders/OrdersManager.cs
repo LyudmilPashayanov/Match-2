@@ -32,24 +32,28 @@ namespace MergeIt.Game.Field
         private IMessageBus _messageBus;
 
         private float _orderPrefabWidth;
-        private int _amountOfSimultatiousOrders = 2;
+        private int _amountOfSimultaniousOrders = 2;
 
         private List<OrderView> _spawnedOrders = new List<OrderView>();
         private List<int> _completedOrders;
         private Dictionary<ElementConfig, int> _typeAmounts = new Dictionary<ElementConfig, int>();
 
         private void Start()
-        {
+        { 
+            PlayerPrefs.DeleteKey(COMPLETED_ORDERS_KEY);
+            
+            _fieldLogicModel = DiContainer.Get<FieldLogicModel>();
+            _fieldElementVisualFactory = DiContainer.Get<IFieldElementVisualFactory>();
             _messageBus = DiContainer.Get<IMessageBus>();
 
             _messageBus.AddListener<MergeElementsMessage>(OnItemMerged);
             _messageBus.AddListener<SplitElementMessage>(OnItemSplit);
-            _messageBus.AddListener<GeneratorOpenedMessage>(OnItemGenerated);
-            _messageBus.AddListener<StartGameMessage>(OnGameStarted);
+            _messageBus.AddListener<ClickElementMessage>(OnItemClicked);
+            _messageBus.AddListener<LoadedGameMessage>(OnGameLoaded);
+            _messageBus.AddListener<RemoveFromInventoryMessage>(RemoveFromInventory);
+            _messageBus.AddListener<AddToInventoryMessage>(MoveToInventory);
 
-            _fieldLogicModel = DiContainer.Get<FieldLogicModel>();
-            _fieldElementVisualFactory = DiContainer.Get<IFieldElementVisualFactory>();
-
+            
             _orderPrefabWidth = _orderPrefab.GetComponent<RectTransform>().rect.width + OFFSET;
 
             _completedOrders = LoadCompletedOrders();
@@ -63,7 +67,7 @@ namespace MergeIt.Game.Field
         {
             foreach (var orderDefinition in _orderList.OrderDefinitions)
             {
-                if (_spawnedOrders.Count >= _amountOfSimultatiousOrders)
+                if (_spawnedOrders.Count >= _amountOfSimultaniousOrders)
                 {
                     return;
                 }
@@ -73,6 +77,20 @@ namespace MergeIt.Game.Field
                     continue;
                 }
 
+                bool currentlySpawned = false;
+                foreach (var spawnedOrder in _spawnedOrders)
+                {
+                    if (spawnedOrder.OrderDefinition.OrderId == orderDefinition.OrderId)
+                    {
+                        currentlySpawned = true;
+                    }
+                }
+
+                if (currentlySpawned)
+                {
+                    continue;
+                }
+                
                 AddOrder(orderDefinition);
             }
         }
@@ -87,6 +105,8 @@ namespace MergeIt.Game.Field
             _spawnedOrders.Add(newOrder);
 
             UpdateScrollViewContent();
+            UpdateFieldData();
+            UpdateOrdersView();
         }
 
         private void OnOrderCompleted(OrderView order)
@@ -94,6 +114,8 @@ namespace MergeIt.Game.Field
             // Remove from the orders view
             _spawnedOrders.Remove(order);
             Destroy(order.gameObject);
+            // Remove items from the field
+            RemoveItemsFromFields(order.OrderDefinition);
             // save that it was completed
             _completedOrders.Add(order.OrderDefinition.OrderId);
             //save in player prefs
@@ -129,7 +151,8 @@ namespace MergeIt.Game.Field
         {
             int fieldWidth = _fieldLogicModel.FieldWidth;
             int fieldHeight = _fieldLogicModel.FieldHeight;
-
+            _typeAmounts.Clear();
+            
             for (int i = 0; i < fieldHeight; i++)
             {
                 for (int j = 0; j < fieldWidth; j++)
@@ -151,6 +174,40 @@ namespace MergeIt.Game.Field
             }
         }
 
+        private void RemoveItemsFromFields(OrderDefinition orderDefinition)
+        {
+            int fieldWidth = _fieldLogicModel.FieldWidth;
+            int fieldHeight = _fieldLogicModel.FieldHeight;
+            foreach (var order in orderDefinition.RequiredItems)
+            {
+                int removedCounter = 0;
+                for (int i = 0; i < fieldHeight; i++)
+                {
+                    for (int j = 0; j < fieldWidth; j++)
+                    {
+                        var point = GridPoint.Create(i, j);
+                        if (_fieldLogicModel.FieldElements.TryGetValue(point, out var fieldElement))
+                        {
+                            if (order.Type == fieldElement.ConfigParameters.ElementConfig)
+                            {
+                                var remove = new RemoveElementMessage
+                                {
+                                    RemoveAtPoint = point
+                                };
+                                _messageBus.Fire(remove);
+                                removedCounter++;
+                            }
+                        }
+                    }
+                    if (removedCounter == order.Amount)
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+        
+        
         private List<int> LoadCompletedOrders()
         {
             if (PlayerPrefs.HasKey(COMPLETED_ORDERS_KEY) == false)
@@ -195,24 +252,45 @@ namespace MergeIt.Game.Field
             UpdateOrdersView();
         }
         
-        private void OnItemGenerated(GeneratorOpenedMessage _ = null)
+        private void OnItemClicked(ClickElementMessage _ = null)
         {
             Debug.Log("OnItemGenerated");
             UpdateFieldData();
             UpdateOrdersView();
         }
         
-        private void OnGameStarted(StartGameMessage obj)
+        private void OnGameLoaded(LoadedGameMessage obj)
         {
-            Debug.Log("OnGameStarted");
+            UpdateFieldData();
+            UpdateOrdersView();
+        }
+        
+        private void MoveToInventory(AddToInventoryMessage obj)
+        {
+            Debug.Log("MoveToInventory");
+            UpdateFieldData();
+            UpdateOrdersView();
+        }
+
+        private void RemoveFromInventory(RemoveFromInventoryMessage obj)
+        {
+            Debug.Log("RemoveFromInventory");
             UpdateFieldData();
             UpdateOrdersView();
         }
         
         public void Dispose()
         {
-            _messageBus.RemoveListener<MergeElementsMessage>(OnItemMerged);
-            _messageBus.RemoveListener<SplitElementMessage>(OnItemSplit);
+            if (_messageBus != null)
+            {
+                _messageBus.RemoveListener<MergeElementsMessage>(OnItemMerged);
+                _messageBus.RemoveListener<SplitElementMessage>(OnItemSplit);
+                _messageBus.RemoveListener<ClickElementMessage>(OnItemClicked);
+                _messageBus.RemoveListener<LoadedGameMessage>(OnGameLoaded);
+                _messageBus.RemoveListener<AddToInventoryMessage>(MoveToInventory);  
+                _messageBus.RemoveListener<RemoveFromInventoryMessage>(RemoveFromInventory);
+            }
+
         }
     }
 }
