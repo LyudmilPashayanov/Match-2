@@ -27,7 +27,7 @@ public class MenuInitializer : DiRoot
     protected override void OnInstall()
     {
                    
-        DiContainer.RegisterInterfacesFor<MessageBus>().AsSingleton();
+         DiContainer.RegisterInterfacesFor<MessageBus>().AsSingleton();
 
          DiContainer.RegisterInterfacesFor<GameService>().AsSingleton();
          DiContainer.RegisterInterfacesFor<GameFieldService>().AsSingleton();
