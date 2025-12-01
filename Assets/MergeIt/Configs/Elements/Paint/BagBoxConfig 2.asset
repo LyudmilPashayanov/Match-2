@@ -25,8 +25,8 @@ MonoBehaviour:
     _unlockCostSettings:
       _currencyType: 0
       _amount: 10
-    _name: Bag Box L
-    _icon: {fileID: 8196838751629904819, guid: 3d4adbda9c9d3412eaae2f8c62b96e61, type: 3}
+    _name: Magic Pineapple
+    _icon: {fileID: 8196838751629904819, guid: b7ce9759c20c3344db35306c896c9881, type: 3}
     _isConsumable: 0
     _consumableSettings:
       _target: 0

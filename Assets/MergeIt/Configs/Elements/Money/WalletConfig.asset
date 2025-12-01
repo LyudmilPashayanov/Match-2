@@ -15,7 +15,7 @@ MonoBehaviour:
   _type: 0
   _commonSettings:
     _expanded: 1
-    _description: Merge to produce Suite Case
+    _description: Merge to produce Watermelon fresh
     _splitCostSettings:
       _currencyType: 2
       _amount: 1
@@ -25,8 +25,8 @@ MonoBehaviour:
     _unlockCostSettings:
       _currencyType: 0
       _amount: 10
-    _name: Wallet
-    _icon: {fileID: 8196838751629904819, guid: c2fc4dee6fb2343b9aab6e78101979a4, type: 3}
+    _name: Strawberry mochito
+    _icon: {fileID: 8196838751629904819, guid: 7de709373fa04c44a9033c671858c138, type: 3}
     _isConsumable: 0
     _consumableSettings:
       _target: 0

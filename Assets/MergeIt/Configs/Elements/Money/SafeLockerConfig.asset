@@ -25,8 +25,8 @@ MonoBehaviour:
     _unlockCostSettings:
       _currencyType: 0
       _amount: 10
-    _name: Safe Locker
-    _icon: {fileID: 8196838751629904819, guid: daa4ce1b739804dd8bd0347d4233717a, type: 3}
+    _name: Magic Mango Mania
+    _icon: {fileID: 8196838751629904819, guid: c9c21c325b3015c4a972d88fafc23907, type: 3}
     _isConsumable: 0
     _consumableSettings:
       _target: 0

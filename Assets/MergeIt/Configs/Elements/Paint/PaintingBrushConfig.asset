@@ -15,7 +15,7 @@ MonoBehaviour:
   _type: 0
   _commonSettings:
     _expanded: 1
-    _description: Merge to produce Pallete
+    _description: Merge to produce Strawberry
     _splitCostSettings:
       _currencyType: 2
       _amount: 0
@@ -25,8 +25,8 @@ MonoBehaviour:
     _unlockCostSettings:
       _currencyType: 0
       _amount: 10
-    _name: Painting Brush
-    _icon: {fileID: 8196838751629904819, guid: 9c2cf6f4d03754fdeb3f8e5f5329772f, type: 3}
+    _name: Cherry
+    _icon: {fileID: 8196838751629904819, guid: f31e4ad7781a3ca40a9e03937ea39d45, type: 3}
     _isConsumable: 0
     _consumableSettings:
       _target: 0

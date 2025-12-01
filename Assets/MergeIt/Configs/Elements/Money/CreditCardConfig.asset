@@ -15,7 +15,7 @@ MonoBehaviour:
   _type: 0
   _commonSettings:
     _expanded: 1
-    _description: Merge to produce Wallet
+    _description: Merge to produce Strawberry mochito
     _splitCostSettings:
       _currencyType: 2
       _amount: 1
@@ -25,8 +25,8 @@ MonoBehaviour:
     _unlockCostSettings:
       _currencyType: 0
       _amount: 10
-    _name: Credit Card
-    _icon: {fileID: 8196838751629904819, guid: 3a5c985aa666840b6ad30dadd6f39355, type: 3}
+    _name: Appletini
+    _icon: {fileID: 8196838751629904819, guid: 0b4f4c5476d3d2e46b402d9432385038, type: 3}
     _isConsumable: 0
     _consumableSettings:
       _target: 0

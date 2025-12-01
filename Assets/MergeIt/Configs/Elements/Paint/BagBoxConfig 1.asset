@@ -15,8 +15,7 @@ MonoBehaviour:
   _type: 1
   _commonSettings:
     _expanded: 1
-    _description: Tap to draw out items stored inside or merge to produce Bag Box
-      L
+    _description: Tap to draw out items stored inside or merge to produce Magic Pineapple
     _splitCostSettings:
       _currencyType: 2
       _amount: 1
@@ -26,8 +25,8 @@ MonoBehaviour:
     _unlockCostSettings:
       _currencyType: 0
       _amount: 10
-    _name: Bag Box M
-    _icon: {fileID: 8196838751629904819, guid: c3a7814d2976a4da8ae613be05678041, type: 3}
+    _name: Magic Orange
+    _icon: {fileID: 8196838751629904819, guid: b4293c136259a9c438e2aeb31b5a15bb, type: 3}
     _isConsumable: 0
     _consumableSettings:
       _target: 0

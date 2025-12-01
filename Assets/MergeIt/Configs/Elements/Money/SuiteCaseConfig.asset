@@ -15,7 +15,7 @@ MonoBehaviour:
   _type: 0
   _commonSettings:
     _expanded: 1
-    _description: Merge to produce Safe Locker
+    _description: Merge to produce Magic Mango Mania
     _splitCostSettings:
       _currencyType: 2
       _amount: 1
@@ -25,8 +25,8 @@ MonoBehaviour:
     _unlockCostSettings:
       _currencyType: 0
       _amount: 10
-    _name: Suite Case
-    _icon: {fileID: 8196838751629904819, guid: 0644904d4150341cb95d2726ebc1a6a8, type: 3}
+    _name: Watermelon fresh
+    _icon: {fileID: 8196838751629904819, guid: e3ba60d489bbef34fa65bbbdc37154dc, type: 3}
     _isConsumable: 0
     _consumableSettings:
       _target: 0
