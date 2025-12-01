@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System;
 using MergeIt.Core.Messages;
 using MergeIt.Game;
 using MergeIt.Game.Services;
@@ -34,7 +34,12 @@ public class UpgradesManager : MonoBehaviour
     private UserServiceModel _userServiceModel;
     
     private int _playerLevel;
-    
+
+    private void Awake()
+    {
+        _upgradePanel.gameObject.SetActive(false);
+    }
+
     public void Start()
     {
         _messageBus = DiContainer.Get<IMessageBus>();
@@ -48,7 +53,12 @@ public class UpgradesManager : MonoBehaviour
         
         _upgradeAvailableButton.onClick.AddListener(ShowPanel);
         _collectRewardButton.onClick.AddListener(CollectReward);
-        
+
+        CheckUpgradeAvailable();
+    }
+
+    private void CheckUpgradeAvailable()
+    {
         if (GetCurrentUpgradeReward())
         {
             ActivateUpgradeButton();
@@ -58,7 +68,7 @@ public class UpgradesManager : MonoBehaviour
             DeactivateUpgradeButton();
         }
     }
-
+    
     private void ActivateUpgradeButton()
     {
         _upgradeAvailableButtonText.text = UPGRADE_BUTTON_AVAILABLE_TEXT;
@@ -90,11 +100,15 @@ public class UpgradesManager : MonoBehaviour
         {
             Debug.Log("we need to add more rewards for the next levels!");
         }
-
+        
+        _upgradePanel.gameObject.SetActive(true);
     }
     
     private void CollectReward()
     {
+        _upgradePanel.gameObject.SetActive(false);
+        CheckUpgradeAvailable();
+        
         UpgradeRewardDefinition reward = GetCurrentUpgradeReward();
         
         // save player prefs
@@ -102,8 +116,9 @@ public class UpgradesManager : MonoBehaviour
         
         // animate reward on the menu
         _stageBackgroundLogic.AddUpgradeOnStage(reward);
-        //check if it is end of stage and move to the other stage
-
+        
+        
+        // TODO LATER: Check if it is end of stage and move to the other stage
     }
 
     private UpgradeRewardDefinition GetCurrentUpgradeReward()
@@ -128,7 +143,7 @@ public class UpgradesManager : MonoBehaviour
         {
             if (_playerLevel + 1 >= rewardDefinition.LevelRequirement)
             {
-                if (rewardDefinition.LevelRequirement > PlayerPrefs.GetInt(LAST_RECEIVED_REWARD))
+                if (rewardDefinition.LevelRequirement > PlayerPrefs.GetInt(LAST_RECEIVED_REWARD, 1) + 1)
                 {
                     return rewardDefinition;
                 }
