@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4536539a8491a2478bad5fc192893f3, type: 3}
+  m_Name: Order-15
+  m_EditorClassIdentifier: MergeIt.Game::OrderDefinition
+  OrderId: 15
+  RequiredItems:
+  - {fileID: 11400000, guid: 5e3ae72599e8b9644835f879af893227, type: 2}
+  - {fileID: 11400000, guid: a648d9a72650220469e48b499b8ba2b6, type: 2}
+  reward: {fileID: 11400000, guid: 378a57755deac4d569ee77f9436fa8f0, type: 2}

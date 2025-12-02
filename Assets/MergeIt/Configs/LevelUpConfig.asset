@@ -13,14 +13,20 @@ MonoBehaviour:
   m_Name: LevelUpConfig
   m_EditorClassIdentifier: 
   LevelUp:
-  - Experience: 15
+  - Experience: 50
     Bonuses:
-    - {fileID: 11400000, guid: 83b5d7bd2166846c0914867e0a9d38be, type: 2}
-    - {fileID: 11400000, guid: f9650906f7d5d462dbbf6988b078a94d, type: 2}
-  - Experience: 22
+    - {fileID: 11400000, guid: 463f6e9514db21d40a45961b8d7505b2, type: 2}
+    - {fileID: 11400000, guid: 567c199ff980546ca9c5dc15ccc466c0, type: 2}
+  - Experience: 130
+    Bonuses:
+    - {fileID: 11400000, guid: 6dc5b4f6e1e14fb40b45b013479447c7, type: 2}
+  - Experience: 200
+    Bonuses:
+    - {fileID: 11400000, guid: 863855f875c4eb9478ceb0fcca2b3e9e, type: 2}
+    - {fileID: 11400000, guid: 463f6e9514db21d40a45961b8d7505b2, type: 2}
+  - Experience: 300
+    Bonuses:
+    - {fileID: 11400000, guid: 307e2f1aab26e7143a6381802565e57f, type: 2}
+  - Experience: 900
     Bonuses:
     - {fileID: 11400000, guid: 5f2cc1f5044324d06b159ae09e8b41a1, type: 2}
-  - Experience: 30
-    Bonuses: []
-  - Experience: 40
-    Bonuses: []

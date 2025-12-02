@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6834cf8c02a4ed7b157b9db857e3c62, type: 3}
+  m_Name: New_level
+  m_EditorClassIdentifier: MergeIt.Core::MergeIt.Core.Configs.LevelConfig
+  FieldWidth: 7
+  FieldHeight: 9
+  EvolutionsScheme: {fileID: 11400000, guid: fc3536215164b024085c7c931058a1c5, type: 2}
+  FieldElementsData:
+  - EvolutionId: 72eb6271-4311-4c9f-a3b3-10709c7fcb87
+    Element: {fileID: 11400000, guid: 6dc5b4f6e1e14fb40b45b013479447c7, type: 2}
+    IsBlocked: 1
+    Position:
+      _x: 0
+      _y: 0
+  - EvolutionId: 72eb6271-4311-4c9f-a3b3-10709c7fcb87
+    Element: {fileID: 11400000, guid: 65627fff693d1b2459a032a4f58efada, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 0
+      _y: 6
+  - EvolutionId: 72eb6271-4311-4c9f-a3b3-10709c7fcb87
+    Element: {fileID: 11400000, guid: 369105541a2715c42aac015e02c45bdf, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 3
+      _y: 1
+  - EvolutionId: 72eb6271-4311-4c9f-a3b3-10709c7fcb87
+    Element: {fileID: 11400000, guid: d22f0494b711e31489e02c729f24dc17, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 4
+      _y: 5
+  - EvolutionId: 72eb6271-4311-4c9f-a3b3-10709c7fcb87
+    Element: {fileID: 11400000, guid: 1e959ea7afc1cea40877f9cb3e7a1801, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 5
+      _y: 2
+  - EvolutionId: 72eb6271-4311-4c9f-a3b3-10709c7fcb87
+    Element: {fileID: 11400000, guid: 1e959ea7afc1cea40877f9cb3e7a1801, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 8
+      _y: 5
+  - EvolutionId: 72eb6271-4311-4c9f-a3b3-10709c7fcb87
+    Element: {fileID: 11400000, guid: 6dc5b4f6e1e14fb40b45b013479447c7, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 3
+      _y: 4
+  - EvolutionId: bb5965e5-c6ca-4f68-8762-1fe69bd988ca
+    Element: {fileID: 11400000, guid: 52712e21ea47a894cb2b8628b36962a8, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 7
+      _y: 1
+  - EvolutionId: bb5965e5-c6ca-4f68-8762-1fe69bd988ca
+    Element: {fileID: 11400000, guid: 696d5f8a1f23d1b4187c34f7e74466e3, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 6
+      _y: 6
+  - EvolutionId: bb5965e5-c6ca-4f68-8762-1fe69bd988ca
+    Element: {fileID: 11400000, guid: 64ef212a628047a43ad3983d9708330b, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 1
+      _y: 1
+  - EvolutionId: bb5965e5-c6ca-4f68-8762-1fe69bd988ca
+    Element: {fileID: 11400000, guid: 463f6e9514db21d40a45961b8d7505b2, type: 2}
+    IsBlocked: 1
+    Position:
+      _x: 8
+      _y: 0
+  - EvolutionId: 7df6b5d3-3cb6-4c2d-889c-876810290e78
+    Element: {fileID: 11400000, guid: 3bdc20ced63fa4e6ebfd23c11795ccc6, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 1
+      _y: 4
+  - EvolutionId: 376fdb16-9adb-4bdb-9b4b-71a340e11177
+    Element: {fileID: 11400000, guid: 5e23aceca344043c7912575859359f3e, type: 2}
+    IsBlocked: 1
+    Position:
+      _x: 7
+      _y: 4
+  - EvolutionId: 8d921ac8-d981-48c5-8daa-1e52c7ea6dd2
+    Element: {fileID: 11400000, guid: 0d7c75d27458841ecbb95d37a4e63d95, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 5
+      _y: 0
+  - EvolutionId: 72eb6271-4311-4c9f-a3b3-10709c7fcb87
+    Element: {fileID: 11400000, guid: 445c56fd5ec82fa4998b68d1ea52a3df, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 5
+      _y: 4
+  - EvolutionId: 72eb6271-4311-4c9f-a3b3-10709c7fcb87
+    Element: {fileID: 11400000, guid: 445c56fd5ec82fa4998b68d1ea52a3df, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 0
+      _y: 2
+  - EvolutionId: 72eb6271-4311-4c9f-a3b3-10709c7fcb87
+    Element: {fileID: 11400000, guid: 445c56fd5ec82fa4998b68d1ea52a3df, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 3
+      _y: 6
+  - EvolutionId: bb5965e5-c6ca-4f68-8762-1fe69bd988ca
+    Element: {fileID: 11400000, guid: 52712e21ea47a894cb2b8628b36962a8, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 2
+      _y: 0
+  - EvolutionId: bb5965e5-c6ca-4f68-8762-1fe69bd988ca
+    Element: {fileID: 11400000, guid: 52712e21ea47a894cb2b8628b36962a8, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 2
+      _y: 6
+  - EvolutionId: bb5965e5-c6ca-4f68-8762-1fe69bd988ca
+    Element: {fileID: 11400000, guid: 696d5f8a1f23d1b4187c34f7e74466e3, type: 2}
+    IsBlocked: 0
+    Position:
+      _x: 0
+      _y: 1

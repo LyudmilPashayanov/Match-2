@@ -3277,7 +3277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneNavigator
   _changeSceneButton: {fileID: 1720361681}
-  _fadeCanvasGroup: {fileID: 550325341}
+  _fadeBackground: {fileID: 555009486}
 --- !u!4 &1007960023
 Transform:
   m_ObjectHideFlags: 0

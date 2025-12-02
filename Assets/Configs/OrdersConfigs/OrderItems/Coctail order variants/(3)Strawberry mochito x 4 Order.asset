@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bd69249f6a459342be5fc5c7afe7c55, type: 3}
-  m_Name: Wallet x 1 Order
+  m_Name: (3)Strawberry mochito x 4 Order
   m_EditorClassIdentifier: MergeIt.Game::MergeIt.Game.Order
-  Type: {fileID: 11400000, guid: 006efc945c9124963b24fe2f2526e1a8, type: 2}
-  Amount: 1
+  Type: {fileID: 11400000, guid: 64ef212a628047a43ad3983d9708330b, type: 2}
+  Amount: 4

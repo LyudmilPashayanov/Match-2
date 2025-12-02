@@ -24,7 +24,7 @@ MonoBehaviour:
       _amount: 22
     _unlockCostSettings:
       _currencyType: 0
-      _amount: 10
+      _amount: 200
     _name: Magic Pineapple
     _icon: {fileID: 8196838751629904819, guid: b7ce9759c20c3344db35306c896c9881, type: 3}
     _isConsumable: 0
@@ -53,16 +53,16 @@ MonoBehaviour:
       _amount: 0
     _generateBlocked: 0
     _generateItems:
-    - Element: {fileID: 11400000, guid: 7b724b8e378614737ad628b8a422777a, type: 2}
-      Possibility: 40
-    - Element: {fileID: 11400000, guid: 741881e7dc75142349a8a614f7305997, type: 2}
-      Possibility: 30
-    - Element: {fileID: 11400000, guid: fc27160c0fc5a452aa68debc3fd8e4c1, type: 2}
+    - Element: {fileID: 11400000, guid: 445c56fd5ec82fa4998b68d1ea52a3df, type: 2}
+      Possibility: 25
+    - Element: {fileID: 11400000, guid: 675abfb64c05e62449a40f784616e67e, type: 2}
+      Possibility: 25
+    - Element: {fileID: 11400000, guid: 1e959ea7afc1cea40877f9cb3e7a1801, type: 2}
       Possibility: 20
-    - Element: {fileID: 11400000, guid: 8353c351b91764a32a9cdad07f211201, type: 2}
+    - Element: {fileID: 11400000, guid: 369105541a2715c42aac015e02c45bdf, type: 2}
+      Possibility: 15
+    - Element: {fileID: 11400000, guid: d22f0494b711e31489e02c729f24dc17, type: 2}
       Possibility: 10
-    - Element: {fileID: 11400000, guid: b61758723018d4d54af0dbf60d8434fb, type: 2}
+    - Element: {fileID: 11400000, guid: 65627fff693d1b2459a032a4f58efada, type: 2}
       Possibility: 5
-    - Element: {fileID: 11400000, guid: c2bde557d5dc24ea7bdfd03740aa2e08, type: 2}
-      Possibility: 2
   _id: 11094ec2-f66f-4673-991b-47f84ca3cae4

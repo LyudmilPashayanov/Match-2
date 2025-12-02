@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnergyCap: 20
   EnergyRestoreTime: 60
-  InitialSoftCurrency: 999
-  InitialHardCurrency: 99
-  InitialSplittersCount: 10
+  InitialSoftCurrency: 0
+  InitialHardCurrency: 0
+  InitialSplittersCount: 100
   LevelString: Level
   SaveInterval: 10

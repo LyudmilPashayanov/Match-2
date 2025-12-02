@@ -53,12 +53,12 @@ MonoBehaviour:
       _amount: 0
     _generateBlocked: 0
     _generateItems:
-    - Element: {fileID: 11400000, guid: 258f46d09c19e42c1ae42a617667d396, type: 2}
+    - Element: {fileID: 11400000, guid: 52712e21ea47a894cb2b8628b36962a8, type: 2}
       Possibility: 80
-    - Element: {fileID: 11400000, guid: 2e002e088faf44bf1a6864bc795031cb, type: 2}
+    - Element: {fileID: 11400000, guid: 64ef212a628047a43ad3983d9708330b, type: 2}
       Possibility: 10
-    - Element: {fileID: 11400000, guid: 006efc945c9124963b24fe2f2526e1a8, type: 2}
-      Possibility: 6
-    - Element: {fileID: 11400000, guid: 07602a28ea4884e6c80132f48a795327, type: 2}
+    - Element: {fileID: 11400000, guid: 244bcf65f0531ae47acae4b895840db0, type: 2}
+      Possibility: 7
+    - Element: {fileID: 11400000, guid: 244bcf65f0531ae47acae4b895840db0, type: 2}
       Possibility: 3
   _id: 86bae71f-d0b9-449f-9b68-266c744bfad3

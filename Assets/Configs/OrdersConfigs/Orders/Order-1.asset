@@ -16,3 +16,4 @@ MonoBehaviour:
   RequiredItems:
   - {fileID: 11400000, guid: 6858494b245fa6644809eee2645d8b45, type: 2}
   - {fileID: 11400000, guid: 336653ed496936e4a9395a708ca77c5a, type: 2}
+  reward: {fileID: 11400000, guid: 378a57755deac4d569ee77f9436fa8f0, type: 2}

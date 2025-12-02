@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using MergeIt.Core.Configs.Elements;
 using MergeIt.Core.FieldElements;
 using MergeIt.Core.Messages;
+using MergeIt.Core.Services;
 using MergeIt.Game.Factories.FieldElement;
 using MergeIt.Game.Messages;
 using MergeIt.SimpleDI;
@@ -37,6 +37,7 @@ namespace MergeIt.Game.Field
         private List<OrderView> _spawnedOrders = new List<OrderView>();
         private List<int> _completedOrders;
         private Dictionary<ElementConfig, int> _typeAmounts = new Dictionary<ElementConfig, int>();
+        private IGameFieldService _fieldService;
 
         private void Start()
         { 
@@ -44,6 +45,8 @@ namespace MergeIt.Game.Field
             
             _fieldLogicModel = DiContainer.Get<FieldLogicModel>();
             _fieldElementVisualFactory = DiContainer.Get<IFieldElementVisualFactory>();
+            _fieldService = DiContainer.Get<IGameFieldService>();
+
             _messageBus = DiContainer.Get<IMessageBus>();
 
             _messageBus.AddListener<MergeElementsMessage>(OnItemMerged);
@@ -116,6 +119,10 @@ namespace MergeIt.Game.Field
             Destroy(order.gameObject);
             // Remove items from the field
             RemoveItemsFromFields(order.OrderDefinition);
+            //Spawn experience on the board.
+
+            GenerateRewardOnField(order);
+
             // save that it was completed
             _completedOrders.Add(order.OrderDefinition.OrderId);
             //save in player prefs
@@ -123,7 +130,27 @@ namespace MergeIt.Game.Field
             // add new order
             InitializeOrders();
         }
-        
+
+        private void GenerateRewardOnField(OrderView order)
+        {
+            GridPoint? pointContainer = _fieldService.GetFreeCell();
+
+            if (pointContainer != null)
+            {
+                GridPoint point = pointContainer.Value;
+                IFieldElement newElement = _fieldService.CreateNewElement(order.OrderDefinition.reward, point);
+
+                var message = new CreateElementMessage
+                {
+                    FromPosition = order.transform.position,
+                    ToPoint = point,
+                    NewElement = newElement
+                };
+
+                _messageBus.Fire(message);
+            }
+        }
+
         private void UpdateScrollViewContent()
         {
             // setting new scroll view content width

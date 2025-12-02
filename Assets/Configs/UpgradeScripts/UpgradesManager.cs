@@ -107,7 +107,6 @@ public class UpgradesManager : MonoBehaviour
     private void CollectReward()
     {
         _upgradePanel.gameObject.SetActive(false);
-        CheckUpgradeAvailable();
         
         UpgradeRewardDefinition reward = GetCurrentUpgradeReward();
         
@@ -117,7 +116,8 @@ public class UpgradesManager : MonoBehaviour
         // animate reward on the menu
         _stageBackgroundLogic.AddUpgradeOnStage(reward);
         
-        
+        CheckUpgradeAvailable();
+
         // TODO LATER: Check if it is end of stage and move to the other stage
     }
 

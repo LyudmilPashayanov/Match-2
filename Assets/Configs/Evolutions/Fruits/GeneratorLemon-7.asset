@@ -54,10 +54,10 @@ MonoBehaviour:
       _amount: 0
     _generateBlocked: 0
     _generateItems:
-    - Element: {fileID: 11400000, guid: 7b724b8e378614737ad628b8a422777a, type: 2}
+    - Element: {fileID: 11400000, guid: 445c56fd5ec82fa4998b68d1ea52a3df, type: 2}
       Possibility: 80
-    - Element: {fileID: 11400000, guid: 741881e7dc75142349a8a614f7305997, type: 2}
+    - Element: {fileID: 11400000, guid: 675abfb64c05e62449a40f784616e67e, type: 2}
       Possibility: 15
-    - Element: {fileID: 11400000, guid: fc27160c0fc5a452aa68debc3fd8e4c1, type: 2}
+    - Element: {fileID: 11400000, guid: 1e959ea7afc1cea40877f9cb3e7a1801, type: 2}
       Possibility: 5
   _id: 7a92e575-0bad-4c6d-b4ea-f7c7a2b27f9d
