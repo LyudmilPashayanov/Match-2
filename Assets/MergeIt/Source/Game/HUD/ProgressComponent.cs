@@ -73,7 +73,6 @@ namespace MergeIt.Game.HUD
             UserServiceModel.Level.Subscribe(OnLevelChanged, true);
             UserServiceModel.Experience.Subscribe(OnExperienceChanged, true);
         }
-        
 
         private void OnProgressButtonClick()
         {

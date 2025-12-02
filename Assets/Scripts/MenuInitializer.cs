@@ -32,7 +32,7 @@ public class MenuInitializer : DiRoot
          DiContainer.RegisterInterfacesFor<GameService>().AsSingleton();
          DiContainer.RegisterInterfacesFor<GameFieldService>().AsSingleton();
          DiContainer.RegisterInterfacesFor<GameFieldActionsService>().AsSingleton();
-         DiContainer.RegisterInterfacesFor<GameSaveEveryIntervalService>().AsSingleton();
+         DiContainer.RegisterInterfacesFor<GameSaveOnEveryActionService>().AsSingleton();
          DiContainer.RegisterInterfacesFor<UserService>().AsSingleton();
          DiContainer.RegisterInterfacesFor<UserProgressService>().AsSingleton();
          DiContainer.RegisterInterfacesFor<InventoryService>().AsSingleton();

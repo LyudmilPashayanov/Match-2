@@ -1,4 +1,7 @@
 using DG.Tweening;
+using MergeIt.Core.Saves;
+using MergeIt.Core.Services;
+using MergeIt.SimpleDI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,7 +12,8 @@ public class SceneNavigator : MonoBehaviour
     
     [SerializeField] private Button _changeSceneButton;
     [SerializeField] private Image _fadeBackground;
-  
+    private IGameSaveService _saveService;
+
     private bool _isLoading;
     
     private void Awake()
@@ -18,6 +22,11 @@ public class SceneNavigator : MonoBehaviour
         _fadeBackground.color = new Color(0, 0, 0, 1);
         _changeSceneButton.onClick.AddListener(GoToOtherScene);
         FadeOut();
+    }
+
+    private void Start()
+    {
+        _saveService = DiContainer.Get<IGameSaveService>();
     }
 
     private void FadeOut()
@@ -30,6 +39,7 @@ public class SceneNavigator : MonoBehaviour
         if (_isLoading) return;
         
         _isLoading = true;
+        _saveService.Save(GameSaveType.All);
 
         int goToIndex = 0;
         if (SceneManager.GetActiveScene().buildIndex == 0)

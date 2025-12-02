@@ -129,6 +129,9 @@ namespace MergeIt.Game.Field
             SaveCompletedOrders();
             // add new order
             InitializeOrders();
+            UpdateFieldData();
+            UpdateOrdersView();
+            UpdateScrollViewContent();
         }
 
         private void GenerateRewardOnField(OrderView order)
@@ -267,21 +270,21 @@ namespace MergeIt.Game.Field
         
         private void OnItemMerged(MergeElementsMessage _ = null)
         {
-            Debug.Log("OnItemMerged");
+            //Debug.Log("OnItemMerged");
             UpdateFieldData();
             UpdateOrdersView();
         }
         
         private void OnItemSplit(SplitElementMessage _ = null)
         {
-            Debug.Log("OnItemSplit");
+            //Debug.Log("OnItemSplit");
             UpdateFieldData();
             UpdateOrdersView();
         }
         
         private void OnItemClicked(ClickElementMessage _ = null)
         {
-            Debug.Log("OnItemGenerated");
+            //Debug.Log("OnItemGenerated");
             UpdateFieldData();
             UpdateOrdersView();
         }
@@ -294,14 +297,14 @@ namespace MergeIt.Game.Field
         
         private void MoveToInventory(AddToInventoryMessage obj)
         {
-            Debug.Log("MoveToInventory");
+            //Debug.Log("MoveToInventory");
             UpdateFieldData();
             UpdateOrdersView();
         }
 
         private void RemoveFromInventory(RemoveFromInventoryMessage obj)
         {
-            Debug.Log("RemoveFromInventory");
+            //Debug.Log("RemoveFromInventory");
             UpdateFieldData();
             UpdateOrdersView();
         }

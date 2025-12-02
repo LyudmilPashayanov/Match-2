@@ -1,27 +1,18 @@
-using System;
 using System.Collections.Generic;
-using DG.Tweening;
 using MergeIt.Core.Messages;
 using MergeIt.Game;
 using MergeIt.Game.Services;
 using MergeIt.SimpleDI;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class StageBackgroundLogic : MonoBehaviour
 {
     private const string LAST_RECEIVED_REWARD = "LastReceivedReward";
     [SerializeField] public Stage stageType;
     [SerializeField] public List<SpawnedReward> spawnedRewards;
-    [SerializeField] public Image _hideCanvasImage;
 
     private IMessageBus  _messageBus;
     private UserServiceModel _userServiceModel;
-
-    private void Awake()
-    {
-        _hideCanvasImage.gameObject.SetActive(true);
-    }
 
     public void Start()
     {
@@ -45,10 +36,6 @@ public class StageBackgroundLogic : MonoBehaviour
                 reward.Hide();
             }
         }
-
-        _hideCanvasImage.DOFade(0, 1f).OnComplete(
-            () => _hideCanvasImage.gameObject.SetActive(false)
-            );
     }
 
     public void AddUpgradeOnStage(UpgradeRewardDefinition reward)

@@ -16,6 +16,7 @@ using MergeIt.Game.User;
 using MergeIt.SimpleDI;
 using MergeIt.SimpleDI.ReservedInterfaces;
 using UnityEditor;
+using UnityEngine;
 
 namespace MergeIt.Game.Services.Saves
 {
@@ -47,6 +48,8 @@ namespace MergeIt.Game.Services.Saves
         [Introduce]
         private ISerializeStrategy _serializeStrategy;
 
+        private readonly bool _isPlaying = Application.isPlaying; // throws — runs on loading thread
+        
         public async UniTask Save(GameSaveType gameSaveType)
         {
             if ((gameSaveType & GameSaveType.Field) == GameSaveType.Field)
@@ -74,7 +77,7 @@ namespace MergeIt.Game.Services.Saves
                 await SaveEvolutionsProgress();
             }
         }
-
+        
         public void Initialize()
         {
             MonoEventsListener.Instance.SubscribeOnApplicationQuit(this);
@@ -136,7 +139,10 @@ namespace MergeIt.Game.Services.Saves
         {
             await _serializeStrategy.Save(data);
 #if UNITY_EDITOR
-            AssetDatabase.Refresh();
+            if (!_isPlaying)
+            {
+                AssetDatabase.Refresh();
+            }
 #endif
         }
     }
