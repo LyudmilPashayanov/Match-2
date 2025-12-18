@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: UpgradeRewardDefinition-lvl-2
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeItem
   LevelRequirement: 2
-  RewardName: reward nr 2
-  RewardSprite: {fileID: 21300000, guid: 4f9c1f6f2280d074ab0cfcdc207fb9c0, type: 3}
+  StageType: 0
+  RewardName: Beach hut
+  RewardSprite: {fileID: 21300000, guid: 0498f9c44177efb43ae7d740278e502a, type: 3}

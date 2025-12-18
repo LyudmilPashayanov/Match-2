@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: UpgradeRewardDefinition-lvl-4
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeItem
   LevelRequirement: 4
-  RewardName: reward nr 4
-  RewardSprite: {fileID: 21300000, guid: 8642f4ca6580f8444b66fa4123ccd1a3, type: 3}
+  StageType: 0
+  RewardName: Sailing ship
+  RewardSprite: {fileID: 21300000, guid: f4b802e9a5528ec4a868385f8f221f5a, type: 3}

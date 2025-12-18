@@ -16,6 +16,7 @@ public class StageBackgroundLogic : MonoBehaviour
 
     public void Start()
     {
+        //PlayerPrefs.DeleteAll();
         _messageBus = DiContainer.Get<IMessageBus>();
         _messageBus.AddListener<MenuStartedMessage>(OnMenuStartedMessage);        
     }

@@ -1,8 +1,10 @@
 // Copyright (c) 2024, Awessets
 
 using MergeIt.Core.WindowSystem.Windows;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace MergeIt.Game.Windows.UserProgress
@@ -12,6 +14,9 @@ namespace MergeIt.Game.Windows.UserProgress
 
         [SerializeField]
         private Button _levelUpButton;
+        
+        [SerializeField]
+        private TextMeshProUGUI _levelUpButtonText;
 
         [SerializeField]
         private RectTransform _prizesContainer;
@@ -42,7 +47,24 @@ namespace MergeIt.Game.Windows.UserProgress
 
         public void EnableLevelUpButton(bool enable)
         {
-            _levelUpButton.interactable = enable;
+            if (SceneManager.GetActiveScene().name != "Menu")
+            {
+                _levelUpButton.interactable = enable;
+            }
+            else
+            {
+                _levelUpButton.interactable = false;
+                
+                if (enable)
+                {
+                    _levelUpButtonText.text = "Go to Game mode to upgrade";
+                }
+                else
+                {
+                    _levelUpButtonText.text = "Get exp to level up";
+                }
+               
+            }
         }
 
         public void UpdateProgress(int level, int currentExp, int nextExp)

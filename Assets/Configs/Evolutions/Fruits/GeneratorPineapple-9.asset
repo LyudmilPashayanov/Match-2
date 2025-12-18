@@ -25,7 +25,7 @@ MonoBehaviour:
     _unlockCostSettings:
       _currencyType: 0
       _amount: 200
-    _name: Magic Pineapple
+    _name: Magic Tree
     _icon: {fileID: 8196838751629904819, guid: b7ce9759c20c3344db35306c896c9881, type: 3}
     _isConsumable: 0
     _consumableSettings:
