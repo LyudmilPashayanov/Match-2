@@ -1,0 +1,17 @@
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\GAToUnityCallbacks.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\MacroEnd.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\MacroHeaderBegin.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\MacroSourceBegin.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAApplication.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAConfiguration.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGADebug.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAEvents.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAInput.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGASoftKeyboard.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGASoftKeyboardCallbacks.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGATypes.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAVersion.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGACallbacks.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAConfigurationCallbacks.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAKeyEventCallbacks.h
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAMotionEventCallbacks.h

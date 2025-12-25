@@ -25,6 +25,8 @@ namespace MergeIt.Editor.Helpers
                 ClearDirectory(oldPath);
                 AssetDatabase.Refresh();
             }
+            
+            PlayerPrefs.DeleteAll();
         }
 
         private static void ClearDirectory(string path)

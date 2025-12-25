@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef49f397f8384c73a836470c93704f28, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  EnergyCap: 20
-  EnergyRestoreTime: 60
-  InitialSoftCurrency: 0
+  EnergyCap: 30
+  EnergyRestoreTime: 30
+  InitialSoftCurrency: 20
   InitialHardCurrency: 0
   InitialSplittersCount: 100
   LevelString: Level

@@ -1,0 +1,2 @@
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Lyudmil Stuff\Work\Freelance\Match-2\Match-2\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

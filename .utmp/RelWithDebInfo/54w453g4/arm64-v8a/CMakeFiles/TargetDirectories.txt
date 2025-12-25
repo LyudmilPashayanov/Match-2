@@ -1,0 +1,5 @@
+C:/Lyudmil Stuff/Work/Freelance/Match-2/Match-2/.utmp/RelWithDebInfo/54w453g4/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Lyudmil Stuff/Work/Freelance/Match-2/Match-2/.utmp/RelWithDebInfo/54w453g4/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Lyudmil Stuff/Work/Freelance/Match-2/Match-2/.utmp/RelWithDebInfo/54w453g4/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Lyudmil Stuff/Work/Freelance/Match-2/Match-2/.utmp/RelWithDebInfo/54w453g4/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Lyudmil Stuff/Work/Freelance/Match-2/Match-2/.utmp/RelWithDebInfo/54w453g4/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir

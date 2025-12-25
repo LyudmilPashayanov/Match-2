@@ -41,7 +41,7 @@ namespace MergeIt.Game.Field
 
         private void Start()
         { 
-            PlayerPrefs.DeleteKey(COMPLETED_ORDERS_KEY);
+            //PlayerPrefs.DeleteKey(COMPLETED_ORDERS_KEY);
             
             _fieldLogicModel = DiContainer.Get<FieldLogicModel>();
             _fieldElementVisualFactory = DiContainer.Get<IFieldElementVisualFactory>();

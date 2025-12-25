@@ -18,7 +18,7 @@ MonoBehaviour:
   FieldElementsData:
   - EvolutionId: 72eb6271-4311-4c9f-a3b3-10709c7fcb87
     Element: {fileID: 11400000, guid: 6dc5b4f6e1e14fb40b45b013479447c7, type: 2}
-    IsBlocked: 1
+    IsBlocked: 0
     Position:
       _x: 0
       _y: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
       _y: 1
   - EvolutionId: bb5965e5-c6ca-4f68-8762-1fe69bd988ca
     Element: {fileID: 11400000, guid: 463f6e9514db21d40a45961b8d7505b2, type: 2}
-    IsBlocked: 1
+    IsBlocked: 0
     Position:
       _x: 8
       _y: 0
@@ -90,7 +90,7 @@ MonoBehaviour:
       _y: 4
   - EvolutionId: 376fdb16-9adb-4bdb-9b4b-71a340e11177
     Element: {fileID: 11400000, guid: 5e23aceca344043c7912575859359f3e, type: 2}
-    IsBlocked: 1
+    IsBlocked: 0
     Position:
       _x: 7
       _y: 4

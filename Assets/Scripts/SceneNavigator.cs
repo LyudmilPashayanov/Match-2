@@ -11,6 +11,7 @@ public class SceneNavigator : MonoBehaviour
     private const float FADE_DURATION = 0.5f;
     
     [SerializeField] private Button _changeSceneButton;
+    [SerializeField] private Button _quitGameButton;
     [SerializeField] private Image _fadeBackground;
     private IGameSaveService _saveService;
 
@@ -21,6 +22,10 @@ public class SceneNavigator : MonoBehaviour
         _fadeBackground.gameObject.SetActive(true);
         _fadeBackground.color = new Color(0, 0, 0, 1);
         _changeSceneButton.onClick.AddListener(GoToOtherScene);
+        if (_quitGameButton != null)
+        {
+            _quitGameButton.onClick.AddListener(QuitGame);
+        }
         FadeOut();
     }
 
@@ -34,6 +39,11 @@ public class SceneNavigator : MonoBehaviour
         _fadeBackground.DOFade(0f, FADE_DURATION);
     }
 
+    private void QuitGame()
+    {
+        Application.Quit();
+    }
+    
     private void GoToOtherScene()
     {
         if (_isLoading) return;
