@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b72332746789b41a27a405378028f3, type: 3}
+  m_Name: FullWaterLeafConfig-4
+  m_EditorClassIdentifier: 
+  _type: 0
+  _commonSettings:
+    _expanded: 1
+    _description: Merge to produce Bucket of Water
+    _splitCostSettings:
+      _currencyType: 2
+      _amount: 0
+    _sellCostSettings:
+      _currencyType: 0
+      _amount: 1
+    _unlockCostSettings:
+      _currencyType: 0
+      _amount: 10
+    _name: Leaf full of Water
+    _icon: {fileID: 8196838751629904819, guid: 54e14267497b76d45b04cd8974a7ee15, type: 3}
+    _isConsumable: 0
+    _consumableSettings:
+      _target: 0
+      _operation: 2
+      _value: 1
+  _generatorSettings:
+    _expanded: 0
+    _stack: 0
+    _minDrop: 0
+    _maxDrop: 0
+    _chargeTime: 0
+    _dropCount: 0
+    _skipChargeCostSettings:
+      _currencyType: 0
+      _amount: 0
+    _adSkip: 0
+    _charged: 0
+    _energyCost: 0
+    _isUnlimited: 0
+    _needOpen: 0
+    _openTime: 0
+    _skipOpenCostSettings:
+      _currencyType: 0
+      _amount: 0
+    _generateBlocked: 0
+    _generateItems: []
+  _id: ac35cbe8-15db-4640-962a-4df575036b6a

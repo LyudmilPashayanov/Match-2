@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1b72332746789b41a27a405378028f3, type: 3}
-  m_Name: GeneratorOrangeConfig-8
+  m_Name: Pineapple-9
   m_EditorClassIdentifier: 
   _type: 0
   _commonSettings:
     _expanded: 1
-    _description: Merge to produce Magic Pineapple
+    _description: Most rare fruit in the jungle!
     _splitCostSettings:
       _currencyType: 2
       _amount: 1
     _sellCostSettings:
       _currencyType: 0
-      _amount: 10
+      _amount: 22
     _unlockCostSettings:
       _currencyType: 0
-      _amount: 100
-    _name: Magic Orange
-    _icon: {fileID: 8196838751629904819, guid: b4293c136259a9c438e2aeb31b5a15bb, type: 3}
+      _amount: 200
+    _name: Pineapple
+    _icon: {fileID: 8196838751629904819, guid: dcad4bef6cd4f1145b4e1254b8993421, type: 3}
     _isConsumable: 0
     _consumableSettings:
       _target: 0
@@ -36,12 +36,12 @@ MonoBehaviour:
     _expanded: 1
     _stack: 0
     _minDrop: 3
-    _maxDrop: 15
+    _maxDrop: 20
     _chargeTime: 15
-    _dropCount: 1
+    _dropCount: 2
     _skipChargeCostSettings:
       _currencyType: 1
-      _amount: 4
+      _amount: 5
     _adSkip: 0
     _charged: 0
     _energyCost: 1
@@ -54,13 +54,15 @@ MonoBehaviour:
     _generateBlocked: 0
     _generateItems:
     - Element: {fileID: 11400000, guid: 445c56fd5ec82fa4998b68d1ea52a3df, type: 2}
-      Possibility: 60
+      Possibility: 25
     - Element: {fileID: 11400000, guid: 675abfb64c05e62449a40f784616e67e, type: 2}
-      Possibility: 20
+      Possibility: 25
     - Element: {fileID: 11400000, guid: 1e959ea7afc1cea40877f9cb3e7a1801, type: 2}
-      Possibility: 10
+      Possibility: 20
     - Element: {fileID: 11400000, guid: 369105541a2715c42aac015e02c45bdf, type: 2}
-      Possibility: 6
+      Possibility: 15
     - Element: {fileID: 11400000, guid: d22f0494b711e31489e02c729f24dc17, type: 2}
-      Possibility: 4
-  _id: ad8d889c-3edc-495a-8c50-1d4f32b6a57b
+      Possibility: 10
+    - Element: {fileID: 11400000, guid: 65627fff693d1b2459a032a4f58efada, type: 2}
+      Possibility: 5
+  _id: 11094ec2-f66f-4673-991b-47f84ca3cae4

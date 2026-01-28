@@ -10,54 +10,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1b72332746789b41a27a405378028f3, type: 3}
-  m_Name: GeneratorLemon-7
+  m_Name: ShovelConfig-0
   m_EditorClassIdentifier: 
-  _type: 1
+  _type: 0
   _commonSettings:
     _expanded: 1
-    _description: Tap to draw out fruits stored inside or merge to produce Magic
-      Orange
+    _description: Merge to produce Dirt
     _splitCostSettings:
       _currencyType: 2
-      _amount: 0
+      _amount: 1
     _sellCostSettings:
       _currencyType: 0
-      _amount: 4
+      _amount: 3
     _unlockCostSettings:
       _currencyType: 0
       _amount: 10
-    _name: Magic Lemon
-    _icon: {fileID: 8196838751629904819, guid: 3fd36da271dff774fa0f7fef8f720edd, type: 3}
+    _name: Shovel
+    _icon: {fileID: 8196838751629904819, guid: d7838c848bede7642abf8561867ce911, type: 3}
     _isConsumable: 0
     _consumableSettings:
       _target: 0
       _operation: 2
       _value: 1
   _generatorSettings:
-    _expanded: 1
+    _expanded: 0
     _stack: 0
-    _minDrop: 4
-    _maxDrop: 12
-    _chargeTime: 5
-    _dropCount: 1
+    _minDrop: 0
+    _maxDrop: 0
+    _chargeTime: 0
+    _dropCount: 0
     _skipChargeCostSettings:
-      _currencyType: 1
-      _amount: 3
+      _currencyType: 0
+      _amount: 0
     _adSkip: 0
     _charged: 0
-    _energyCost: 2
-    _isUnlimited: 1
+    _energyCost: 0
+    _isUnlimited: 0
     _needOpen: 0
     _openTime: 0
     _skipOpenCostSettings:
       _currencyType: 0
       _amount: 0
     _generateBlocked: 0
-    _generateItems:
-    - Element: {fileID: 11400000, guid: 445c56fd5ec82fa4998b68d1ea52a3df, type: 2}
-      Possibility: 80
-    - Element: {fileID: 11400000, guid: 675abfb64c05e62449a40f784616e67e, type: 2}
-      Possibility: 15
-    - Element: {fileID: 11400000, guid: 1e959ea7afc1cea40877f9cb3e7a1801, type: 2}
-      Possibility: 5
-  _id: 7a92e575-0bad-4c6d-b4ea-f7c7a2b27f9d
+    _generateItems: []
+  _id: bec01c5e-ef20-4436-b558-1047aa69d757

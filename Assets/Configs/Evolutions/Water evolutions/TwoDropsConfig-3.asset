@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1b72332746789b41a27a405378028f3, type: 3}
-  m_Name: GeneratorOrangeConfig-8
+  m_Name: TwoDropsConfig-3
   m_EditorClassIdentifier: 
   _type: 0
   _commonSettings:
     _expanded: 1
-    _description: Merge to produce Magic Pineapple
+    _description: Merge to produce Leaf full of water
     _splitCostSettings:
       _currencyType: 2
       _amount: 1
@@ -25,8 +25,8 @@ MonoBehaviour:
     _unlockCostSettings:
       _currencyType: 0
       _amount: 100
-    _name: Magic Orange
-    _icon: {fileID: 8196838751629904819, guid: b4293c136259a9c438e2aeb31b5a15bb, type: 3}
+    _name: Two drops of Water
+    _icon: {fileID: 8196838751629904819, guid: fcfd3c3952bbfb14cb1a487456a19735, type: 3}
     _isConsumable: 0
     _consumableSettings:
       _target: 0
@@ -63,4 +63,4 @@ MonoBehaviour:
       Possibility: 6
     - Element: {fileID: 11400000, guid: d22f0494b711e31489e02c729f24dc17, type: 2}
       Possibility: 4
-  _id: ad8d889c-3edc-495a-8c50-1d4f32b6a57b
+  _id: 7dc22851-7002-4169-8ef7-b231acbe2a78
