@@ -36,15 +36,15 @@ MonoBehaviour:
   _generatorSettings:
     _expanded: 1
     _stack: 0
-    _minDrop: 2
-    _maxDrop: 10
-    _chargeTime: 5
+    _minDrop: 50
+    _maxDrop: 100
+    _chargeTime: 1
     _dropCount: 1
     _skipChargeCostSettings:
       _currencyType: 1
       _amount: 5
     _adSkip: 0
-    _charged: 0
+    _charged: 1
     _energyCost: 1
     _isUnlimited: 1
     _needOpen: 0

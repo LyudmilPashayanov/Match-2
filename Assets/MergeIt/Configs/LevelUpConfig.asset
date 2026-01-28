@@ -15,7 +15,7 @@ MonoBehaviour:
   LevelUp:
   - Experience: 50
     Bonuses:
-    - {fileID: 11400000, guid: 463f6e9514db21d40a45961b8d7505b2, type: 2}
+    - {fileID: 11400000, guid: 09c5d4af4627476439f5f1f849acf138, type: 2}
     - {fileID: 11400000, guid: 567c199ff980546ca9c5dc15ccc466c0, type: 2}
   - Experience: 60
     Bonuses:

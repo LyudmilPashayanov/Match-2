@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: MergeIt.Game::OrderDefinition
   OrderId: 8
   RequiredItems:
-  - {fileID: 11400000, guid: e057a2830c359684499fb6cb65af023b, type: 2}
+  - {fileID: 11400000, guid: d35bb0841a66f1546887bbcd17881c24, type: 2}
   reward: {fileID: 11400000, guid: 378a57755deac4d569ee77f9436fa8f0, type: 2}

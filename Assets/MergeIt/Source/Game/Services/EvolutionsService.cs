@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MergeIt.Core.Configs.Data;
 using MergeIt.Core.Configs.Elements;
+using MergeIt.Core.Configs.Types;
 using MergeIt.Core.Evolutions;
 using MergeIt.Core.Messages;
 using MergeIt.Core.Saves;
@@ -49,7 +50,7 @@ namespace MergeIt.Game.Services
         public List<ElementConfig> GetGenerates(ElementConfig config)
         {
             List<ElementConfig> generatesElements = null;
-            if (config.GeneratorSettings != null)
+            if (config.Type == ElementType.Generator && config.GeneratorSettings != null)
             {
                 generatesElements = new List<ElementConfig>();
                 var generatedItems = config.GeneratorSettings.GenerateItems;

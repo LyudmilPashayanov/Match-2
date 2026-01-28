@@ -26,7 +26,7 @@ MonoBehaviour:
       _currencyType: 0
       _amount: 10
     _name: Magic Pineapple
-    _icon: {fileID: 8196838751629904819, guid: b7ce9759c20c3344db35306c896c9881, type: 3}
+    _icon: {fileID: 0}
     _isConsumable: 0
     _consumableSettings:
       _target: 0

@@ -79,7 +79,7 @@ namespace MergeIt.Game.Windows.ElementInfo
             RectTransform prevPanelTransform, string panelTitle, EvolutionData evolutionData = null, bool showNumbers = false,
             bool lockedItems = false)
         {
-            if (elementConfigs.Count > 0)
+            if (elementConfigs != null && elementConfigs.Count > 0)
             {
                 panelComponent.gameObject.SetActive(true);
                 panelComponent.SetSpacing(View.SpacingInsidePanels);

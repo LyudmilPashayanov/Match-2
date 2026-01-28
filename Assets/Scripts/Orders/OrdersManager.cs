@@ -190,14 +190,17 @@ namespace MergeIt.Game.Field
                     var point = GridPoint.Create(i, j);
                     if (_fieldLogicModel.FieldElements.TryGetValue(point, out var fieldElement))
                     {
-                        var keyType = fieldElement.ConfigParameters.ElementConfig;
-                        if (_typeAmounts.ContainsKey(keyType))
+                        if(fieldElement.InfoParameters.IsBlocked == false)
                         {
-                            _typeAmounts[keyType]++;
-                        }
-                        else
-                        {
-                            _typeAmounts.Add(keyType, 1);
+                            var keyType = fieldElement.ConfigParameters.ElementConfig;
+                            if (_typeAmounts.ContainsKey(keyType))
+                            {
+                                _typeAmounts[keyType]++;
+                            }
+                            else
+                            {
+                                _typeAmounts.Add(keyType, 1);
+                            }
                         }
                     }
                 }
@@ -220,18 +223,21 @@ namespace MergeIt.Game.Field
                         {
                             if (order.Type == fieldElement.ConfigParameters.ElementConfig)
                             {
-                                var remove = new RemoveElementMessage
+                                if (fieldElement.InfoParameters.IsBlocked == false)
                                 {
-                                    RemoveAtPoint = point
-                                };
-                                _messageBus.Fire(remove);
-                                removedCounter++;
+                                    var remove = new RemoveElementMessage
+                                    {
+                                        RemoveAtPoint = point
+                                    };
+                                    _messageBus.Fire(remove);
+                                    removedCounter++;
+                                }
                             }
                         }
-                    }
-                    if (removedCounter == order.Amount)
-                    {
-                        break;
+                        if (removedCounter == order.Amount)
+                        {
+                            break;
+                        }
                     }
                 }
             }
