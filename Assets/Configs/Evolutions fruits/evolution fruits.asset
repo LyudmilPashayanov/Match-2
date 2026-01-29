@@ -278,14 +278,6 @@ MonoBehaviour:
         y: -1842
         width: 230
         height: 632
-    - _id: 3e5ff22e-99e7-4988-b39c-b8270a45327d
-      _elementConfig: {fileID: 11400000, guid: 307e2f1aab26e7143a6381802565e57f, type: 2}
-      _position:
-        serializedVersion: 2
-        x: 3750
-        y: -1842
-        width: 230
-        height: 632
     - _id: 5d907c8d-35cb-4410-b91b-a02c9bb365a5
       _elementConfig: {fileID: 11400000, guid: 266ec194cea807e4aab147aa79ec3499, type: 2}
       _position:
@@ -324,6 +316,14 @@ MonoBehaviour:
         serializedVersion: 2
         x: -60
         y: -896
+        width: 230
+        height: 632
+    - _id: 3e5ff22e-99e7-4988-b39c-b8270a45327d
+      _elementConfig: {fileID: 11400000, guid: 307e2f1aab26e7143a6381802565e57f, type: 2}
+      _position:
+        serializedVersion: 2
+        x: 3750
+        y: -1842
         width: 230
         height: 632
     EvolutionsNodesData:
@@ -392,7 +392,7 @@ MonoBehaviour:
     - _id: 72eb6271-4311-4c9f-a3b3-10709c7fcb87
       _name: Fruits
       _description: Fruits whatever you want!
-      _discovered: 1
+      _discovered: 0
       _position:
         serializedVersion: 2
         x: 1062
@@ -412,7 +412,7 @@ MonoBehaviour:
     - _id: 52476c4f-5611-4f2f-9702-b1db46a3fe06
       _name: Tree Generator
       _description: Grow a tree from nothing!
-      _discovered: 1
+      _discovered: 0
       _position:
         serializedVersion: 2
         x: -1179
@@ -422,7 +422,7 @@ MonoBehaviour:
     - _id: 32844360-8107-4a8a-ac6e-666e074ba412
       _name: Water
       _description: Hydratation is important!
-      _discovered: 1
+      _discovered: 0
       _position:
         serializedVersion: 2
         x: -1450
@@ -637,7 +637,7 @@ MonoBehaviour:
     - _guid: 72eb6271-4311-4c9f-a3b3-10709c7fcb87
       _name: Fruits
       _description: Fruits whatever you want!
-      _discovered: 1
+      _discovered: 0
       _chain:
       - {fileID: 11400000, guid: 445c56fd5ec82fa4998b68d1ea52a3df, type: 2}
       - {fileID: 11400000, guid: 675abfb64c05e62449a40f784616e67e, type: 2}
@@ -661,7 +661,7 @@ MonoBehaviour:
     - _guid: 52476c4f-5611-4f2f-9702-b1db46a3fe06
       _name: Tree Generator
       _description: Grow a tree from nothing!
-      _discovered: 1
+      _discovered: 0
       _chain:
       - {fileID: 11400000, guid: d48c2f7025f2b434cb15fdd168686ece, type: 2}
       - {fileID: 11400000, guid: b64aa24293cb9e14f884c0ceb3598954, type: 2}
@@ -671,7 +671,7 @@ MonoBehaviour:
     - _guid: 32844360-8107-4a8a-ac6e-666e074ba412
       _name: Water
       _description: Hydratation is important!
-      _discovered: 1
+      _discovered: 0
       _chain:
       - {fileID: 11400000, guid: 266ec194cea807e4aab147aa79ec3499, type: 2}
       - {fileID: 11400000, guid: e371583ae24ce8143a641a2a9a6373f2, type: 2}

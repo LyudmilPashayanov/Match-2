@@ -52,15 +52,5 @@ MonoBehaviour:
       _currencyType: 0
       _amount: 0
     _generateBlocked: 0
-    _generateItems:
-    - Element: {fileID: 11400000, guid: 445c56fd5ec82fa4998b68d1ea52a3df, type: 2}
-      Possibility: 60
-    - Element: {fileID: 11400000, guid: 675abfb64c05e62449a40f784616e67e, type: 2}
-      Possibility: 20
-    - Element: {fileID: 11400000, guid: 1e959ea7afc1cea40877f9cb3e7a1801, type: 2}
-      Possibility: 10
-    - Element: {fileID: 11400000, guid: 369105541a2715c42aac015e02c45bdf, type: 2}
-      Possibility: 6
-    - Element: {fileID: 11400000, guid: d22f0494b711e31489e02c729f24dc17, type: 2}
-      Possibility: 4
+    _generateItems: []
   _id: ad8d889c-3edc-495a-8c50-1d4f32b6a57b

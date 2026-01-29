@@ -52,11 +52,5 @@ MonoBehaviour:
       _currencyType: 0
       _amount: 0
     _generateBlocked: 0
-    _generateItems:
-    - Element: {fileID: 11400000, guid: 445c56fd5ec82fa4998b68d1ea52a3df, type: 2}
-      Possibility: 80
-    - Element: {fileID: 11400000, guid: 675abfb64c05e62449a40f784616e67e, type: 2}
-      Possibility: 15
-    - Element: {fileID: 11400000, guid: 1e959ea7afc1cea40877f9cb3e7a1801, type: 2}
-      Possibility: 5
+    _generateItems: []
   _id: 7a92e575-0bad-4c6d-b4ea-f7c7a2b27f9d

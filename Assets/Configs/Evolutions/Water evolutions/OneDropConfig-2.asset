@@ -33,7 +33,7 @@ MonoBehaviour:
       _operation: 2
       _value: 1
   _generatorSettings:
-    _expanded: 0
+    _expanded: 1
     _stack: 0
     _minDrop: 0
     _maxDrop: 0
