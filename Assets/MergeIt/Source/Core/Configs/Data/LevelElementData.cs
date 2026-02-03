@@ -12,6 +12,7 @@ namespace MergeIt.Core.Configs.Data
     {
         public string EvolutionId;
         public ElementConfig Element;
+        public bool IsBlockedInvisible;
         public bool IsBlocked;
         public GridPoint Position;
 
@@ -19,6 +20,7 @@ namespace MergeIt.Core.Configs.Data
         {
             EvolutionId = itemData.EvolutionId;
             Element = itemData.Element;
+            IsBlockedInvisible = itemData.IsBlockedInvisible;
             IsBlocked = itemData.IsBlocked;
 
             if (copyPosition)

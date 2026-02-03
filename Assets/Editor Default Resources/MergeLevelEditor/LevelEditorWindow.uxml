@@ -23,6 +23,7 @@
                 <ui:VisualElement name="EvoPanel" />
                 <ui:Image name="ItemIcon" class="itemFrameIcon" />
                 <ui:Toggle name="IsLocked" text="Is locked" />
+                <ui:Toggle name="IsInvisibleLocked" text="Is invisible locked" />
                 <ui:Button name="ApplyButton" text="Apply" />
                 <ui:Button name="ClearButton" text="Clear" />
                 <ui:VisualElement name="CopyFrom" class="copyContainer">

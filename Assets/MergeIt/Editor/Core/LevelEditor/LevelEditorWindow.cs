@@ -37,6 +37,7 @@ namespace MergeIt.Editor.LevelEditor
         private ToolbarToggle _selectedToggle;
         private GridPoint _selectedCell;
         private Toggle _isLockedToggle;
+        private Toggle _isInvisibleLockedToggle;
         private Button _applyButton;
         private Button _clearButton;
         private Image _itemImage;
@@ -55,6 +56,7 @@ namespace MergeIt.Editor.LevelEditor
         private PopupField<ElementConfig> _evolutionChainElementsPopup;
 
         private Texture _lockTexture;
+        private Texture _invisiblelockTexture;
 
         private int _fieldWidth = 0;
         private int _fieldHeight = 0;
@@ -116,6 +118,7 @@ namespace MergeIt.Editor.LevelEditor
             });
 
             _lockTexture = AssetDatabase.LoadAssetAtPath<Texture>("Assets/MergeIt/Content/Images/Common/lock.png");
+            _invisiblelockTexture = AssetDatabase.LoadAssetAtPath<Texture>("Assets/MergeIt/Content/Images/Common/invisibleLock.png");
 
             var visualTree =
                 (VisualTreeAsset)EditorGUIUtility.Load(Path.Combine(Constants.LevelEditorResourcesRoot,
@@ -203,6 +206,9 @@ namespace MergeIt.Editor.LevelEditor
             _isLockedToggle = _itemFrameSettings.Q<Toggle>("IsLocked");
             _isLockedToggle.RegisterValueChangedCallback(OnIsLockedChanged);
 
+            _isInvisibleLockedToggle = _itemFrameSettings.Q<Toggle>("IsInvisibleLocked");
+            _isInvisibleLockedToggle.RegisterValueChangedCallback(OnIsInvisibleLockedChanged);
+            
             _itemFrameEvolutions = _itemFrameSettings.Q<VisualElement>("EvoPanel");
 
             _itemImage = _itemFrameSettings.Q<Image>("ItemIcon");
@@ -253,7 +259,7 @@ namespace MergeIt.Editor.LevelEditor
             _fieldElements.Remove(point);
             _selectedToggle.style.backgroundImage = null;
 
-            ChangeVisualLock(false, _selectedToggle);
+            ChangeVisualLock(false, false, _selectedToggle);
         }
 
         public void UndoClearCell(LevelElementData previousData)
@@ -268,6 +274,7 @@ namespace MergeIt.Editor.LevelEditor
             rootVisualElement.UnregisterCallback<MouseUpEvent>(OnElementClicked);
 
             _isLockedToggle.UnregisterValueChangedCallback(OnIsLockedChanged);
+            _isInvisibleLockedToggle.UnregisterValueChangedCallback(OnIsInvisibleLockedChanged);
             _createFieldHeight.UnregisterValueChangedCallback(OnFieldSizeChanged);
             _createFieldWidth.UnregisterValueChangedCallback(OnFieldSizeChanged);
             _createLevelButton.clicked -= CreateLevelButtonClicked;
@@ -533,6 +540,11 @@ namespace MergeIt.Editor.LevelEditor
         {
             SetLock(evt.newValue);
         }
+        
+        private void OnIsInvisibleLockedChanged(ChangeEvent<bool> evt)
+        {
+            SetInvisibleLock(evt.newValue);
+        }
 
         private void OnEvolutionsConfigChanged(ChangeEvent<Object> evt)
         {
@@ -596,7 +608,7 @@ namespace MergeIt.Editor.LevelEditor
                 GridPoint point = fieldElement.Key;
                 ToolbarToggle toggle = _toggles[point.X, point.Y];
                 toggle.style.backgroundImage = null;
-                ChangeVisualLock(false, toggle);
+                ChangeVisualLock(false, false, toggle);
                 UnselectToggle(toggle, true);
             }
 
@@ -714,17 +726,43 @@ namespace MergeIt.Editor.LevelEditor
                 SwitchSideBarVisibility(false);
             }
         }
-
+        
         private void SetLock(bool isLocked)
         {
             EvolutionSelection.LockCell(isLocked);
         }
-
-        private void ChangeVisualLock(bool isLocked, Toggle toggle)
+        
+        private void SetInvisibleLock(bool isInvisibleLocked)
         {
-            var locker = toggle.Q<Image>("Locker");
-            if (isLocked)
+            EvolutionSelection.InvisibleLockCell(isInvisibleLocked);
+        }
+
+        private void ChangeVisualLock(bool isLocked, bool isInvisibleLocked, Toggle toggle)
+        {
+            if (isInvisibleLocked)
             {
+                var locker = toggle.Q<Image>("Locker");
+
+                if (locker != null)
+                {
+                    toggle.Remove(locker);
+                }
+                
+                var invisiblelocker = toggle.Q<Image>("InvisibleLocker");
+                if (invisiblelocker == null)
+                {
+                    invisiblelocker = CreateInvisibleLocker();
+                    toggle.Add(invisiblelocker);
+                }
+            }
+            else if (isLocked)
+            {
+                var invisiblelocker = toggle.Q<Image>("InvisibleLocker");
+                if (invisiblelocker != null)
+                {
+                    toggle.Remove(invisiblelocker);
+                }
+                var locker = toggle.Q<Image>("Locker");
                 if (locker == null)
                 {
                     locker = CreateLocker();
@@ -733,9 +771,16 @@ namespace MergeIt.Editor.LevelEditor
             }
             else
             {
+                var invisiblelocker = toggle.Q<Image>("InvisibleLocker");
+                var locker = toggle.Q<Image>("Locker");
+
                 if (locker != null)
                 {
                     toggle.Remove(locker);
+                }
+                if (invisiblelocker != null)
+                {
+                    toggle.Remove(invisiblelocker);
                 }
             }
         }
@@ -760,7 +805,7 @@ namespace MergeIt.Editor.LevelEditor
 
             toggle.style.backgroundImage = icon != null ? icon.texture : null;
 
-            ChangeVisualLock(elementData.IsBlocked, toggle);
+            ChangeVisualLock(elementData.IsBlocked, elementData.IsBlockedInvisible, toggle);
         }
 
         private Sprite GetIcon(FieldElementIconComponent placeholder)
@@ -791,6 +836,25 @@ namespace MergeIt.Editor.LevelEditor
             };
 
             return locker;
+        }
+        
+        private Image CreateInvisibleLocker()
+        {
+            var invisibleLocker = new Image
+            {
+                name = "InvisibleLocker",
+                image = _invisiblelockTexture,
+                style =
+                {
+                    left = StylesConstants.Length0,
+                    right = StylesConstants.Length0,
+                    top = StylesConstants.Length0,
+                    bottom = StylesConstants.Length0,
+                    position = StylesConstants.AbsolutePosition,
+                }
+            };
+
+            return invisibleLocker;
         }
 
         private void SelectToggle(ToolbarToggle toggle, bool setValue)
@@ -840,6 +904,7 @@ namespace MergeIt.Editor.LevelEditor
             }
 
             _isLockedToggle.SetValueWithoutNotify(EvolutionSelection.ElementData.IsBlocked);
+            _isInvisibleLockedToggle.SetValueWithoutNotify(EvolutionSelection.ElementData.IsBlockedInvisible);
         }
 
         private void OnEvolutionChanged(ChangeEvent<EvolutionData> evt)

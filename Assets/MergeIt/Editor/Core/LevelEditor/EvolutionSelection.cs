@@ -44,6 +44,11 @@ namespace MergeIt.Editor.LevelEditor
         {
             _elementData.IsBlocked = isLocked;
         }
+        
+        public static void InvisibleLockCell(bool isInvisibleLocked)
+        {
+            _elementData.IsBlockedInvisible = isInvisibleLocked;
+        }
 
         public static void UpdateCell(LevelElementData itemData, GridPoint newPosition = default, bool copyPosition = true)
         {
