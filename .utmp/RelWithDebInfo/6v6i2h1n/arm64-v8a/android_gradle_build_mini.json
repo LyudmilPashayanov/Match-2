@@ -1,0 +1,28 @@
+{
+  "buildFiles": [
+    "S:\\Personal projects\\Unity Projects\\Merge-2-New\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\src\\main\\cpp\\CMakeLists.txt",
+    "S:\\Personal projects\\Unity Projects\\Merge-2-New\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\src\\main\\cpp\\GameActivity\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.2.7f2\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "S:\\Personal projects\\Unity Projects\\Merge-2-New\\.utmp\\RelWithDebInfo\\6v6i2h1n\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Program Files\\Unity\\Hub\\Editor\\6000.2.7f2\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "S:\\Personal projects\\Unity Projects\\Merge-2-New\\.utmp\\RelWithDebInfo\\6v6i2h1n\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "game::@d02bb112ea9f9c2ed29f": {
+      "artifactName": "game",
+      "abi": "arm64-v8a",
+      "output": "S:\\Personal projects\\Unity Projects\\Merge-2-New\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\RelWithDebInfo\\6v6i2h1n\\obj\\arm64-v8a\\libgame.so",
+      "runtimeFiles": []
+    }
+  }
+}
