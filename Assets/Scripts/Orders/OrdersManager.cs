@@ -190,7 +190,7 @@ namespace MergeIt.Game.Field
                     var point = GridPoint.Create(i, j);
                     if (_fieldLogicModel.FieldElements.TryGetValue(point, out var fieldElement))
                     {
-                        if(fieldElement.InfoParameters.IsBlocked == false)
+                        if(fieldElement.InfoParameters.IsBlocked == false && fieldElement.InfoParameters.IsInvisibleBlocked == false)
                         {
                             var keyType = fieldElement.ConfigParameters.ElementConfig;
                             if (_typeAmounts.ContainsKey(keyType))
@@ -223,7 +223,7 @@ namespace MergeIt.Game.Field
                         {
                             if (order.Type == fieldElement.ConfigParameters.ElementConfig)
                             {
-                                if (fieldElement.InfoParameters.IsBlocked == false)
+                                if (fieldElement.InfoParameters.IsBlocked == false && fieldElement.InfoParameters.IsInvisibleBlocked == false)
                                 {
                                     var remove = new RemoveElementMessage
                                     {

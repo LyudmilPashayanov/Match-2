@@ -9,7 +9,7 @@ namespace MergeIt.Core.Configs.Elements
     public class FieldElementIconComponent : MonoBehaviour
     {
         [SerializeField]
-        private Material _blockedMaterial;
+        private Material _blockedMaterial; 
         
         [SerializeField]
         private Image _image;
@@ -41,8 +41,23 @@ namespace MergeIt.Core.Configs.Elements
 
         public void SetBlocked(bool locked)
         {
+
             if (locked)
             {
+                Debug.Log("SetBlocked TRUE");
+                _image.material = _blockedMaterial;
+            }
+            else
+            {
+                _image.material = _defaultMaterial;
+            }
+        }
+        
+        public void SetInvisibleBlocked(bool invisibleLocked)
+        {
+            if (invisibleLocked)
+            {
+                Debug.Log("SetInvisibleBlocked TRUE");
                 _image.material = _blockedMaterial;
             }
             else

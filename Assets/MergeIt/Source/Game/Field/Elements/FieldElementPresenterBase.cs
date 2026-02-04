@@ -39,7 +39,7 @@ namespace MergeIt.Game.Field.Elements
 
         public bool IsAvailable
         {
-            get => !Model.IsBusy && !Model.IsLocked;
+            get => !Model.IsBusy && Model.IsLocked == false && Model.IsInvisibleLocked == false;
         }
 
         public bool IsBusy
@@ -50,6 +50,11 @@ namespace MergeIt.Game.Field.Elements
         public bool IsLocked
         {
             get => Model.IsLocked;
+        }
+        
+        public bool IsInvisibleLocked
+        {
+            get => Model.IsInvisibleLocked;
         }
 
         public RectTransform RectTransform
@@ -83,10 +88,12 @@ namespace MergeIt.Game.Field.Elements
             FieldElement = fieldElement;
             Model.Point = FieldElement.InfoParameters.LogicPosition;
             Model.IsLocked = FieldElement.InfoParameters.IsBlocked;
+            Model.IsInvisibleLocked = FieldElement.InfoParameters.IsInvisibleBlocked;
 
             View.GameObject.name = $"[{Model.Point.X}, {Model.Point.Y}] {FieldElement.InfoParameters.Name}";
 
             View.Lock(Model.IsLocked);
+            View.InvisibleLock(Model.IsInvisibleLocked);
             View.ResetState();
         }
 
@@ -136,6 +143,12 @@ namespace MergeIt.Game.Field.Elements
         {
             Model.IsLocked = block;
             View.Lock(block);
+        }
+        
+        public virtual void SetInvisibleLock(bool invisibleBlock)
+        {
+            Model.IsInvisibleLocked = invisibleBlock;
+            View.InvisibleLock(invisibleBlock);
         }
 
         public virtual void Select(bool select)

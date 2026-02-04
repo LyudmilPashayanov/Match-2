@@ -34,7 +34,7 @@ namespace MergeIt.Game.UI.InfoPanel
         protected override bool OnTrySetup()
         {
             if (SelectedElement.InfoParameters.Type == ElementType.Generator &&
-                !SelectedElement.InfoParameters.IsBlocked)
+                SelectedElement.InfoParameters.IsBlocked == false && SelectedElement.InfoParameters.IsInvisibleBlocked == false)
             {
                 CurrencySettings skipChargeCostSettings =
                     SelectedElement.ConfigParameters.ElementConfig.GeneratorSettings.SkipChargeCostSettings;

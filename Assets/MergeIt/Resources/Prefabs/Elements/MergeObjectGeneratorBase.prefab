@@ -560,6 +560,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2439266722209738137}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8577328015897988783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6256289650603008822, guid: 1e0e66f9d45284ee79f5be4239d84478,
+    type: 3}
+  m_PrefabInstance: {fileID: 2439266722209738137}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8885730261365276097 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6524150915428225112, guid: 1e0e66f9d45284ee79f5be4239d84478,
@@ -579,4 +585,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blocker: {fileID: 1845054383818024648}
+  _invisibleBlocker: {fileID: 8577328015897988783}
   _timer: {fileID: 8700038014167587247}

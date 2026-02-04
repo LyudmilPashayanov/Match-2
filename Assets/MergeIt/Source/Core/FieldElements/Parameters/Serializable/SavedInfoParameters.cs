@@ -12,5 +12,7 @@ namespace MergeIt.Core.FieldElements
         public GridPoint LogicPosition { get; set; }
         [JsonProperty("b")]
         public bool IsBlocked { get; set; }
+        [JsonProperty("ib")]
+        public bool IsInvisibleBlocked { get; set; }
     }
 }

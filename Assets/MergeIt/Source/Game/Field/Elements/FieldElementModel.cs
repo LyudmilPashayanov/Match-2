@@ -20,7 +20,8 @@ namespace MergeIt.Game.Field.Elements
         private int _clicksCount;
         
         public bool IsBusy { get; set; }
-        public bool IsLocked { get; set; }
+        public bool IsLocked { get; set; } // LOCKED_CHECK
+        public bool IsInvisibleLocked { get; set; }
 
         public bool Selected
         {

@@ -41,7 +41,12 @@ namespace MergeIt.Game.Field.Actions
             {
                 return;
             }
-
+            
+            if (fieldElement.InfoParameters.IsInvisibleBlocked)
+            {
+                return;
+            }
+            
             ElementCommonSettings settings = fieldElement.ConfigParameters.ElementConfig.CommonSettings;
 
             if (!settings.IsConsumable)

@@ -43,6 +43,7 @@ namespace MergeIt.Game.Field
             _messageBus.RemoveListener<ResetSelectionMessage>(OnResetSelectionMessageHandler);
             _messageBus.RemoveListener<MergeElementsMessage>(OnMergeElementsMessageHandler);
             _messageBus.RemoveListener<UnlockElementMessage>(OnUnlockElementMessageHandler);
+            _messageBus.RemoveListener<InvisibleUnlockElementMessage>(OnInvisibleUnlockElementMessageHandler);
             _messageBus.RemoveListener<SplitElementMessage>(OnSplitResultMessageHandler);
             _messageBus.RemoveListener<ResetPositionMessage>(OnResetPositionsMessageHandler);
             _messageBus.RemoveListener<SwapElementsMessage>(OnSwapElementsMessageHandler);
@@ -57,6 +58,7 @@ namespace MergeIt.Game.Field
             _messageBus.AddListener<MergeElementsMessage>(OnMergeElementsMessageHandler);
             _messageBus.AddListener<SplitElementMessage>(OnSplitResultMessageHandler);
             _messageBus.AddListener<UnlockElementMessage>(OnUnlockElementMessageHandler);
+            _messageBus.AddListener<InvisibleUnlockElementMessage>(OnInvisibleUnlockElementMessageHandler);
             _messageBus.AddListener<ResetPositionMessage>(OnResetPositionsMessageHandler);
             _messageBus.AddListener<SwapElementsMessage>(OnSwapElementsMessageHandler);
             _messageBus.AddListener<CreateElementMessage>(OnCreateElementMessageHandler);
@@ -142,8 +144,70 @@ namespace MergeIt.Game.Field
 
             fieldElementPresenter.Select(true);
             Debug.Log("merged");
+            
+            // above, below, left and right make them from invisible to locked
+
+            UnlockCellsAround(message.NewElement.InfoParameters.LogicPosition);
         }
 
+        private void UnlockCellsAround(GridPoint centerPoint)
+        {
+            GridPoint right = new GridPoint(centerPoint.X, centerPoint.Y + 1);
+            GridPoint left = new GridPoint(centerPoint.X, centerPoint.Y - 1);
+            GridPoint above = new GridPoint(centerPoint.X - 1, centerPoint.Y);
+            GridPoint below = new GridPoint(centerPoint.X + 1, centerPoint.Y);
+
+            if (_cellComponents.TryGetValue(right, out var rightCell))
+            {
+                if (rightCell.FieldElementPresenter != null)
+                {
+                    Debug.Log("right- position X: " + right.X + " and Y: " + right.Y + " exists!");
+
+                    if (rightCell.FieldElementPresenter.IsInvisibleLocked)
+                    {
+                        rightCell.FieldElementPresenter.SetInvisibleLock(false);
+                        rightCell.FieldElementPresenter.SetLock(true);
+                    }
+                }
+            }
+            if (_cellComponents.TryGetValue(left, out var leftCell))
+            {
+                if (leftCell.FieldElementPresenter != null)
+                {
+                    Debug.Log("left- position X: " + left.X + " and Y: " + left.Y + " exists!");
+                    if (leftCell.FieldElementPresenter.IsInvisibleLocked)
+                    {
+                        leftCell.FieldElementPresenter.SetInvisibleLock(false);
+                        leftCell.FieldElementPresenter.SetLock(true);
+                    }
+                }
+            }
+            if (_cellComponents.TryGetValue(above, out var aboveCell))
+            {
+                if (aboveCell.FieldElementPresenter != null)
+                {
+                    Debug.Log("above- position X: " + above.X + " and Y: " + above.Y + " exists!");
+                    if (aboveCell.FieldElementPresenter.IsInvisibleLocked)
+                    {
+                        aboveCell.FieldElementPresenter.SetInvisibleLock(false);
+                        aboveCell.FieldElementPresenter.SetLock(true);
+                    }
+                }
+            }
+            if (_cellComponents.TryGetValue(below, out var belowCell))
+            {
+                if (belowCell.FieldElementPresenter != null)
+                {
+                    Debug.Log("below- position X: " + below.X + " and Y: " + below.Y + " exists!");
+                    if (belowCell.FieldElementPresenter.IsInvisibleLocked)
+                    {
+                        belowCell.FieldElementPresenter.SetInvisibleLock(false);
+                        belowCell.FieldElementPresenter.SetLock(true);
+                    }
+                }
+            }
+        }
+        
         private void OnSplitResultMessageHandler(SplitElementMessage message)
         {
             _messageBus.Fire<ResetHintsMessage>();
@@ -183,6 +247,17 @@ namespace MergeIt.Game.Field
                 cellComponent.FieldElementPresenter != null)
             {
                 cellComponent.FieldElementPresenter.SetLock(false);
+            }
+        }
+        
+        private void OnInvisibleUnlockElementMessageHandler(InvisibleUnlockElementMessage message)
+        {
+            GridPoint point = message.Element.InfoParameters.LogicPosition;
+
+            if (_cellComponents.TryGetValue(point, out FieldCellComponent cellComponent) &&
+                cellComponent.FieldElementPresenter != null)
+            {
+                cellComponent.FieldElementPresenter.SetInvisibleLock(false);
             }
         }
 

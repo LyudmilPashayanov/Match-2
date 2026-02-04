@@ -14,6 +14,7 @@ namespace MergeIt.Core.FieldElements
         bool IsAvailable { get; }
         bool IsBusy { get; }
         bool IsLocked { get; }
+        bool IsInvisibleLocked { get; }
 
         void Update(IFieldElement fieldElement);
         void Activate(bool isActive);
@@ -26,6 +27,7 @@ namespace MergeIt.Core.FieldElements
         void SetParent(Transform parent, bool resetPosition);
         void SetPoint(GridPoint point);
         void SetLock(bool block);
+        void SetInvisibleLock(bool invisibleBlock);
         void Remove();
         void ResetPosition();
         IFieldElementView GetView();

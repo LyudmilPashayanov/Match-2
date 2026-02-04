@@ -8,6 +8,7 @@ namespace MergeIt.Core.FieldElements
     {
         public GridPoint LogicPosition { get; set; }
         public bool IsBlocked { get; set; }
+        public bool IsInvisibleBlocked { get; set; }
         public ElementType Type { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

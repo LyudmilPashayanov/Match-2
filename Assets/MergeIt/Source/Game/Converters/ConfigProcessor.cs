@@ -73,7 +73,8 @@ namespace MergeIt.Game.Converters
                     InfoParameters = new SavedInfoParameters
                     {
                         LogicPosition = levelElementData.Position,
-                        IsBlocked = levelElementData.IsBlocked
+                        IsBlocked = levelElementData.IsBlocked,
+                        IsInvisibleBlocked = levelElementData.IsBlockedInvisible
                     },
                     ConfigParameters = new SavedConfigParameters
                     {
@@ -126,7 +127,8 @@ namespace MergeIt.Game.Converters
                 InfoParameters = new SavedInfoParameters
                 {
                     LogicPosition = fieldElement.InfoParameters.LogicPosition,
-                    IsBlocked = fieldElement.InfoParameters.IsBlocked
+                    IsBlocked = fieldElement.InfoParameters.IsBlocked,
+                    IsInvisibleBlocked = fieldElement.InfoParameters.IsInvisibleBlocked
                 }
             };
 
@@ -211,6 +213,7 @@ namespace MergeIt.Game.Converters
             {
                 LogicPosition = parameters.LogicPosition,
                 IsBlocked = parameters.IsBlocked,
+                IsInvisibleBlocked = parameters.IsInvisibleBlocked,
                 Name = config.CommonSettings.Name,
                 Description = config.GetDescription(),
                 Type = config.Type

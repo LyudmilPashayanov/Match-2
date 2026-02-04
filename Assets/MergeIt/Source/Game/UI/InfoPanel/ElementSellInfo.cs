@@ -36,7 +36,7 @@ namespace MergeIt.Game.UI.InfoPanel
             CurrencySettings sellCostSettings =
                 SelectedElement.ConfigParameters.ElementConfig.CommonSettings.SellCostSettings;
 
-            if (sellCostSettings.Amount > 0 && !SelectedElement.InfoParameters.IsBlocked)
+            if (sellCostSettings.Amount > 0 && SelectedElement.InfoParameters.IsBlocked == false && SelectedElement.InfoParameters.IsInvisibleBlocked == false)
             {
                 if (SelectedElement.InfoParameters.Type == ElementType.Generator)
                 {

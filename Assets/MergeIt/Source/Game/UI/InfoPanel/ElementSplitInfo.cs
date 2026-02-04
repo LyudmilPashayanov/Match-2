@@ -44,7 +44,7 @@ namespace MergeIt.Game.UI.InfoPanel
 
             ElementCommonSettings commonSettings = SelectedElement.ConfigParameters.ElementConfig.CommonSettings;
 
-            if (!SelectedElement.InfoParameters.IsBlocked &&
+            if (SelectedElement.InfoParameters.IsBlocked == false && SelectedElement.InfoParameters.IsInvisibleBlocked == false &&
                 SelectedElement.GetPreviousInEvolution() &&
                 commonSettings.SplitCostSettings.Amount > 0)
             {

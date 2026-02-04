@@ -67,7 +67,7 @@ namespace MergeIt.Game.Field.Actions
 
                             SaveService.Save(GameSaveType.Field);
                         }
-                        else if (!toPresenter.IsLocked)
+                        else if (!toPresenter.IsLocked && !toPresenter.IsInvisibleLocked)
                         {
                             SendSwapMessage(fromPoint, toPoint);
                             SaveService.Save(GameSaveType.Field);
@@ -137,13 +137,13 @@ namespace MergeIt.Game.Field.Actions
 
         private void SendMergeMessage(GridPoint fromPoint, IFieldElement newElement)
         {
-            var resetMessage = new MergeElementsMessage
+            var mergeMessage = new MergeElementsMessage
             {
                 From = fromPoint,
                 NewElement = newElement
             };
 
-            MessageBus.Fire(resetMessage);
+            MessageBus.Fire(mergeMessage);
         }
 
         private void SendSwapMessage(GridPoint fromPoint, GridPoint toPoint)

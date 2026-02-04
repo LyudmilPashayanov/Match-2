@@ -16,7 +16,7 @@ namespace MergeIt.Core.FieldElements
 
         public override string ToString()
         {
-            return $"Type: {InfoParameters.Type}, Pos: {InfoParameters.LogicPosition}, Blocked: {InfoParameters.IsBlocked}";
+            return $"Type: {InfoParameters.Type}, Pos: {InfoParameters.LogicPosition}, Blocked: {InfoParameters.IsBlocked}, InvisibleBlocked: {InfoParameters.IsInvisibleBlocked}";
         }
     }
 }

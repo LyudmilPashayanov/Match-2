@@ -16,6 +16,9 @@ namespace MergeIt.Game.Field.Elements
         
         [SerializeField]
         private GameObject _blocker;
+        
+        [SerializeField]
+        private GameObject _invisibleBlocker;
 
         private IAnimationController _animationController;
         
@@ -72,6 +75,17 @@ namespace MergeIt.Game.Field.Elements
             
             _iconComponent.SetBlocked(isLocked);
             _blocker.SetActive(isLocked);
+        }
+        
+        public void InvisibleLock(bool isInvisibleLocked)
+        {
+            if (!_iconComponent)
+            {
+                _iconComponent = GetComponentInChildren<FieldElementIconComponent>();
+            }
+            
+            _iconComponent.SetInvisibleBlocked(isInvisibleLocked);
+            _invisibleBlocker.SetActive(isInvisibleLocked);
         }
 
         public void ResetState()

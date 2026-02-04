@@ -9,4 +9,10 @@ namespace MergeIt.Game.Messages
     {
         public IFieldElement Element { get; set; }
     }
+    
+    public class InvisibleUnlockElementMessage : IMessage
+    {
+        public IFieldElement Element { get; set; }
+    }
+    
 }
