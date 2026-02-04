@@ -1,6 +1,7 @@
 // Copyright (c) 2024, Awessets
 
 using MergeIt.Core.Configs.Elements;
+using MergeIt.Game.Field;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,6 +36,10 @@ namespace MergeIt.Game.UI.InfoPanel
             CurrencySettings unlockCostSettings =
                 SelectedElement.ConfigParameters.ElementConfig.CommonSettings.UnlockCostSettings;
 
+            if (SelectedElement.InfoParameters.IsInvisibleBlocked)
+            {      
+                return false;
+            }
             if (unlockCostSettings.Amount > 0 && SelectedElement.InfoParameters.IsBlocked)
             {
                 gameObject.SetActive(true);

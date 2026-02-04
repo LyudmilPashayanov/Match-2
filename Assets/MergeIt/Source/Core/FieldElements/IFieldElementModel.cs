@@ -6,6 +6,8 @@ namespace MergeIt.Core.FieldElements
     {
         bool IsBusy { get; set; }
         bool IsLocked { get; set; }
+        bool IsInvisibleLocked { get; set; }
+
         bool Selected { get; set; }
         int ClicksCount { get; set; }
         GridPoint Point { get; set; }

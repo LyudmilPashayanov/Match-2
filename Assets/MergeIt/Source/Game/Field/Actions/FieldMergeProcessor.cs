@@ -58,7 +58,7 @@ namespace MergeIt.Game.Field.Actions
 
                     if (toPresenter != null)
                     {
-                        var mergedResult = TryMerge(fromPoint, toPoint);
+                        var mergedResult = TryMerge(fromPoint, toPoint, toPresenter);
                         if (mergedResult != null)
                         {
                             SendRemoveElement(fromPoint);
@@ -94,11 +94,15 @@ namespace MergeIt.Game.Field.Actions
             }
         }
 
-        private IFieldElement TryMerge(GridPoint fromPoint, GridPoint toPoint)
+        private IFieldElement TryMerge(GridPoint fromPoint, GridPoint toPoint, IFieldElementPresenter toPresenter)
         {
             IFieldElement firstElement = FieldLogicModel.FieldElements[fromPoint];
             IFieldElement secondElement = FieldLogicModel.FieldElements[toPoint];
 
+            if (toPresenter.IsInvisibleLocked)
+            {
+                return null;
+            }
             ElementConfig firstId = firstElement.ConfigParameters.ElementConfig;
             ElementConfig secondId = secondElement.ConfigParameters.ElementConfig;
 

@@ -10,6 +10,6 @@ namespace MergeIt.Game.Factories.FieldElement
     {
         IFieldElement CreateFieldElement(FieldElementData data);
         IFieldElement CreateFieldElement(LevelElementData data);
-        IFieldElement CreateFieldElement(ElementConfig elementConfig, GridPoint point, bool isBlocked = false);
+        IFieldElement CreateFieldElement(ElementConfig elementConfig, GridPoint point, bool isBlocked = false, bool isInvisibleBlocked = false);
     }
 }

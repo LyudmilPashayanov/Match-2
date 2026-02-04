@@ -129,6 +129,14 @@ namespace MergeIt.Game.Managers
                     GridPoint point = GridPoint.Create(row, column);
                     if (_fieldLogicModel.FieldElements.TryGetValue(point, out IFieldElement fieldElement))
                     {
+                        FieldCellComponent cell =
+                            _fieldLogicModel.CellComponents[fieldElement.InfoParameters.LogicPosition];
+                        IFieldElementPresenter candidate = cell.FieldElementPresenter;
+                        if (candidate.IsInvisibleLocked)
+                        {
+                            continue;
+                        }
+                        
                         ElementConfig config = fieldElement.ConfigParameters.ElementConfig;
                         if (fieldElement.GetNextInEvolution() != null)
                         {

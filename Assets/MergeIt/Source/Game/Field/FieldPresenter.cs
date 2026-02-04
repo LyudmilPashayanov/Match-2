@@ -165,6 +165,11 @@ namespace MergeIt.Game.Field
 
                     if (rightCell.FieldElementPresenter.IsInvisibleLocked)
                     {
+                        if (_fieldLogicModel.FieldElements.TryGetValue(right, out IFieldElement nearbyElement))
+                        {
+                            nearbyElement.InfoParameters.IsInvisibleBlocked = false;
+                            nearbyElement.InfoParameters.IsBlocked = true;
+                        }
                         rightCell.FieldElementPresenter.SetInvisibleLock(false);
                         rightCell.FieldElementPresenter.SetLock(true);
                     }
@@ -177,6 +182,11 @@ namespace MergeIt.Game.Field
                     Debug.Log("left- position X: " + left.X + " and Y: " + left.Y + " exists!");
                     if (leftCell.FieldElementPresenter.IsInvisibleLocked)
                     {
+                        if (_fieldLogicModel.FieldElements.TryGetValue(left, out IFieldElement nearbyElement))
+                        {
+                            nearbyElement.InfoParameters.IsInvisibleBlocked = false;
+                            nearbyElement.InfoParameters.IsBlocked = true;
+                        }
                         leftCell.FieldElementPresenter.SetInvisibleLock(false);
                         leftCell.FieldElementPresenter.SetLock(true);
                     }
@@ -189,6 +199,12 @@ namespace MergeIt.Game.Field
                     Debug.Log("above- position X: " + above.X + " and Y: " + above.Y + " exists!");
                     if (aboveCell.FieldElementPresenter.IsInvisibleLocked)
                     {
+                        if (_fieldLogicModel.FieldElements.TryGetValue(above, out IFieldElement nearbyElement))
+                        {
+                            nearbyElement.InfoParameters.IsInvisibleBlocked = false;
+                            nearbyElement.InfoParameters.IsBlocked = true;
+                        }
+
                         aboveCell.FieldElementPresenter.SetInvisibleLock(false);
                         aboveCell.FieldElementPresenter.SetLock(true);
                     }
@@ -201,6 +217,11 @@ namespace MergeIt.Game.Field
                     Debug.Log("below- position X: " + below.X + " and Y: " + below.Y + " exists!");
                     if (belowCell.FieldElementPresenter.IsInvisibleLocked)
                     {
+                        if (_fieldLogicModel.FieldElements.TryGetValue(below, out IFieldElement nearbyElement))
+                        {
+                            nearbyElement.InfoParameters.IsInvisibleBlocked = false;
+                            nearbyElement.InfoParameters.IsBlocked = true;
+                        }
                         belowCell.FieldElementPresenter.SetInvisibleLock(false);
                         belowCell.FieldElementPresenter.SetLock(true);
                     }

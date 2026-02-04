@@ -60,10 +60,11 @@ namespace MergeIt.Core.Configs.Elements
                 Debug.Log("SetInvisibleBlocked TRUE");
                 _image.material = _blockedMaterial;
             }
-            else
+            /*else
             {
+                if(block)
                 _image.material = _defaultMaterial;
-            }
+            }*/
         }
         
         public Image GetImage()

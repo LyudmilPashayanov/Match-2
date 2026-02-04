@@ -32,14 +32,14 @@ namespace MergeIt.Game.Factories.FieldElement
             return _configProcessor.ConvertToFieldElement(fieldElementData);
         }
 
-        public IFieldElement CreateFieldElement(ElementConfig elementConfig, GridPoint point, bool isBlocked = false)
+        public IFieldElement CreateFieldElement(ElementConfig elementConfig, GridPoint point, bool isBlocked = false, bool isInvisibleBlocked = false)
         {
-            FieldElementData fieldElementData = CreateFieldElementData(elementConfig, point, isBlocked);
+            FieldElementData fieldElementData = CreateFieldElementData(elementConfig, point, isBlocked, isInvisibleBlocked);
 
             return _configProcessor.ConvertToFieldElement(fieldElementData);
         }
 
-        private FieldElementData CreateFieldElementData(ElementConfig elementConfig, GridPoint point, bool isBlocked)
+        private FieldElementData CreateFieldElementData(ElementConfig elementConfig, GridPoint point, bool isBlocked, bool isInvisibleBlocked)
         {
             FieldElementData fieldElementData = new FieldElementData();
             ElementConfig config = elementConfig;
@@ -54,7 +54,8 @@ namespace MergeIt.Game.Factories.FieldElement
             fieldElementData.InfoParameters = new SavedInfoParameters
             {
                 LogicPosition = point,
-                IsBlocked = isBlocked
+                IsBlocked = isBlocked,
+                IsInvisibleBlocked = isInvisibleBlocked
             };
 
             switch (config.Type)
