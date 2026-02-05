@@ -36,7 +36,12 @@ public class SceneNavigator : MonoBehaviour
 
     private void FadeOut()
     {
-        _fadeBackground.DOFade(0f, FADE_DURATION);
+        _fadeBackground.gameObject.SetActive(true);
+        _fadeBackground.DOFade(0f, FADE_DURATION).OnComplete(() =>
+            {
+                _fadeBackground.gameObject.SetActive(false);
+            }
+        );
     }
 
     private void QuitGame()
@@ -59,6 +64,7 @@ public class SceneNavigator : MonoBehaviour
         
         AsyncOperation loadOp = SceneManager.LoadSceneAsync(goToIndex);
         loadOp.allowSceneActivation = false;
+        _fadeBackground.gameObject.SetActive(true);
 
         _fadeBackground.DOFade(1f, FADE_DURATION).OnComplete(() =>
         {
