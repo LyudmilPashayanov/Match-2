@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 625024d9f9934707a11212da029488cd
+timeCreated: 1698076120
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Core/Configs/Types/CurrencyType.cs
+  uploadId: 687220

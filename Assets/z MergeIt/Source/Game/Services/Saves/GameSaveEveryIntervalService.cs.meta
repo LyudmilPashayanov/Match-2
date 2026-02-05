@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c4cc441a74c241658fa335e3bfba7410
+timeCreated: 1702242778
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Game/Services/Saves/GameSaveEveryIntervalService.cs
+  uploadId: 687220

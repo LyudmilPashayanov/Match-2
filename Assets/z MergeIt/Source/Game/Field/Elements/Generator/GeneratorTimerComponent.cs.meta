@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 6b0dfce3a1c54954960ba9ea815009a6
+timeCreated: 1695237195
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Game/Field/Elements/Generator/GeneratorTimerComponent.cs
+  uploadId: 687220

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 435c686cf9f214af1bc3fa0e9e92d882
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Utils/MergeIt.Utils.asmdef
+  uploadId: 687220

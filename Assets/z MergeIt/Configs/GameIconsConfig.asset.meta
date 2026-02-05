@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d447ed6c29aa94de19e366b335415a87
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Configs/GameIconsConfig.asset
+  uploadId: 687220

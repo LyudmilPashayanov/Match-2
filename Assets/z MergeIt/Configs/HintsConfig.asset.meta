@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 726c6b7b43d2e48389007fd58f06b5eb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Configs/HintsConfig.asset
+  uploadId: 687220

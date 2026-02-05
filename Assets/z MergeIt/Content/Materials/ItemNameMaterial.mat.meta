@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 703ed3e3ab8c248468d466c532b8671b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Content/Materials/ItemNameMaterial.mat
+  uploadId: 687220

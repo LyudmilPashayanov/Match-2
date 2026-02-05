@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d363538726d654b278043e2f836b6b34
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Content/Animations/Windows/SlideAnimation/Open.anim
+  uploadId: 687220

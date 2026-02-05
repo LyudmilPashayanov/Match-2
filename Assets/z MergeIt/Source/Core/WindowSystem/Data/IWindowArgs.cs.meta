@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 404ecbd9b5e074b008a39f719da39b1d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Core/WindowSystem/Data/IWindowArgs.cs
+  uploadId: 687220

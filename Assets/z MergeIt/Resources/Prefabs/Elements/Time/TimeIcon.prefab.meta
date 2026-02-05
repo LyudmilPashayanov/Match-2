@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 61e847fb65273407ea27951b1cb5408f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Resources/Prefabs/Elements/Time/TimeIcon.prefab
+  uploadId: 687220

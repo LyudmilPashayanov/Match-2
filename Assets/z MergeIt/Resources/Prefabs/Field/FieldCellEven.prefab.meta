@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ef69ad4937684461183d50726d7d16bf
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Resources/Prefabs/Field/FieldCellEven.prefab
+  uploadId: 687220

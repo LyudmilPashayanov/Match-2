@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b61758723018d4d54af0dbf60d8434fb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Configs/Elements/Paint/RollBrushConfig.asset
+  uploadId: 687220

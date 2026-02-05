@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: f72cb75be3fe42c78f9cb350f2e327e6
+timeCreated: 1697461110
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Game/Messages/StartChargingMessage.cs
+  uploadId: 687220

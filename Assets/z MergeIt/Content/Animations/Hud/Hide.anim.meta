@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2501fb51c4fb04a5993fe9fb4bf072b3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Content/Animations/Hud/Hide.anim
+  uploadId: 687220

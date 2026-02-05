@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fcbfbd16186354c5db04adb8ce28ba6d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Resources/Prefabs/Windows/ElementInfo/ElementInfoWindowItem.prefab
+  uploadId: 687220

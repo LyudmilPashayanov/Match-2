@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5211341046ad84f23a604d854a08e6a5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Configs/Effects/MoveToUiEffectConfig.asset
+  uploadId: 687220

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 741881e7dc75142349a8a614f7305997
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Configs/Elements/Paint/PalleteConfig.asset
+  uploadId: 687220

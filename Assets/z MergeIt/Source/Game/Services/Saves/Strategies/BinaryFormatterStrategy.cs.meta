@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: e4d8de42b1ae43088ab16f69088b940b
+timeCreated: 1702316701
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283444
+  packageName: Merge Toolkit - Casual Game Template
+  packageVersion: 1.3
+  assetPath: Assets/MergeIt/Source/Game/Services/Saves/Strategies/BinaryFormatterStrategy.cs
+  uploadId: 687220
