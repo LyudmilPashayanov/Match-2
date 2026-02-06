@@ -44,7 +44,6 @@ namespace MergeIt.Core.Configs.Elements
 
             if (locked)
             {
-                Debug.Log("SetBlocked TRUE");
                 _image.material = _blockedMaterial;
             }
             else
@@ -57,7 +56,6 @@ namespace MergeIt.Core.Configs.Elements
         {
             if (invisibleLocked)
             {
-                Debug.Log("SetInvisibleBlocked TRUE");
                 _image.material = _blockedMaterial;
             }
             /*else

@@ -161,7 +161,7 @@ namespace MergeIt.Game.Field
             {
                 if (rightCell.FieldElementPresenter != null)
                 {
-                    Debug.Log("right- position X: " + right.X + " and Y: " + right.Y + " exists!");
+                    //Debug.Log("right- position X: " + right.X + " and Y: " + right.Y + " exists!");
 
                     if (rightCell.FieldElementPresenter.IsInvisibleLocked)
                     {
@@ -214,7 +214,7 @@ namespace MergeIt.Game.Field
             {
                 if (belowCell.FieldElementPresenter != null)
                 {
-                    Debug.Log("below- position X: " + below.X + " and Y: " + below.Y + " exists!");
+                   // Debug.Log("below- position X: " + below.X + " and Y: " + below.Y + " exists!");
                     if (belowCell.FieldElementPresenter.IsInvisibleLocked)
                     {
                         if (_fieldLogicModel.FieldElements.TryGetValue(below, out IFieldElement nearbyElement))

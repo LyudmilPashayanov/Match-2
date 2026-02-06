@@ -50,6 +50,8 @@ namespace MergeIt.Game.UI.InfoPanel
             _messageBus.AddListener<GeneratorRestoredMessage>(OnGeneratorRestoredMessageHandler);
             _messageBus.AddListener<CheckGeneratorMessage>(OnCheckGeneratorMessageHandler);
             _messageBus.AddListener<UnlockElementMessage>(OnUnlockElementMessageHandler);
+            Debug.Log(" Element info panel component : start");
+
         }
 
         private void OnDestroy()
@@ -69,6 +71,7 @@ namespace MergeIt.Game.UI.InfoPanel
 
         private void OnLoadedGameMessageHandler(LoadedGameMessage message)
         {
+            Debug.Log(" Element info panel component : OnLoadedGameMessageHandler ");
             _fieldLogicModel = DiContainer.Get<FieldLogicModel>();
         }
 
