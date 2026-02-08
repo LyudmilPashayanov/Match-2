@@ -31,6 +31,9 @@ public class FirstMergeTutorial : Tutorial
         {
             if (pair.Value.InfoParameters.Name == "Glove")
             {
+                TutorialInProgressMessage tutorialInProgressMessage = new TutorialInProgressMessage(){TutorialCurrentlyInProgressName = TutorialName};
+                _messageBus.Fire(tutorialInProgressMessage);
+                
                 ShowTutorial();
                 _hand.localPosition = _handPos_1.localPosition;
                 _hand.gameObject.SetActive(true);
@@ -45,16 +48,14 @@ public class FirstMergeTutorial : Tutorial
     {
         if (message.NewElement.InfoParameters.Name == "Pair of Gloves")
         {
-            FinishTutorial();
+            _handTween.Kill();
+            _handTween = null;
+            HideTutorial(FinishTutorial);
         }
     }
 
     private void FinishTutorial()
     {
-        HideTutorial();
-        _handTween.Kill();
-        _handTween = null;
-        
         TutorialFinishedMessage tutorialFinishedMessage = new TutorialFinishedMessage(){TutorialFinishedName = TutorialName} ;
         _messageBus.Fire(tutorialFinishedMessage);
     }

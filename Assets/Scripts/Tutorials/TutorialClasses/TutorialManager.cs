@@ -9,8 +9,8 @@ public class TutorialManager : MonoBehaviour
    private List<string> _tutorialKeys = new List<string>() 
       { 
          "firstMergeTutorial", 
-         "uncoverFieldTutorial",/*
-         "ClickGeneratorTutorial",
+         "uncoverFieldTutorial",
+         "ClickGeneratorTutorial",/*
          "FirstOrderCompletedTutorial",
          "ShowLevelUpTutorial",
          "ShowRewardedItemsTutorial",*/

@@ -16,6 +16,8 @@ public class SecondUnblockTutorial : Tutorial
     
     private IMessageBus _messageBus;
     private Tween _handTween;
+    private string waitForTutorialToFinish;
+    private bool waiting = false;
     
     private void Start()
     {
@@ -23,18 +25,24 @@ public class SecondUnblockTutorial : Tutorial
 
         _messageBus.AddListener<TutorialFinishedMessage>(OnFirstTutorialFinished);
         _messageBus.AddListener<MergeElementsMessage>(OnMergeElementMessageHandler);
+        _messageBus.AddListener<TutorialInProgressMessage>(OnTutorialInProgressMessageHandler);
 
+    }
+
+    private void OnTutorialInProgressMessageHandler(TutorialInProgressMessage obj)
+    {
+        waitForTutorialToFinish = obj.TutorialCurrentlyInProgressName;
     }
 
     private void OnFirstTutorialFinished(TutorialFinishedMessage message)
     {
         if (message.TutorialFinishedName == FirstTutorialName)
         {
-            ShowTutorial();
-            _hand.localPosition = _handPos_1.localPosition;
-            _hand.gameObject.SetActive(true);
-            _handTween = _hand.DOLocalJump(_handPos_2.localPosition, 100f,1,2f);
-            _handTween.SetLoops(-1, LoopType.Yoyo);
+                ShowTutorial();
+                _hand.localPosition = _handPos_1.localPosition;
+                _hand.gameObject.SetActive(true);
+                _handTween = _hand.DOLocalJump(_handPos_2.localPosition, 100f, 1, 2f);
+                _handTween.SetLoops(-1, LoopType.Yoyo);
         }
     }
     
@@ -42,16 +50,14 @@ public class SecondUnblockTutorial : Tutorial
     {
         if (message.NewElement.InfoParameters.Name == "Special Pair of Gloves")
         {
-            FinishTutorial();
+            _handTween.Kill();
+            _handTween = null;
+            HideTutorial(FinishTutorial);
         }
     }
 
     private void FinishTutorial()
     {
-        HideTutorial();
-        _handTween.Kill();
-        _handTween = null;
-        
         TutorialFinishedMessage tutorialFinishedMessage = new TutorialFinishedMessage(){TutorialFinishedName = TutorialName} ;
         _messageBus.Fire(tutorialFinishedMessage);
     }

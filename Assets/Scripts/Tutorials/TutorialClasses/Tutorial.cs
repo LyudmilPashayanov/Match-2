@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class Tutorial : MonoBehaviour
@@ -8,12 +9,12 @@ public abstract class Tutorial : MonoBehaviour
 
     protected void ShowTutorial()
     {
-        TutorialOverlay.gameObject.SetActive(true);
+        TutorialOverlay.AnimateIn();
     }
    
-    protected void HideTutorial()
+    protected void HideTutorial(Action onComplete = null)
     {
-        TutorialOverlay.gameObject.SetActive(false);
+        TutorialOverlay.AnimateOut(onComplete);
     }
 
     public void SetTutorialName(string nameOfTutorial)

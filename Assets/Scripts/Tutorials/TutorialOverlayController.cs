@@ -1,19 +1,27 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class TutorialOverlayController : MonoBehaviour
 {
+    
+    private const float SHOW_TUTORIAL_ANIMATION_DURATION = 1f;
+    private const float HIDE_TUTORIAL_ANIMATION_DURATION = 0.3f;
     [SerializeField] private Image overlayImage;
 
     [SerializeField] private RectTransform targetrt;
     [SerializeField] private Vector2 targetPadding;
+    
     [Header("UI References")]
-    [SerializeField] private Canvas canvas;       // The Canvas this overlay belongs to
+    [SerializeField] private Canvas canvas;
+    [SerializeField] private CanvasGroup canvasGroup;       
 
     [Header("Optional Settings")]
     private Material _material;
-
-   private void Awake()
+    private Color savedColor;
+    
+    private void Awake()
     {
         if (overlayImage == null)
             overlayImage = GetComponent<Image>();
@@ -24,15 +32,37 @@ public class TutorialOverlayController : MonoBehaviour
         // Instantiate material to avoid shared material issues
         _material = Instantiate(overlayImage.material);
         overlayImage.material = _material;
+
+        savedColor = _material.color;
+        _material.color = new Color(0, 0, 0, 0);
+        canvasGroup.alpha = 0;
     }
 
-    public void Update()
+    public void AnimateIn()
+    {
+        gameObject.SetActive(true);
+        canvasGroup.DOFade(1, SHOW_TUTORIAL_ANIMATION_DURATION);
+        _material.DOColor(savedColor, SHOW_TUTORIAL_ANIMATION_DURATION);
+    }
+
+    public void AnimateOut(Action onComplete = null)
+    {
+        canvasGroup.DOFade(0, HIDE_TUTORIAL_ANIMATION_DURATION);
+        _material.DOColor(new Color(0, 0, 0, 0), HIDE_TUTORIAL_ANIMATION_DURATION).OnComplete(()=>
+        {
+            onComplete?.Invoke();
+            gameObject.SetActive(false);
+        });
+
+    }
+   
+    /*public void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
             FocusOn(targetrt, targetPadding);
         }
-    }
+    }*/
     
     /// <summary>
     /// Focus the tutorial overlay on a UI element (RectTransform).
