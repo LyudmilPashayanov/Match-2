@@ -1,4 +1,4 @@
-using System;
+using DG.Tweening;
 using MergeIt.Core.Messages;
 using MergeIt.Game.Field;
 using MergeIt.Game.Messages;
@@ -7,9 +7,15 @@ using UnityEngine;
 
 public class FirstMergeTutorial : Tutorial
 {
+    [SerializeField] private RectTransform _hand;
+    [SerializeField] private RectTransform _handPos_1;
+    [SerializeField] private RectTransform _handPos_2;
+    
     private IMessageBus _messageBus;
     private FieldLogicModel _fieldLogicModel;
-
+    
+    private Tween _handTween;
+    
     private void Start()
     {
         _messageBus = DiContainer.Get<IMessageBus>();
@@ -26,6 +32,10 @@ public class FirstMergeTutorial : Tutorial
             if (pair.Value.InfoParameters.Name == "Glove")
             {
                 ShowTutorial();
+                _hand.localPosition = _handPos_1.localPosition;
+                _hand.gameObject.SetActive(true);
+                _handTween = _hand.DOLocalJump(_handPos_2.localPosition, 100f,1,2f);
+                _handTween.SetLoops(-1, LoopType.Yoyo);
                 break;
             }
         }
@@ -36,6 +46,9 @@ public class FirstMergeTutorial : Tutorial
         if (message.NewElement.InfoParameters.Name == "Pair of Gloves")
         {
             HideTutorial();
+            _handTween.Kill();
+            _handTween = null;
+            PlayerPrefs.SetInt("firstMergeTutorial", 1);
         }
     }
 
