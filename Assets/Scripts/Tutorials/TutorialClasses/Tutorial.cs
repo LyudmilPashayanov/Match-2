@@ -2,6 +2,8 @@ using UnityEngine;
 
 public abstract class Tutorial : MonoBehaviour
 {
+    protected string TutorialName;
+    
     [SerializeField] protected TutorialOverlayController TutorialOverlay;
 
     protected void ShowTutorial()
@@ -12,5 +14,10 @@ public abstract class Tutorial : MonoBehaviour
     protected void HideTutorial()
     {
         TutorialOverlay.gameObject.SetActive(false);
+    }
+
+    public void SetTutorialName(string nameOfTutorial)
+    {
+        TutorialName = nameOfTutorial;
     }
 }

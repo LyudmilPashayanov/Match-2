@@ -45,13 +45,20 @@ public class FirstMergeTutorial : Tutorial
     {
         if (message.NewElement.InfoParameters.Name == "Pair of Gloves")
         {
-            HideTutorial();
-            _handTween.Kill();
-            _handTween = null;
-            PlayerPrefs.SetInt("firstMergeTutorial", 1);
+            FinishTutorial();
         }
     }
 
+    private void FinishTutorial()
+    {
+        HideTutorial();
+        _handTween.Kill();
+        _handTween = null;
+        
+        TutorialFinishedMessage tutorialFinishedMessage = new TutorialFinishedMessage(){TutorialFinishedName = TutorialName} ;
+        _messageBus.Fire(tutorialFinishedMessage);
+    }
+    
     private void OnDisable()
     {
         _messageBus?.RemoveListener<LoadedGameMessage>(OnGameLoadedMessageHandler);
