@@ -2,11 +2,11 @@ using System.Collections.Generic;
 using MergeIt.Core.Messages;
 using MergeIt.SimpleDI;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
    [SerializeField] private List<Tutorial> _tutorialsToSpawn; // Tutorials have to be in correct order from first to last!!!
+   [SerializeField] private RectTransform _tutorialHand;
 
    private List<string> _tutorialKeys = new List<string>() 
       { 
@@ -41,8 +41,18 @@ public class TutorialManager : MonoBehaviour
 
    private void OnTutorialFinished(TutorialFinishedMessage message)
    {
-      Debug.Log("OnTutorialFinished: " + message.TutorialFinished.TutorialName);
       message.TutorialFinished.gameObject.SetActive(false);
       PlayerPrefs.SetInt(message.TutorialFinished.TutorialName, 1);
+
+      if (message.TutorialFinished.TutorialName == _tutorialKeys[3])
+      {
+         EnableHandHints();
+      }
+   }
+
+   private void EnableHandHints()
+   {
+      EnableTutorialHandMessage tutorialHandMessage = new EnableTutorialHandMessage { Enabled = true, TutorialHand = _tutorialHand};
+      _messageBus.Fire(tutorialHandMessage);
    }
 }

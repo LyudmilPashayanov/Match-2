@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using MergeIt.Core.Configs.Elements;
 using MergeIt.Core.FieldElements;
 using MergeIt.Core.Helpers;
@@ -23,7 +24,10 @@ namespace MergeIt.Game.Managers
         [Introduce] private FieldLogicModel _fieldLogicModel;
 
         [Introduce] private IConfigsService _configsService;
-
+        
+        private RectTransform _tutorialHand;
+        private bool _useHand;
+        
         private float _time;
         private bool _animationInProcess;
         private bool _active;
@@ -33,7 +37,9 @@ namespace MergeIt.Game.Managers
         private IList<int> _randomHeight;
         private IList<int> _randomWidth;
         private Dictionary<ElementConfig, List<IFieldElement>> _sameElements = new();
-
+        
+        private Tween _handTween;
+        private const float HAND_ANIMATION_DURATION = 1f;
         private bool Available => _active && !_animationInProcess;
 
         public void Initialize()
@@ -41,6 +47,7 @@ namespace MergeIt.Game.Managers
             _messageBus.AddListener<LoadedGameMessage>(OnLoadedGameMessageHandler);
             _messageBus.AddListener<ActivateHintsMessage>(OnActivateHintsMessageHandler);
             _messageBus.AddListener<ResetHintsMessage>(OnResetHintsMessageHandler);
+            _messageBus.AddListener<EnableTutorialHandMessage>(HandTutorialEnableMessageHandler);
         }
 
         public void Dispose()
@@ -48,8 +55,22 @@ namespace MergeIt.Game.Managers
             _messageBus.RemoveListener<LoadedGameMessage>(OnLoadedGameMessageHandler);
             _messageBus.RemoveListener<ActivateHintsMessage>(OnActivateHintsMessageHandler);
             _messageBus.RemoveListener<ResetHintsMessage>(OnResetHintsMessageHandler);
+            _messageBus.RemoveListener<EnableTutorialHandMessage>(HandTutorialEnableMessageHandler);
         }
-
+        
+        private void HandTutorialEnableMessageHandler(EnableTutorialHandMessage message)
+        {
+            if (message.Enabled)
+            {
+                _useHand = true;
+                _tutorialHand = message.TutorialHand;
+            }
+            else
+            {
+                _useHand = false;
+            }
+        }
+        
         public void Update()
         {
             if (Available && _candidate1 == null && _candidate2 == null)
@@ -67,6 +88,7 @@ namespace MergeIt.Game.Managers
                 if (_candidate1.State == FieldElementState.Idle &&
                     _candidate2.State == FieldElementState.Idle)
                 {
+                    //StopHandLoop();
                     _candidate1 = null;
                     _candidate2 = null;
 
@@ -108,6 +130,7 @@ namespace MergeIt.Game.Managers
             _candidate2 = null;
 
             _animationInProcess = false;
+            //StopHandLoop();
         }
 
         private void FindCandidates()
@@ -165,28 +188,49 @@ namespace MergeIt.Game.Managers
                 }
             }
 
-            if (candidates != null)
+            if (candidates?.Count > 1 )
             {
-                for (var i = 0; i < 2; i++)
-                {
-                    IFieldElement fieldElement = candidates[i];
-                    FieldCellComponent cell =
-                        _fieldLogicModel.CellComponents[fieldElement.InfoParameters.LogicPosition];
-                    IFieldElementPresenter candidate = cell.FieldElementPresenter;
+               
+                IFieldElement fieldElement = candidates[0];
+                FieldCellComponent cell =
+                    _fieldLogicModel.CellComponents[fieldElement.InfoParameters.LogicPosition];
+                _candidate1 = cell.FieldElementPresenter;
+                _candidate1.SetState(FieldElementState.Hint);
 
-                    if (_candidate1 != null)
+                IFieldElement fieldElement2 = candidates[1];
+                FieldCellComponent cell2 =
+                    _fieldLogicModel.CellComponents[fieldElement2.InfoParameters.LogicPosition];
+                _candidate2 = cell2.FieldElementPresenter;
+                _candidate2.SetState(FieldElementState.Hint);
+                
+                _animationInProcess = true;
+                if (_useHand)
+                {
+                    if (_candidate1.IsLocked)
                     {
-                        _candidate2 = candidate;
+                        StartHandLoop(_candidate2.RectTransform, _candidate1.RectTransform);
                     }
                     else
                     {
-                        _candidate1 = candidate;
+                        StartHandLoop(_candidate1.RectTransform, _candidate2.RectTransform);
                     }
-
-                    _animationInProcess = true;
-                    candidate.SetState(FieldElementState.Hint);
-                }
+                }        
             }
+        }
+        
+        private void StartHandLoop(RectTransform cand1, RectTransform cand2)
+        {
+            _tutorialHand.gameObject.SetActive(true);
+            _tutorialHand.position = cand1.position;
+            _handTween = _tutorialHand.DOMove(cand2.position, HAND_ANIMATION_DURATION).OnComplete(StopHandLoop);
+            //_handTween.SetLoops(1, LoopType.Restart).OnComplete(StopHandLoop);
+        }
+
+        private void StopHandLoop()
+        {
+            _tutorialHand.gameObject.SetActive(false);
+            _handTween?.Kill();
+            _handTween = null;
         }
     }
 }

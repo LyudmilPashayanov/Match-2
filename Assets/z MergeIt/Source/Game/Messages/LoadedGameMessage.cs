@@ -7,5 +7,4 @@ namespace MergeIt.Game.Messages
     public class LoadedGameMessage : IMessage
     {
     }
-
 }

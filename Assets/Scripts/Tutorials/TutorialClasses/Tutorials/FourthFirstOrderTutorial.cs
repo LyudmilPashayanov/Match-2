@@ -11,7 +11,7 @@ public class FourthFirstOrderTutorial : Tutorial
     private Tween _handTween;
 
     private int _orderReadyId;
-    
+
     private void Start()
     {
         _messageBus = DiContainer.Get<IMessageBus>();
