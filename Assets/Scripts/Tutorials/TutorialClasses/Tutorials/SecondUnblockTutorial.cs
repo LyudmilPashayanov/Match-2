@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using MergeIt.Core.Messages;
 using MergeIt.Game.Field;
@@ -51,5 +52,11 @@ public class SecondUnblockTutorial : Tutorial
     {
         TutorialFinishedMessage tutorialFinishedMessage = new TutorialFinishedMessage(){TutorialFinished = this} ;
         _messageBus.Fire(tutorialFinishedMessage);
+    }
+
+    private void OnDisable()
+    {
+        _messageBus.RemoveListener<TutorialFinishedMessage>(OnFirstTutorialFinished);
+        _messageBus.RemoveListener<MergeElementsMessage>(OnMergeElementMessageHandler);
     }
 }

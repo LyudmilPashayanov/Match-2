@@ -7,7 +7,7 @@ public abstract class Tutorial : MonoBehaviour
     public string TutorialName { private set; get; }
     
     [SerializeField] protected TutorialOverlayController TutorialOverlay;
-    [SerializeField] private GraphicRaycaster _mainCanvasRaycaster; // Tutorials have to be in correct order from first to last!!!
+    [SerializeField] protected GraphicRaycaster _mainCanvasRaycaster; // Tutorials have to be in correct order from first to last!!!
 
     protected void ShowTutorial()
     {

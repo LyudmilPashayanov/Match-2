@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using MergeIt.Core.Configs.Types;
 using MergeIt.Core.Messages;
@@ -57,5 +58,11 @@ public class ThirdTutorialGenerator : Tutorial
     {
         TutorialFinishedMessage tutorialFinishedMessage = new TutorialFinishedMessage(){TutorialFinished = this} ;
         _messageBus.Fire(tutorialFinishedMessage);
+    }
+
+    private void OnDisable()
+    {
+        _messageBus.RemoveListener<MergeElementsMessage>(OnMergeElementMessageHandler);
+        _messageBus.RemoveListener<CreateElementMessage>(OnFieldFullMessageHandler);
     }
 }

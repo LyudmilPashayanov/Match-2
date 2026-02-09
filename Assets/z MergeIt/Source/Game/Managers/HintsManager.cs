@@ -4,13 +4,16 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using MergeIt.Core.Configs.Elements;
+using MergeIt.Core.Configs.Types;
 using MergeIt.Core.FieldElements;
 using MergeIt.Core.Helpers;
 using MergeIt.Core.Messages;
 using MergeIt.Core.Services;
 using MergeIt.Game.Field;
+using MergeIt.Game.Field.Elements;
 using MergeIt.Game.Helpers;
 using MergeIt.Game.Messages;
+using MergeIt.Game.UI.InfoPanel;
 using MergeIt.SimpleDI;
 using MergeIt.SimpleDI.ReservedInterfaces;
 using UnityEngine;
@@ -34,6 +37,7 @@ namespace MergeIt.Game.Managers
 
         private IFieldElementPresenter _candidate1;
         private IFieldElementPresenter _candidate2;
+        private IFieldElementPresenter _generatorCandidate;
         private IList<int> _randomHeight;
         private IList<int> _randomWidth;
         private Dictionary<ElementConfig, List<IFieldElement>> _sameElements = new();
@@ -41,6 +45,7 @@ namespace MergeIt.Game.Managers
         private Tween _handTween;
         private const float HAND_ANIMATION_DURATION = 1f;
         private bool Available => _active && !_animationInProcess;
+        private bool _fieldFull = false;
 
         public void Initialize()
         {
@@ -48,6 +53,28 @@ namespace MergeIt.Game.Managers
             _messageBus.AddListener<ActivateHintsMessage>(OnActivateHintsMessageHandler);
             _messageBus.AddListener<ResetHintsMessage>(OnResetHintsMessageHandler);
             _messageBus.AddListener<EnableTutorialHandMessage>(HandTutorialEnableMessageHandler);
+            _messageBus.AddListener<FieldFullMessage>(FieldFullMessageHandler);
+            _messageBus.AddListener<MergeElementsMessage>(MergeElementsMessageHandler);
+            _messageBus.AddListener<ElementActionMessage>(ElementSoldMessageHandler);
+
+        }
+
+        private void ElementSoldMessageHandler(ElementActionMessage obj)
+        {
+            if ((obj.ActionType & ElementActionType.Sell) != 0)
+            {
+                _fieldFull = false;
+            }
+        }
+
+        private void MergeElementsMessageHandler(MergeElementsMessage obj)
+        {
+            _fieldFull = false;
+        }
+
+        private void FieldFullMessageHandler(FieldFullMessage obj)
+        {
+            _fieldFull = true;
         }
 
         public void Dispose()
@@ -56,6 +83,9 @@ namespace MergeIt.Game.Managers
             _messageBus.RemoveListener<ActivateHintsMessage>(OnActivateHintsMessageHandler);
             _messageBus.RemoveListener<ResetHintsMessage>(OnResetHintsMessageHandler);
             _messageBus.RemoveListener<EnableTutorialHandMessage>(HandTutorialEnableMessageHandler);
+            _messageBus.RemoveListener<FieldFullMessage>(FieldFullMessageHandler);
+            _messageBus.RemoveListener<MergeElementsMessage>(MergeElementsMessageHandler);
+            _messageBus.RemoveListener<ElementActionMessage>(ElementSoldMessageHandler);
         }
         
         private void HandTutorialEnableMessageHandler(EnableTutorialHandMessage message)
@@ -73,7 +103,7 @@ namespace MergeIt.Game.Managers
         
         public void Update()
         {
-            if (Available && _candidate1 == null && _candidate2 == null)
+            if (Available && _candidate1 == null && _candidate2 == null && _generatorCandidate == null)
             {
                 _time += Time.deltaTime;
 
@@ -88,10 +118,17 @@ namespace MergeIt.Game.Managers
                 if (_candidate1.State == FieldElementState.Idle &&
                     _candidate2.State == FieldElementState.Idle)
                 {
-                    //StopHandLoop();
                     _candidate1 = null;
                     _candidate2 = null;
 
+                    _animationInProcess = false;
+                }
+            }
+            else if (_generatorCandidate != null)
+            {
+                if (_generatorCandidate.State == FieldElementState.Idle)
+                {
+                    _generatorCandidate = null;
                     _animationInProcess = false;
                 }
             }
@@ -129,6 +166,9 @@ namespace MergeIt.Game.Managers
             _candidate1 = null;
             _candidate2 = null;
 
+            _generatorCandidate?.SetState(FieldElementState.Idle);
+            _generatorCandidate = null;
+            
             _animationInProcess = false;
             //StopHandLoop();
         }
@@ -141,6 +181,7 @@ namespace MergeIt.Game.Managers
             _randomWidth.Shuffle();
 
             List<IFieldElement> candidates = null;
+            IFieldElement generatorOnBoard = null;
 
             for (int i = 0; i < _randomHeight.Count; i++)
             {
@@ -155,6 +196,10 @@ namespace MergeIt.Game.Managers
                         FieldCellComponent cell =
                             _fieldLogicModel.CellComponents[fieldElement.InfoParameters.LogicPosition];
                         IFieldElementPresenter candidate = cell.FieldElementPresenter;
+                        if (fieldElement.ConfigParameters.ElementConfig.Type == ElementType.Generator)
+                        {
+                            generatorOnBoard = fieldElement;
+                        }
                         if (candidate.IsInvisibleLocked)
                         {
                             continue;
@@ -216,8 +261,29 @@ namespace MergeIt.Game.Managers
                     }
                 }        
             }
+            else if (_fieldFull == false && generatorOnBoard != null)
+            {
+                IFieldElement generatorElement = generatorOnBoard;
+                FieldCellComponent generatorCell =
+                    _fieldLogicModel.CellComponents[generatorElement.InfoParameters.LogicPosition];
+                
+                _generatorCandidate = generatorCell.FieldElementPresenter;
+                _generatorCandidate.SetState(FieldElementState.Hint);
+                if (_useHand)
+                {
+                    StartHandClickingLoop(_generatorCandidate.RectTransform);
+                }
+            }
         }
-        
+
+        private void StartHandClickingLoop(RectTransform generatorCandidate)
+        {
+            _tutorialHand.gameObject.SetActive(true);
+            _tutorialHand.position = generatorCandidate.position;
+            _handTween = _tutorialHand.DOScale(1.2f, 0.4f);
+            _handTween.SetLoops(4, LoopType.Yoyo).OnComplete(StopHandLoop);
+        }
+
         private void StartHandLoop(RectTransform cand1, RectTransform cand2)
         {
             _tutorialHand.gameObject.SetActive(true);

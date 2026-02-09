@@ -47,11 +47,13 @@ namespace MergeIt.Game.Field.Elements.Animations
                 switch (concreteState)
                 {
                     case FieldElementState.Idle:
-                        _animator.Play(hash);
+                        if(_animator)
+                            _animator.Play(hash);
                         break;
                     
                     case FieldElementState.Hint:
-                        _animator.SetTrigger(hash);
+                        if(_animator)
+                            _animator.SetTrigger(hash);
                         break;
                 }
             }

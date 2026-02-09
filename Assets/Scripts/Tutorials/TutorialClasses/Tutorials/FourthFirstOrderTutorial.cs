@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using MergeIt.Core.Messages;
 using MergeIt.SimpleDI;
@@ -27,6 +28,7 @@ public class FourthFirstOrderTutorial : Tutorial
     private void StartTutorial(OrderAvailableToServeMessage message)
     {
         _orderReadyId = message.AvailableToServeOrder.OrderDefinition.OrderId;
+        _mainCanvasRaycaster.enabled = false;
         ShowTutorial();
         _hand.position = message.AvailableToServeOrder.GetCenter();
         _hand.gameObject.SetActive(true);
@@ -40,6 +42,8 @@ public class FourthFirstOrderTutorial : Tutorial
     {
         if (message.CompletedOrder.OrderDefinition.OrderId == _orderReadyId)
         {
+            Debug.Log("Order completed");
+            _mainCanvasRaycaster.enabled = true;
             HideTutorial(FinishTutorial);
         }
     }
@@ -48,5 +52,11 @@ public class FourthFirstOrderTutorial : Tutorial
     {
         TutorialFinishedMessage tutorialFinishedMessage = new TutorialFinishedMessage(){TutorialFinished = this} ;
         _messageBus.Fire(tutorialFinishedMessage);
+    }
+
+    private void OnDisable()
+    {
+        _messageBus.RemoveListener<OrderAvailableToServeMessage>(OnOrderAvailableToServeMessageHandler);
+        _messageBus.RemoveListener<OrderCompletedMessage>(OnOrderCompletedMessageHandler);
     }
 }
