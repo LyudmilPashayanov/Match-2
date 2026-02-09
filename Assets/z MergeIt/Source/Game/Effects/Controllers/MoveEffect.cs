@@ -63,9 +63,11 @@ namespace MergeIt.Game.Effects.Controllers
                 Vector3 position = Vector3.Lerp(_moveFrom, _moveTo, _progress);
                 position.x += posX;
                 position.y += posY;
-                
-                Target.position = position;
-                Target.localScale = new Vector3(scale, scale, 1f);
+                if (Target)
+                {
+                    Target.position = position;
+                    Target.localScale = new Vector3(scale, scale, 1f);
+                }
 
                 if (_progress >= 1f)
                 {

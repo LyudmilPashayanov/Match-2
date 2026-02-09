@@ -23,11 +23,15 @@ public class TutorialOverlayController : MonoBehaviour
     
     private void Awake()
     {
-        if (overlayImage == null)
+        if (!overlayImage)
+        {
             overlayImage = GetComponent<Image>();
+        }
 
-        if (canvas == null)
+        if (!canvas)
+        {
             canvas = GetComponentInParent<Canvas>();
+        }
 
         // Instantiate material to avoid shared material issues
         _material = Instantiate(overlayImage.material);

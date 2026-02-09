@@ -121,6 +121,9 @@ namespace MergeIt.Game.Field
             RemoveItemsFromFields(order.OrderDefinition);
             //Spawn experience on the board.
 
+            OrderCompletedMessage orderCompleted =  new OrderCompletedMessage {CompletedOrder = order};
+            _messageBus.Fire(orderCompleted);
+            
             GenerateRewardOnField(order);
 
             // save that it was completed
@@ -173,7 +176,7 @@ namespace MergeIt.Game.Field
         {
             foreach (var order in _spawnedOrders)
             {
-                order.UpdateState(_typeAmounts);
+                order.UpdateState(_typeAmounts, _messageBus);
             }
         }
 

@@ -2,16 +2,18 @@ using System.Collections.Generic;
 using MergeIt.Core.Messages;
 using MergeIt.SimpleDI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
    [SerializeField] private List<Tutorial> _tutorialsToSpawn; // Tutorials have to be in correct order from first to last!!!
+
    private List<string> _tutorialKeys = new List<string>() 
       { 
          "firstMergeTutorial", 
          "uncoverFieldTutorial",
-         "ClickGeneratorTutorial",/*
-         "FirstOrderCompletedTutorial",
+         "ClickGeneratorTutorial",
+         "FirstOrderCompletedTutorial",/*
          "ShowLevelUpTutorial",
          "ShowRewardedItemsTutorial",*/
       };
@@ -39,6 +41,8 @@ public class TutorialManager : MonoBehaviour
 
    private void OnTutorialFinished(TutorialFinishedMessage message)
    {
-      PlayerPrefs.SetInt(message.TutorialFinishedName, 1);
+      Debug.Log("OnTutorialFinished: " + message.TutorialFinished.TutorialName);
+      message.TutorialFinished.gameObject.SetActive(false);
+      PlayerPrefs.SetInt(message.TutorialFinished.TutorialName, 1);
    }
 }

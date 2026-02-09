@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using MergeIt.Core.Configs.Elements;
+using MergeIt.Core.Messages;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -52,7 +53,7 @@ namespace MergeIt.Game
             }
         }
 
-        public void UpdateState(Dictionary<ElementConfig, int> TypeAmounts)
+        public void UpdateState(Dictionary<ElementConfig, int> TypeAmounts, IMessageBus messageBus)
         {
             foreach (var item in _orderItems)
             {
@@ -78,11 +79,14 @@ namespace MergeIt.Game
             }
             
             IsCompleted = true;
-            MarkCompleted();
+            MarkCompleted(messageBus);
         }
         
-        private void MarkCompleted()
+        private void MarkCompleted(IMessageBus messageBus)
         {
+            OrderAvailableToServeMessage orderCompletedMessage = new OrderAvailableToServeMessage(){AvailableToServeOrder = this};
+            messageBus.Fire(orderCompletedMessage);
+            
             _backgroundInProgress.gameObject.SetActive(false);
             _backgroundCompleted.gameObject.SetActive(true);
             _completedText.text = "Completed!";
@@ -97,6 +101,11 @@ namespace MergeIt.Game
             _completedText.text = "Collect:";
             _orderCompleteButton.interactable = false;
             _orderCompleteButtonImage.enabled = false;
+        }
+
+        public Vector3 GetCenter()
+        {
+            return _backgroundCompleted.transform.position;
         }
     }
 }

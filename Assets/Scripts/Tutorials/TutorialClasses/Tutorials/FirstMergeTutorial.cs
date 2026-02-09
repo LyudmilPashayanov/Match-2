@@ -56,7 +56,7 @@ public class FirstMergeTutorial : Tutorial
 
     private void FinishTutorial()
     {
-        TutorialFinishedMessage tutorialFinishedMessage = new TutorialFinishedMessage(){TutorialFinishedName = TutorialName} ;
+        TutorialFinishedMessage tutorialFinishedMessage = new TutorialFinishedMessage(){TutorialFinished = this} ;
         _messageBus.Fire(tutorialFinishedMessage);
     }
     

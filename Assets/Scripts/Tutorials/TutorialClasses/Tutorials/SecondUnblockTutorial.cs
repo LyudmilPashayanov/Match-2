@@ -16,8 +16,6 @@ public class SecondUnblockTutorial : Tutorial
     
     private IMessageBus _messageBus;
     private Tween _handTween;
-    private string waitForTutorialToFinish;
-    private bool waiting = false;
     
     private void Start()
     {
@@ -25,18 +23,11 @@ public class SecondUnblockTutorial : Tutorial
 
         _messageBus.AddListener<TutorialFinishedMessage>(OnFirstTutorialFinished);
         _messageBus.AddListener<MergeElementsMessage>(OnMergeElementMessageHandler);
-        _messageBus.AddListener<TutorialInProgressMessage>(OnTutorialInProgressMessageHandler);
-
-    }
-
-    private void OnTutorialInProgressMessageHandler(TutorialInProgressMessage obj)
-    {
-        waitForTutorialToFinish = obj.TutorialCurrentlyInProgressName;
     }
 
     private void OnFirstTutorialFinished(TutorialFinishedMessage message)
     {
-        if (message.TutorialFinishedName == FirstTutorialName)
+        if (message.TutorialFinished.TutorialName == FirstTutorialName)
         {
                 ShowTutorial();
                 _hand.localPosition = _handPos_1.localPosition;
@@ -58,7 +49,7 @@ public class SecondUnblockTutorial : Tutorial
 
     private void FinishTutorial()
     {
-        TutorialFinishedMessage tutorialFinishedMessage = new TutorialFinishedMessage(){TutorialFinishedName = TutorialName} ;
+        TutorialFinishedMessage tutorialFinishedMessage = new TutorialFinishedMessage(){TutorialFinished = this} ;
         _messageBus.Fire(tutorialFinishedMessage);
     }
 }

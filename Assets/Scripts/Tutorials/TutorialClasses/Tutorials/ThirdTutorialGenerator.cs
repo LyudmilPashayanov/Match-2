@@ -15,6 +15,7 @@ public class ThirdTutorialGenerator : Tutorial
 
     private int _generates = 0;
     private const int generatesToFinish = 3;
+    
     private void Start()
     {
         _messageBus = DiContainer.Get<IMessageBus>();
@@ -54,7 +55,7 @@ public class ThirdTutorialGenerator : Tutorial
     
     private void FinishTutorial()
     {
-        TutorialFinishedMessage tutorialFinishedMessage = new TutorialFinishedMessage(){TutorialFinishedName = TutorialName} ;
+        TutorialFinishedMessage tutorialFinishedMessage = new TutorialFinishedMessage(){TutorialFinished = this} ;
         _messageBus.Fire(tutorialFinishedMessage);
     }
 }
