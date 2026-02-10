@@ -36,6 +36,8 @@ public class FirstMergeTutorial : Tutorial
             {
                 TutorialInProgressMessage tutorialInProgressMessage = new TutorialInProgressMessage(){TutorialCurrentlyInProgressName = TutorialName};
                 _messageBus.Fire(tutorialInProgressMessage);
+                EnableTutorialHandMessage enableTutorialHandMessage = new EnableTutorialHandMessage(){Enabled = false};
+                _messageBus.Fire(enableTutorialHandMessage);
                 
                 ShowTutorial();
                 _hand.localPosition = _handPos_1.localPosition;

@@ -2,6 +2,7 @@ using System;
 using DG.Tweening;
 using MergeIt.Core.Configs.Types;
 using MergeIt.Core.Messages;
+using MergeIt.Game.Field;
 using MergeIt.Game.Messages;
 using MergeIt.SimpleDI;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class ThirdTutorialGenerator : Tutorial
     private Tween _handTween;
 
     private int _generates = 0;
+    private FieldLogicModel _fieldLogicModel;
     private const int generatesToFinish = 3;
     
     private void Start()
@@ -22,8 +24,26 @@ public class ThirdTutorialGenerator : Tutorial
         _messageBus = DiContainer.Get<IMessageBus>();
         _messageBus.AddListener<MergeElementsMessage>(OnMergeElementMessageHandler);
         _messageBus.AddListener<CreateElementMessage>(OnFieldFullMessageHandler);
+        _messageBus.AddListener<LoadedGameMessage>(OnLoadedGameMessageHandler);
     }
-
+    
+    private void OnLoadedGameMessageHandler(LoadedGameMessage message)
+    {
+        _fieldLogicModel = DiContainer.Get<FieldLogicModel>();
+        CheckToStart();
+    }
+    
+    private void CheckToStart()
+    {
+        foreach (var pair in _fieldLogicModel.FieldElements)
+        {
+            if (pair.Value.InfoParameters.Type == ElementType.Generator)
+            {
+                StartTutorial();
+            }
+        }
+    }
+    
     private void OnMergeElementMessageHandler(MergeElementsMessage message)
     {
         if (message.NewElement.InfoParameters.Type == ElementType.Generator)
@@ -35,6 +55,9 @@ public class ThirdTutorialGenerator : Tutorial
     private void StartTutorial()
     {
         ShowTutorial();
+        
+        DisableHints();
+            
         _hand.localPosition = _handPos_1.localPosition;
         _hand.gameObject.SetActive(true);
         _handTween = _hand.DOScale(1.2f, 1f);
@@ -54,6 +77,12 @@ public class ThirdTutorialGenerator : Tutorial
         }
     }
     
+    private void DisableHints()
+    {
+        EnableTutorialHandMessage enableTutorialHandMessage = new EnableTutorialHandMessage(){Enabled = false};
+        _messageBus.Fire(enableTutorialHandMessage);
+    }
+    
     private void FinishTutorial()
     {
         TutorialFinishedMessage tutorialFinishedMessage = new TutorialFinishedMessage(){TutorialFinished = this} ;
@@ -64,5 +93,6 @@ public class ThirdTutorialGenerator : Tutorial
     {
         _messageBus.RemoveListener<MergeElementsMessage>(OnMergeElementMessageHandler);
         _messageBus.RemoveListener<CreateElementMessage>(OnFieldFullMessageHandler);
+        _messageBus.RemoveListener<LoadedGameMessage>(OnLoadedGameMessageHandler);
     }
 }

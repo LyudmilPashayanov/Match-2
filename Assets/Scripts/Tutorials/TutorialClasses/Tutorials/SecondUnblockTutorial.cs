@@ -1,13 +1,13 @@
-using System;
 using DG.Tweening;
 using MergeIt.Core.Messages;
-using MergeIt.Game.Field;
 using MergeIt.Game.Messages;
 using MergeIt.SimpleDI;
 using UnityEngine;
 
 public class SecondUnblockTutorial : Tutorial
 {
+    private const float HAND_ANIMATION_DURATION = 1f;
+    private const float RESTART_DELAY = 0.5f;
     
     private const string FirstTutorialName = "firstMergeTutorial";
 
@@ -24,28 +24,52 @@ public class SecondUnblockTutorial : Tutorial
 
         _messageBus.AddListener<TutorialFinishedMessage>(OnFirstTutorialFinished);
         _messageBus.AddListener<MergeElementsMessage>(OnMergeElementMessageHandler);
+
+        CheckToStart();
     }
-    
-    private const float HAND_ANIMATION_DURATION = 1f;
-    private const float RESTART_DELAY = 0.5f;
+
+    private void CheckToStart()
+    {
+        if (PlayerPrefs.HasKey(FirstTutorialName))
+        {
+            if (PlayerPrefs.GetInt(FirstTutorialName) == 1)
+            {
+                StartTutorial();
+            }
+        }
+    }
     
     private void OnFirstTutorialFinished(TutorialFinishedMessage message)
     {
         if (message.TutorialFinished.TutorialName == FirstTutorialName)
         {
-                ShowTutorial();
-                _hand.localPosition = _handPos_1.localPosition;
-                _hand.gameObject.SetActive(true);
-                _handTween?.Kill();
-
-                _handTween = DOTween.Sequence()
-                    .Append(_hand.DOLocalMove(_handPos_2.localPosition, HAND_ANIMATION_DURATION))
-                    .AppendInterval(RESTART_DELAY)
-                    .SetLoops(-1, LoopType.Restart);
-            
+            StartTutorial();
         }
     }
-    
+
+    private void StartTutorial()
+    {
+        ShowTutorial();
+                
+        DisableHints();
+
+        _hand.localPosition = _handPos_1.localPosition;
+        _hand.gameObject.SetActive(true);
+        _handTween?.Kill();
+
+        _handTween = DOTween.Sequence()
+            .Append(_hand.DOLocalMove(_handPos_2.localPosition, HAND_ANIMATION_DURATION))
+            .AppendInterval(RESTART_DELAY)
+            .SetLoops(-1, LoopType.Restart);
+    }
+
+
+    private void DisableHints()
+    {
+        EnableTutorialHandMessage enableTutorialHandMessage = new EnableTutorialHandMessage(){Enabled = false};
+        _messageBus.Fire(enableTutorialHandMessage);
+    }
+
     private void OnMergeElementMessageHandler(MergeElementsMessage message)
     {
         if (message.NewElement.InfoParameters.Name == "Special Pair of Gloves")

@@ -123,6 +123,7 @@ namespace MergeIt.Game.Field
 
             OrderCompletedMessage orderCompleted =  new OrderCompletedMessage {CompletedOrder = order};
             _messageBus.Fire(orderCompleted);
+          
             
             GenerateRewardOnField(order);
 
@@ -137,6 +138,12 @@ namespace MergeIt.Game.Field
             UpdateScrollViewContent();
         }
 
+        private void SendOrdersAvailable(int amount)
+        {
+            OrderReadyMessage ordersReady = new OrderReadyMessage {AvailableOrders = amount};
+            _messageBus.Fire(ordersReady);
+        }
+        
         private void GenerateRewardOnField(OrderView order)
         {
             GridPoint? pointContainer = _fieldService.GetFreeCell();
@@ -174,10 +181,17 @@ namespace MergeIt.Game.Field
 
         private void UpdateOrdersView()
         {
+            int availableOrders = 0;
             foreach (var order in _spawnedOrders)
             {
                 order.UpdateState(_typeAmounts);
+
+                if (order.IsCompleted)
+                {
+                    availableOrders++;
+                }
             }
+            SendOrdersAvailable(availableOrders);
         }
 
         private void UpdateFieldData()
@@ -329,7 +343,6 @@ namespace MergeIt.Game.Field
                 _messageBus.RemoveListener<AddToInventoryMessage>(MoveToInventory);  
                 _messageBus.RemoveListener<RemoveFromInventoryMessage>(RemoveFromInventory);
             }
-
         }
     }
 }

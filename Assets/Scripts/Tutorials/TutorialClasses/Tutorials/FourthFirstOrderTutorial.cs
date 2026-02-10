@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using MergeIt.Core.Messages;
 using MergeIt.SimpleDI;
@@ -6,7 +5,7 @@ using UnityEngine;
 
 public class FourthFirstOrderTutorial : Tutorial
 {
-    [SerializeField] private RectTransform _hand;
+    // [SerializeField] private RectTransform _hand;
     
     private IMessageBus _messageBus;
     private Tween _handTween;
@@ -27,27 +26,32 @@ public class FourthFirstOrderTutorial : Tutorial
     
     private void StartTutorial(OrderAvailableToServeMessage message)
     {
-        EnableTutorialHandMessage disableTutorialHandMessage = new EnableTutorialHandMessage(){Enabled = false} ;
-        _messageBus.Fire(disableTutorialHandMessage);
-        
+        DisableHints();
+
         _orderReadyId = message.AvailableToServeOrder.OrderDefinition.OrderId;
         _mainCanvasRaycaster.enabled = false;
         ShowTutorial();
-        _hand.position = message.AvailableToServeOrder.GetCenter();
-        _hand.gameObject.SetActive(true);
-        _handTween = _hand.DOScale(1.2f, 1f);
-        _handTween.SetEase(Ease.InSine);
-        _handTween.SetLoops(-1, LoopType.Yoyo);
+        //_hand.position = message.AvailableToServeOrder.GetCenter();
+        //_hand.gameObject.SetActive(true);
+        //_handTween = _hand.DOScale(1.2f, 1f);
+       // _handTween.SetEase(Ease.InSine);
+       // _handTween.SetLoops(-1, LoopType.Yoyo);
         TutorialOverlay.FocusOn(message.AvailableToServeOrder.GetComponent<RectTransform>(), Vector2.zero);
     }
-    
+
+    private void DisableHints()
+    {
+        EnableTutorialHandMessage disableTutorialHandMessage = new EnableTutorialHandMessage(){Enabled = false} ;
+        _messageBus.Fire(disableTutorialHandMessage);
+    }
+
     private void OnOrderCompletedMessageHandler(OrderCompletedMessage message)
     {
         if (message.CompletedOrder.OrderDefinition.OrderId == _orderReadyId)
         {
             _mainCanvasRaycaster.enabled = true;
-            _handTween?.Kill();
-            _handTween = null;
+           // _handTween?.Kill();
+            //_handTween = null;
             HideTutorial(FinishTutorial);
         }
     }

@@ -46,7 +46,7 @@ namespace MergeIt.Game.Managers
         private const float HAND_ANIMATION_DURATION = 1f;
         private bool Available => _active && !_animationInProcess;
         private bool _fieldFull = false; 
-        private bool _orderAvailable = false; 
+        private int _ordersAvailable = 0; 
 
         public void Initialize()
         {
@@ -57,7 +57,25 @@ namespace MergeIt.Game.Managers
             _messageBus.AddListener<FieldFullMessage>(FieldFullMessageHandler);
             _messageBus.AddListener<MergeElementsMessage>(MergeElementsMessageHandler);
             _messageBus.AddListener<ElementActionMessage>(ElementSoldMessageHandler);
-            //_messageBus.AddListener<OrderCompletedMessage>(ElementSoldMessageHandler);
+            _messageBus.AddListener<OrderReadyMessage>(OrderReadyMessageHandler);
+        }
+        
+        public void Dispose()
+        {
+            _messageBus.RemoveListener<LoadedGameMessage>(OnLoadedGameMessageHandler);
+            _messageBus.RemoveListener<ActivateHintsMessage>(OnActivateHintsMessageHandler);
+            _messageBus.RemoveListener<ResetHintsMessage>(OnResetHintsMessageHandler);
+            _messageBus.RemoveListener<EnableTutorialHandMessage>(HandTutorialEnableMessageHandler);
+            _messageBus.RemoveListener<FieldFullMessage>(FieldFullMessageHandler);
+            _messageBus.RemoveListener<MergeElementsMessage>(MergeElementsMessageHandler);
+            _messageBus.RemoveListener<ElementActionMessage>(ElementSoldMessageHandler);
+            _messageBus.RemoveListener<ElementActionMessage>(ElementSoldMessageHandler);
+            _messageBus.RemoveListener<OrderReadyMessage>(OrderReadyMessageHandler);
+        }
+        
+        private void OrderReadyMessageHandler(OrderReadyMessage obj)
+        {
+            _ordersAvailable = obj.AvailableOrders;
         }
 
         private void ElementSoldMessageHandler(ElementActionMessage obj)
@@ -78,24 +96,16 @@ namespace MergeIt.Game.Managers
             _fieldFull = true;
         }
 
-        public void Dispose()
-        {
-            _messageBus.RemoveListener<LoadedGameMessage>(OnLoadedGameMessageHandler);
-            _messageBus.RemoveListener<ActivateHintsMessage>(OnActivateHintsMessageHandler);
-            _messageBus.RemoveListener<ResetHintsMessage>(OnResetHintsMessageHandler);
-            _messageBus.RemoveListener<EnableTutorialHandMessage>(HandTutorialEnableMessageHandler);
-            _messageBus.RemoveListener<FieldFullMessage>(FieldFullMessageHandler);
-            _messageBus.RemoveListener<MergeElementsMessage>(MergeElementsMessageHandler);
-            _messageBus.RemoveListener<ElementActionMessage>(ElementSoldMessageHandler);
-            _messageBus.RemoveListener<ElementActionMessage>(ElementSoldMessageHandler);
-        }
         
         private void HandTutorialEnableMessageHandler(EnableTutorialHandMessage message)
         {
             if (message.Enabled)
             {
                 _useHand = true;
-                _tutorialHand = message.TutorialHand;
+                if (!_tutorialHand)
+                {
+                    _tutorialHand = message.TutorialHand;
+                }
             }
             else
             {
@@ -251,7 +261,7 @@ namespace MergeIt.Game.Managers
                 _candidate2.SetState(FieldElementState.Hint);
                 
                 _animationInProcess = true;
-                if (_useHand)
+                if (_useHand && _ordersAvailable == 0)
                 {
                     if (_candidate1.IsLocked)
                     {
@@ -271,7 +281,7 @@ namespace MergeIt.Game.Managers
                 
                 _generatorCandidate = generatorCell.FieldElementPresenter;
                 _generatorCandidate.SetState(FieldElementState.Hint);
-                if (_useHand)
+                if (_useHand && _ordersAvailable == 0)
                 {
                     StartHandClickingLoop(_generatorCandidate.RectTransform);
                 }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
+   private const string STOP_HAND_HINTS_PLAYER_PREFS_KEY = "stopTutorialHand";
+   
    [SerializeField] private List<Tutorial> _tutorialsToSpawn; // Tutorials have to be in correct order from first to last!!!
    [SerializeField] private RectTransform _tutorialHand;
 
@@ -25,6 +27,13 @@ public class TutorialManager : MonoBehaviour
       _messageBus = DiContainer.Get<IMessageBus>();
       
       _messageBus.AddListener<TutorialFinishedMessage>(OnTutorialFinished);
+      
+      EnableHandHints();
+      
+      if (PlayerPrefs.GetInt(STOP_HAND_HINTS_PLAYER_PREFS_KEY) == 1)
+      {
+         DisableHandHints();
+      }
 
       for (int i = 0; i < _tutorialKeys.Count; i++)
       {
@@ -55,4 +64,11 @@ public class TutorialManager : MonoBehaviour
       EnableTutorialHandMessage tutorialHandMessage = new EnableTutorialHandMessage { Enabled = true, TutorialHand = _tutorialHand};
       _messageBus.Fire(tutorialHandMessage);
    }
+   
+   private void DisableHandHints()
+   {
+      EnableTutorialHandMessage tutorialHandMessage = new EnableTutorialHandMessage { Enabled = false, TutorialHand = _tutorialHand};
+      _messageBus.Fire(tutorialHandMessage);
+   }
+   
 }
