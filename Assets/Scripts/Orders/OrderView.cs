@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using MergeIt.Core.Configs.Elements;
 using MergeIt.Core.Messages;
 using TMPro;
@@ -15,6 +16,9 @@ namespace MergeIt.Game
         [SerializeField] private RectTransform _itemsSpawnPoint;
         [SerializeField] private RectTransform _backgroundInProgress;
         [SerializeField] private RectTransform _backgroundCompleted;
+        
+        [SerializeField] private RectTransform _clickHand;
+        
         [SerializeField] private TextMeshProUGUI _completedText;
         [SerializeField] private Button _orderCompleteButton;
         [SerializeField] private Image _orderCompleteButtonImage;
@@ -25,7 +29,9 @@ namespace MergeIt.Game
         public OrderDefinition OrderDefinition => _orderDefinition;
         
         private Action<OrderView> _onOrderCompleted;
-        
+        private IMessageBus _messageBus;   
+        private Tween _handTween;
+
         public bool IsCompleted { get; private set; }
         
         public void Init(Action<OrderView> OnOrderCompleted)
@@ -38,12 +44,16 @@ namespace MergeIt.Game
         private void CompleteOrder()
         {
             Debug.Log("COMPLETE ORDER");
+            DisableHelpHand();
             _onOrderCompleted?.Invoke(this);
         }
         
-        public void Setup(OrderDefinition orderDefinition)
+        public void Setup(OrderDefinition orderDefinition, IMessageBus messageBus)
         {
+            _messageBus =  messageBus;
+            
             _orderDefinition = orderDefinition;
+            
             foreach (var item in orderDefinition.RequiredItems)
             {
                 OrderItemView newItem = Instantiate(_orderItemPrefab, _itemsSpawnPoint);
@@ -53,7 +63,7 @@ namespace MergeIt.Game
             }
         }
 
-        public void UpdateState(Dictionary<ElementConfig, int> TypeAmounts, IMessageBus messageBus)
+        public void UpdateState(Dictionary<ElementConfig, int> TypeAmounts)
         {
             foreach (var item in _orderItems)
             {
@@ -79,14 +89,16 @@ namespace MergeIt.Game
             }
             
             IsCompleted = true;
-            MarkCompleted(messageBus);
+            MarkCompleted();
         }
         
-        private void MarkCompleted(IMessageBus messageBus)
+        private void MarkCompleted()
         {
             OrderAvailableToServeMessage orderCompletedMessage = new OrderAvailableToServeMessage(){AvailableToServeOrder = this};
-            messageBus.Fire(orderCompletedMessage);
-            
+            _messageBus.Fire(orderCompletedMessage);
+           
+            ActivateHelpHand();
+           
             _backgroundInProgress.gameObject.SetActive(false);
             _backgroundCompleted.gameObject.SetActive(true);
             _completedText.text = "Completed!";
@@ -102,7 +114,28 @@ namespace MergeIt.Game
             _orderCompleteButton.interactable = false;
             _orderCompleteButtonImage.enabled = false;
         }
-
+        
+        private void ActivateHelpHand()
+        {
+            EnableTutorialHandMessage disableHandMessage = new EnableTutorialHandMessage { Enabled = false};
+            _messageBus.Fire(disableHandMessage);
+            
+            _clickHand.gameObject.SetActive(true);
+            _handTween = _clickHand.DOScale(1f, 1f);
+            _handTween.SetEase(Ease.InSine);
+            _handTween.SetLoops(-1, LoopType.Yoyo);
+        } 
+        
+        private void DisableHelpHand()
+        {
+            EnableTutorialHandMessage enableHandMessage = new EnableTutorialHandMessage { Enabled = true};
+            _messageBus.Fire(enableHandMessage);
+            
+            _clickHand.gameObject.SetActive(false);
+            _handTween?.Kill();
+            _handTween = null;
+        }
+        
         public Vector3 GetCenter()
         {
             return _backgroundCompleted.transform.position;

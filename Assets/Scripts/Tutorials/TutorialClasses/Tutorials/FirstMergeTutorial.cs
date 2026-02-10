@@ -24,6 +24,9 @@ public class FirstMergeTutorial : Tutorial
         _messageBus.AddListener<LoadedGameMessage>(OnGameLoadedMessageHandler);
         _messageBus.AddListener<MergeElementsMessage>(OnMergeElementMessageHandler);
     }
+    
+    private const float HAND_ANIMATION_DURATION = 1f;
+    private const float RESTART_DELAY = 0.5f;
 
     private void OnGameLoadedMessageHandler(LoadedGameMessage message)
     {
@@ -37,8 +40,13 @@ public class FirstMergeTutorial : Tutorial
                 ShowTutorial();
                 _hand.localPosition = _handPos_1.localPosition;
                 _hand.gameObject.SetActive(true);
-                _handTween = _hand.DOLocalJump(_handPos_2.localPosition, 100f,1,2f);
-                _handTween.SetLoops(-1, LoopType.Yoyo);
+                _handTween?.Kill();
+
+                _handTween = DOTween.Sequence()
+                    .Append(_hand.DOLocalMove(_handPos_2.localPosition, HAND_ANIMATION_DURATION))
+                    .AppendInterval(RESTART_DELAY)
+                    .SetLoops(-1, LoopType.Restart);
+               
                 break;
             }
         }

@@ -44,7 +44,7 @@ public class TutorialManager : MonoBehaviour
       message.TutorialFinished.gameObject.SetActive(false);
       PlayerPrefs.SetInt(message.TutorialFinished.TutorialName, 1);
 
-      if (message.TutorialFinished.TutorialName == _tutorialKeys[3])
+      if (message.TutorialFinished.TutorialName == _tutorialKeys[2] || message.TutorialFinished.TutorialName == _tutorialKeys[3])
       {
          EnableHandHints();
       }

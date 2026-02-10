@@ -103,7 +103,7 @@ namespace MergeIt.Game.Field
             OrderView newOrder = Instantiate(_orderPrefab, _scrollViewContent);
 
             newOrder.Init(OnOrderCompleted);
-            newOrder.Setup(orderDefinition);
+            newOrder.Setup(orderDefinition, _messageBus);
 
             _spawnedOrders.Add(newOrder);
 
@@ -176,7 +176,7 @@ namespace MergeIt.Game.Field
         {
             foreach (var order in _spawnedOrders)
             {
-                order.UpdateState(_typeAmounts, _messageBus);
+                order.UpdateState(_typeAmounts);
             }
         }
 

@@ -16,8 +16,8 @@ public class FourthFirstOrderTutorial : Tutorial
     private void Start()
     {
         _messageBus = DiContainer.Get<IMessageBus>();
-        _messageBus.AddListener<OrderAvailableToServeMessage>(OnOrderAvailableToServeMessageHandler);
-        _messageBus.AddListener<OrderCompletedMessage>(OnOrderCompletedMessageHandler);
+       _messageBus.AddListener<OrderAvailableToServeMessage>(OnOrderAvailableToServeMessageHandler);
+       _messageBus.AddListener<OrderCompletedMessage>(OnOrderCompletedMessageHandler);
     }
 
     private void OnOrderAvailableToServeMessageHandler(OrderAvailableToServeMessage message)
@@ -27,6 +27,9 @@ public class FourthFirstOrderTutorial : Tutorial
     
     private void StartTutorial(OrderAvailableToServeMessage message)
     {
+        EnableTutorialHandMessage disableTutorialHandMessage = new EnableTutorialHandMessage(){Enabled = false} ;
+        _messageBus.Fire(disableTutorialHandMessage);
+        
         _orderReadyId = message.AvailableToServeOrder.OrderDefinition.OrderId;
         _mainCanvasRaycaster.enabled = false;
         ShowTutorial();
@@ -42,8 +45,9 @@ public class FourthFirstOrderTutorial : Tutorial
     {
         if (message.CompletedOrder.OrderDefinition.OrderId == _orderReadyId)
         {
-            Debug.Log("Order completed");
             _mainCanvasRaycaster.enabled = true;
+            _handTween?.Kill();
+            _handTween = null;
             HideTutorial(FinishTutorial);
         }
     }

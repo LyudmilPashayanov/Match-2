@@ -45,7 +45,8 @@ namespace MergeIt.Game.Managers
         private Tween _handTween;
         private const float HAND_ANIMATION_DURATION = 1f;
         private bool Available => _active && !_animationInProcess;
-        private bool _fieldFull = false;
+        private bool _fieldFull = false; 
+        private bool _orderAvailable = false; 
 
         public void Initialize()
         {
@@ -56,7 +57,7 @@ namespace MergeIt.Game.Managers
             _messageBus.AddListener<FieldFullMessage>(FieldFullMessageHandler);
             _messageBus.AddListener<MergeElementsMessage>(MergeElementsMessageHandler);
             _messageBus.AddListener<ElementActionMessage>(ElementSoldMessageHandler);
-
+            //_messageBus.AddListener<OrderCompletedMessage>(ElementSoldMessageHandler);
         }
 
         private void ElementSoldMessageHandler(ElementActionMessage obj)
@@ -85,6 +86,7 @@ namespace MergeIt.Game.Managers
             _messageBus.RemoveListener<EnableTutorialHandMessage>(HandTutorialEnableMessageHandler);
             _messageBus.RemoveListener<FieldFullMessage>(FieldFullMessageHandler);
             _messageBus.RemoveListener<MergeElementsMessage>(MergeElementsMessageHandler);
+            _messageBus.RemoveListener<ElementActionMessage>(ElementSoldMessageHandler);
             _messageBus.RemoveListener<ElementActionMessage>(ElementSoldMessageHandler);
         }
         
