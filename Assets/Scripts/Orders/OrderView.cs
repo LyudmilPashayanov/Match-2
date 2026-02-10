@@ -108,6 +108,10 @@ namespace MergeIt.Game
 
         private void MarkIncompleted()
         {
+            if (_handTween is { active: true })
+            {
+                DisableHelpHand();
+            }
             _backgroundInProgress.gameObject.SetActive(true);
             _backgroundCompleted.gameObject.SetActive(false);
             _completedText.text = "Collect:";

@@ -182,7 +182,7 @@ namespace MergeIt.Game.Managers
             _generatorCandidate = null;
             
             _animationInProcess = false;
-            //StopHandLoop();
+            StopHandLoop();
         }
 
         private void FindCandidates()
