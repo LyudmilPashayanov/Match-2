@@ -1,0 +1,26 @@
+Tutorials order:
+
+DONE 1. MERGE: Merge 2 items to make an upgraded item.
+DONE 2. UNCOVER ITEMS: Uncover burried item by merging it.
+DONE 3. CLICK GENERATOR: Show the opened/free area and click on the generator until the board is full.
+DONE 4. FIRST ORDER: We finished creating the first fruit, lets Serve it to the customer.
+DONE 5. Always hint with a HAND cursor -> show hand cursor when order is finished.
+
+---------
+
+
+automate below: 
+	* SHOW how to level up your account *
+   	
+	???? HOW TO CLICK ON THE STARS AND GET EXPERIENCE
+   	???? HOW TO CLICK ON THE TOP LEFT WHEN YOU ARE FULL EXPERIENCE
+  	???? 
+
+6. SHOW HOW TO SPAWN REWARDED ITEMS: Spawn one more shopping bag.
+7. MERGE GENERATORS: Merge shopping bag. UPGRADED SHOPPING BAG -> FOR BETTER AND DIFFERENT ITEMS
+
+links: 
+
+gameplay gossip harbor: https://www.youtube.com/watch?v=wVVIYVCenxw
+
+sheet: https://docs.google.com/spreadsheets/d/1dY9CzrfMd9-OFYo4SPx5835M6sRSxkWBSn1x8ZpwTr8/edit?gid=1222201428#gid=1222201428
