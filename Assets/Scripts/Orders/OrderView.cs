@@ -2,7 +2,16 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using MergeIt.Core.Configs.Elements;
+using MergeIt.Core.Configs.Types;
+using MergeIt.Core.Helpers;
 using MergeIt.Core.Messages;
+using MergeIt.Core.Saves;
+using MergeIt.Core.Services;
+using MergeIt.Game.Effects.Controllers;
+using MergeIt.Game.Effects.Parameters;
+using MergeIt.Game.Enums;
+using MergeIt.Game.Services;
+using MergeIt.SimpleDI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,16 +31,20 @@ namespace MergeIt.Game
         [SerializeField] private TextMeshProUGUI _completedText;
         [SerializeField] private Button _orderCompleteButton;
         [SerializeField] private Image _orderCompleteButtonImage;
+        [SerializeField] private List<RectTransform> _experienceStars;
         
         List<OrderItemView> _orderItems = new List<OrderItemView>();
 
         private OrderDefinition _orderDefinition;
         public OrderDefinition OrderDefinition => _orderDefinition;
-        
+
+        private RectTransform _userExperienceHud;
         private Action<OrderView> _onOrderCompleted;
         private IMessageBus _messageBus;   
         private Tween _handTween;
-
+        
+        private UserServiceModel _userServiceModel;
+        private IGameSaveService _saveService;
         public bool IsCompleted { get; private set; }
         
         public void Init(Action<OrderView> OnOrderCompleted)
@@ -39,6 +52,8 @@ namespace MergeIt.Game
             MarkIncompleted();
             _onOrderCompleted = OnOrderCompleted;
             _orderCompleteButton.onClick.AddListener(CompleteOrder);
+            _userServiceModel = DiContainer.Get<UserServiceModel>();
+            _saveService = DiContainer.Get<IGameSaveService>();
         }
 
         private void CompleteOrder()
@@ -48,11 +63,13 @@ namespace MergeIt.Game
             _onOrderCompleted?.Invoke(this);
         }
         
-        public void Setup(OrderDefinition orderDefinition, IMessageBus messageBus)
+        public void Setup(OrderDefinition orderDefinition, RectTransform userExperienceHud, IMessageBus messageBus)
         {
             _messageBus =  messageBus;
             
             _orderDefinition = orderDefinition;
+            
+            _userExperienceHud = userExperienceHud;
             
             foreach (var item in orderDefinition.RequiredItems)
             {
@@ -62,7 +79,27 @@ namespace MergeIt.Game
                 newItem.Setup(item.Type, item.Amount);
             }
         }
-
+        
+        public void AnimateGrantExperience(Action onFinishedAnimation)
+        {
+            foreach (var star in _experienceStars)
+            {
+                star.localScale = Vector3.zero;
+                star.gameObject.SetActive(true);
+                Sequence sequence = DOTween.Sequence();
+                sequence.Append(star.DOScale(1, 1f));
+                sequence.Append(star.DOMove(_userExperienceHud.position, 1f));
+                sequence.Insert(1,star.DOScale(Vector3.zero, 1f));
+                sequence.OnComplete(() =>
+                {
+                    _userServiceModel.Experience.ApplyOperation(ConsumableOperationType.Add, _orderDefinition.experienceReward, false);
+                    _saveService.Save(GameSaveType.User);
+                    onFinishedAnimation?.Invoke();
+                });
+            }
+           
+        }
+        
         public void UpdateState(Dictionary<ElementConfig, int> TypeAmounts)
         {
             foreach (var item in _orderItems)

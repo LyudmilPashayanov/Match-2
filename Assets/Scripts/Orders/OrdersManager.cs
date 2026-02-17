@@ -23,6 +23,8 @@ namespace MergeIt.Game.Field
         private const int OFFSET = 20;
 
         [SerializeField] private RectTransform _scrollViewContent;
+        [SerializeField] private RectTransform _userExperienceHud;
+        
         [SerializeField] private OrderView _orderPrefab;
         
         [SerializeField] private OrderList _orderList;
@@ -38,6 +40,8 @@ namespace MergeIt.Game.Field
         private List<int> _completedOrders;
         private Dictionary<ElementConfig, int> _typeAmounts = new Dictionary<ElementConfig, int>();
         private IGameFieldService _fieldService;
+        
+     
 
         private void Start()
         { 
@@ -47,6 +51,7 @@ namespace MergeIt.Game.Field
             _fieldElementVisualFactory = DiContainer.Get<IFieldElementVisualFactory>();
             _fieldService = DiContainer.Get<IGameFieldService>();
 
+            
             _messageBus = DiContainer.Get<IMessageBus>();
 
             _messageBus.AddListener<MergeElementsMessage>(OnItemMerged);
@@ -103,7 +108,7 @@ namespace MergeIt.Game.Field
             OrderView newOrder = Instantiate(_orderPrefab, _scrollViewContent);
 
             newOrder.Init(OnOrderCompleted);
-            newOrder.Setup(orderDefinition, _messageBus);
+            newOrder.Setup(orderDefinition, _userExperienceHud, _messageBus);
 
             _spawnedOrders.Add(newOrder);
 
@@ -116,7 +121,6 @@ namespace MergeIt.Game.Field
         {
             // Remove from the orders view
             _spawnedOrders.Remove(order);
-            Destroy(order.gameObject);
             // Remove items from the field
             RemoveItemsFromFields(order.OrderDefinition);
             //Spawn experience on the board.
@@ -125,17 +129,21 @@ namespace MergeIt.Game.Field
             _messageBus.Fire(orderCompleted);
           
             
-            GenerateRewardOnField(order);
+            order.AnimateGrantExperience(OnAnimationFinished);
 
-            // save that it was completed
-            _completedOrders.Add(order.OrderDefinition.OrderId);
-            //save in player prefs
-            SaveCompletedOrders();
-            // add new order
-            InitializeOrders();
-            UpdateFieldData();
-            UpdateOrdersView();
-            UpdateScrollViewContent();
+            void OnAnimationFinished()
+            {
+                Destroy(order.gameObject);
+                // save that it was completed
+                _completedOrders.Add(order.OrderDefinition.OrderId);
+                //save in player prefs
+                SaveCompletedOrders();
+                // add new order 
+                InitializeOrders();
+                UpdateFieldData();
+                UpdateOrdersView();
+                UpdateScrollViewContent();
+            }
         }
 
         private void SendOrdersAvailable(int amount)
