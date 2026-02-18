@@ -18,6 +18,7 @@ public class ThirdTutorialGenerator : Tutorial
     private int _generates = 0;
     private FieldLogicModel _fieldLogicModel;
     private const int generatesToFinish = 3;
+    private bool _tutorialStarted = false;
     
     private void Start()
     {
@@ -45,7 +46,11 @@ public class ThirdTutorialGenerator : Tutorial
     }
     
     private void OnMergeElementMessageHandler(MergeElementsMessage message)
-    {
+    { 
+        if (_tutorialStarted)
+        {
+            EndTutorial();
+        }
         if (message.NewElement.InfoParameters.Type == ElementType.Generator)
         {
             StartTutorial();
@@ -57,7 +62,7 @@ public class ThirdTutorialGenerator : Tutorial
         ShowTutorial();
         
         DisableHints();
-            
+        _tutorialStarted = true;
         _hand.localPosition = _handPos_1.localPosition;
         _hand.gameObject.SetActive(true);
         _handTween = _hand.DOScale(1.2f, 1f);
@@ -71,10 +76,16 @@ public class ThirdTutorialGenerator : Tutorial
 
         if (_generates == generatesToFinish)
         {
-            _handTween.Kill();
-            _handTween = null;
-            HideTutorial(FinishTutorial);   
+            EndTutorial();
         }
+    }
+
+    private void EndTutorial()
+    {
+        _handTween.Kill();
+        _handTween = null;
+        _tutorialStarted = false;
+        HideTutorial(FinishTutorial);   
     }
     
     private void DisableHints()
