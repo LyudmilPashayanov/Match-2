@@ -47,24 +47,8 @@ namespace MergeIt.Game.Windows.UserProgress
 
         public void EnableLevelUpButton(bool enable)
         {
-            if (SceneManager.GetActiveScene().name != "Menu")
-            {
-                _levelUpButton.interactable = enable;
-            }
-            else
-            {
-                _levelUpButton.interactable = false;
-                
-                if (enable)
-                {
-                    _levelUpButtonText.text = "Go to Game mode to upgrade";
-                }
-                else
-                {
-                    _levelUpButtonText.text = "Get exp to level up";
-                }
-               
-            }
+            _levelUpButton.interactable = false;
+            _levelUpButtonText.text = "Complete orders to level up!";
         }
 
         public void UpdateProgress(int level, int currentExp, int nextExp)

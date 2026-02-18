@@ -9,5 +9,5 @@ public class OrderDefinition : ScriptableObject
     public int OrderId;
     public List<Order> RequiredItems;
     public ElementConfig reward;
-    public int experienceReward = 15;
+    public int experienceReward = 30;
 }

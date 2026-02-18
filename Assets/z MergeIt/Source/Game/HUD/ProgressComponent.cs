@@ -82,6 +82,7 @@ namespace MergeIt.Game.HUD
         private void OnLevelChanged(int value)
         {
             _levelValue.text = $"{value}";
+            _animate = false;
         }
 
         private void OnExperienceChanged(int prev, int current)

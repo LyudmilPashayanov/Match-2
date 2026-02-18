@@ -10,6 +10,7 @@ using MergeIt.Core.Services;
 using MergeIt.Game.Effects.Controllers;
 using MergeIt.Game.Effects.Parameters;
 using MergeIt.Game.Enums;
+using MergeIt.Game.Messages;
 using MergeIt.Game.Services;
 using MergeIt.SimpleDI;
 using TMPro;
@@ -82,22 +83,30 @@ namespace MergeIt.Game
         
         public void AnimateGrantExperience(Action onFinishedAnimation)
         {
-            foreach (var star in _experienceStars)
+            _userServiceModel.Experience.ApplyOperation(ConsumableOperationType.Add,
+                _orderDefinition.experienceReward, false);
+            _saveService.Save(GameSaveType.User);
+            _messageBus.Fire(new ExperienceGainedMessage());
+            
+            for (int i = 0; i < _experienceStars.Count; i++)
             {
-                star.localScale = Vector3.zero;
-                star.gameObject.SetActive(true);
+                bool isLast = i == _experienceStars.Count - 1;
+                
+                _experienceStars[i].localScale = Vector3.zero;
+                _experienceStars[i].gameObject.SetActive(true);
                 Sequence sequence = DOTween.Sequence();
-                sequence.Append(star.DOScale(1, 1f));
-                sequence.Append(star.DOMove(_userExperienceHud.position, 1f));
-                sequence.Insert(1,star.DOScale(Vector3.zero, 1f));
+                sequence.Append(_experienceStars[i].DOScale(1, 0.5f));
+                sequence.Append(_experienceStars[i].DOMove(_userExperienceHud.position, 0.5f));
+                sequence.Insert(1,_experienceStars[i].DOScale(Vector3.zero, 0.5f));
+                
                 sequence.OnComplete(() =>
                 {
-                    _userServiceModel.Experience.ApplyOperation(ConsumableOperationType.Add, _orderDefinition.experienceReward, false);
-                    _saveService.Save(GameSaveType.User);
-                    onFinishedAnimation?.Invoke();
+                    if (isLast)
+                    {
+                        onFinishedAnimation?.Invoke();
+                    }
                 });
             }
-           
         }
         
         public void UpdateState(Dictionary<ElementConfig, int> TypeAmounts)

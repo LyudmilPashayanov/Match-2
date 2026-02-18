@@ -30,6 +30,15 @@ namespace MergeIt.Game.Services
         public void Initialize()
         {
             _messageBus.AddListener<LevelUpMessage>(OnLevelUpMessageHandler);
+            _messageBus.AddListener<ExperienceGainedMessage>(OnExperienceGainedMessageHandler);
+        }
+
+        private void OnExperienceGainedMessageHandler(ExperienceGainedMessage obj)
+        {
+            if (CanLevelUp())
+            {
+                _messageBus.Fire(new LevelUpMessage());
+            }
         }
 
         public int GetCurrentLevelMaxExp()
