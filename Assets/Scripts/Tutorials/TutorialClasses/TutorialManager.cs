@@ -12,12 +12,12 @@ public class TutorialManager : MonoBehaviour
 
    private List<string> _tutorialKeys = new List<string>() 
       { 
-         "firstMergeTutorial", 
-         "uncoverFieldTutorial",
-         "ClickGeneratorTutorial",
-         "FirstOrderCompletedTutorial",/*
-         "ShowLevelUpTutorial",
-         "ShowRewardedItemsTutorial",*/
+         "firstMergeTutorial", // 0 
+         "uncoverFieldTutorial", // 1
+         "ClickGeneratorTutorial", // 2 
+         "FirstOrderCompletedTutorial", // 3
+         "LevelUpRewardsTutorials", // 4
+          //5
       };
    
    private IMessageBus _messageBus;
@@ -53,7 +53,7 @@ public class TutorialManager : MonoBehaviour
       message.TutorialFinished.gameObject.SetActive(false);
       PlayerPrefs.SetInt(message.TutorialFinished.TutorialName, 1);
 
-      if (message.TutorialFinished.TutorialName == _tutorialKeys[2] || message.TutorialFinished.TutorialName == _tutorialKeys[3])
+      if (message.TutorialFinished.TutorialName == _tutorialKeys[2] || message.TutorialFinished.TutorialName == _tutorialKeys[3] ||  message.TutorialFinished.TutorialName == _tutorialKeys[4])
       {
          EnableHandHints();
       }

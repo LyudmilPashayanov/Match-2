@@ -1,5 +1,6 @@
 // Copyright (c) 2024, Awessets
 
+using DG.Tweening;
 using MergeIt.Core.Configs.Elements;
 using MergeIt.Core.ElementsStock;
 using MergeIt.Core.FieldElements;
@@ -19,6 +20,10 @@ namespace MergeIt.Game.ElementsStock
         
         [SerializeField]
         private Transform _elementContainer;
+       
+        [SerializeField] private RectTransform _hand;
+        [SerializeField] private Material _handMaterial;
+        private Tween _handTween;
 
         private IMessageBus _messageBus;
         private IGameFieldService _fieldService;
@@ -26,7 +31,8 @@ namespace MergeIt.Game.ElementsStock
 
         private ElementConfig _currentElement;
         private GameObject _iconPrefab;
-
+        private Sequence _handLoopSequence;
+        
         public void Initialize()
         {
             _elementButton.onClick.AddListener(OnElementClick);
@@ -36,10 +42,11 @@ namespace MergeIt.Game.ElementsStock
             _stockService = DiContainer.Get<IElementsStockService>();
             
             _messageBus.AddListener<UpdateStockMessage>(UpdateStockMessageHandler);
-            
+
+            _handMaterial.color = new Color(0,0,0,0);
             SetupElement(_stockService.GetNext());
         }
-
+        
         public void OnDestroy()
         {
             _elementButton.onClick.RemoveListener(OnElementClick);
@@ -52,15 +59,32 @@ namespace MergeIt.Game.ElementsStock
             {
                 gameObject.SetActive(true);
                 _currentElement = elementConfig;
-
                 UpdateView();
+                StartHandLoop();
             }
             else
             {
                 Hide();
+                StopHandLoop();
             }
         }
 
+        private void StartHandLoop()
+        {
+            _handLoopSequence = DOTween.Sequence();
+            _handLoopSequence.Append(_handMaterial.DOFade(1,0.4f));
+            _handLoopSequence.Append(_hand.DOScale(1.2f, 1f).SetLoops(3, LoopType.Yoyo).SetEase(Ease.InSine));
+            _handLoopSequence.Append(_handMaterial.DOFade(0, 0.4f));
+            _handLoopSequence.AppendInterval(5f);
+            _handLoopSequence.SetLoops(-1);
+        }
+
+        private void StopHandLoop()
+        {
+            _handLoopSequence?.Kill();
+            _handLoopSequence = null;
+        }
+        
         public void PopElement()
         {
             if (_currentElement != null)
