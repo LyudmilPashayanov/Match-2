@@ -38,6 +38,7 @@ namespace MergeIt.Game.HUD
         private IElementsStockService _elementsStockService;
         private IElementInfoFactory _elementInfoFactory;
         private IEffectsFactory _effectsFactory;
+        private ElementConfig[] _prizes;
 
         private void Start()
         {
@@ -77,6 +78,8 @@ namespace MergeIt.Game.HUD
             _energyComponent.ApplyModel(_userServiceModel);
             _softCurrencyComponent.ApplyModel(_userServiceModel);
             _hardCurrencyComponent.ApplyModel(_userServiceModel);
+            
+            _prizes = _userProgressService.GetLevelUpPrizes();
         }
         
         private void OnMenuStartedMessage(MenuStartedMessage message)
@@ -96,23 +99,22 @@ namespace MergeIt.Game.HUD
             _energyComponent.ApplyModel(_userServiceModel);
             _softCurrencyComponent.ApplyModel(_userServiceModel);
             _hardCurrencyComponent.ApplyModel(_userServiceModel);
+            _prizes = _userProgressService.GetLevelUpPrizes();
         }
 
+        
         private void OnLevelUpdatedMessageHandler(LevelUpdatedMessage message)
         {
             _progressComponent.SetMaxProgress(message.NextLevelExp);
             _progressComponent.UpdateProgress();
             
-            //////
-            
-            var prizes = _userProgressService.GetLevelUpPrizes();
-            int effectsCount = prizes.Length;
+            int effectsCount = _prizes.Length;
 
-            if (prizes is {Length: > 0})
+            if (_prizes is {Length: > 0})
             {
-                for (int i = 0; i < prizes.Length; i++)
+                for (int i = 0; i < _prizes.Length; i++)
                 {
-                    ElementConfig prize = prizes[i];
+                    ElementConfig prize = _prizes[i];
                     ElementInfoItemComponent prizeIcon = _elementInfoFactory.CreateElementWindowItem(prize, ElementInfoType.UserProgressWindow);
 
                     if (prizeIcon != null)
@@ -141,6 +143,7 @@ namespace MergeIt.Game.HUD
                     if (effectsCount == 0)
                     {
                         _messageBus.Fire<UpdateStockMessage>();
+                        _prizes = _userProgressService.GetLevelUpPrizes();
                     }
                 }
             }

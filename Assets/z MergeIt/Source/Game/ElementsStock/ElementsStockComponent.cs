@@ -9,6 +9,7 @@ using MergeIt.Core.Services;
 using MergeIt.Game.Messages;
 using MergeIt.SimpleDI;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 namespace MergeIt.Game.ElementsStock
@@ -22,7 +23,7 @@ namespace MergeIt.Game.ElementsStock
         private Transform _elementContainer;
        
         [SerializeField] private RectTransform _hand;
-        [SerializeField] private Material _handMaterial;
+        [SerializeField] private Image _handImage;
         private Tween _handTween;
 
         private IMessageBus _messageBus;
@@ -43,7 +44,6 @@ namespace MergeIt.Game.ElementsStock
             
             _messageBus.AddListener<UpdateStockMessage>(UpdateStockMessageHandler);
 
-            _handMaterial.color = new Color(0,0,0,0);
             SetupElement(_stockService.GetNext());
         }
         
@@ -61,6 +61,7 @@ namespace MergeIt.Game.ElementsStock
                 _currentElement = elementConfig;
                 UpdateView();
                 StartHandLoop();
+                _messageBus.Fire(new StockNotEmptyMessage());
             }
             else
             {
@@ -70,12 +71,13 @@ namespace MergeIt.Game.ElementsStock
         }
 
         private void StartHandLoop()
-        {
+        {         
+            _hand.localScale = Vector3.one;
             _handLoopSequence = DOTween.Sequence();
-            _handLoopSequence.Append(_handMaterial.DOFade(1,0.4f));
-            _handLoopSequence.Append(_hand.DOScale(1.2f, 1f).SetLoops(3, LoopType.Yoyo).SetEase(Ease.InSine));
-            _handLoopSequence.Append(_handMaterial.DOFade(0, 0.4f));
-            _handLoopSequence.AppendInterval(5f);
+            _handLoopSequence.Append(_handImage.DOFade(1,0.4f));
+            _handLoopSequence.Append(_hand.DOScale(1.2f, 1f).SetLoops(7, LoopType.Yoyo).SetEase(Ease.InSine));
+            _handLoopSequence.Append(_handImage.DOFade(0, 0.4f));
+            _handLoopSequence.AppendInterval(2f);
             _handLoopSequence.SetLoops(-1);
         }
 
@@ -83,6 +85,7 @@ namespace MergeIt.Game.ElementsStock
         {
             _handLoopSequence?.Kill();
             _handLoopSequence = null;
+            _handImage.DOFade(0, 0.1f);
         }
         
         public void PopElement()

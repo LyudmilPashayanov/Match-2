@@ -16,7 +16,6 @@ MonoBehaviour:
   - Experience: 50
     Bonuses:
     - {fileID: 11400000, guid: 09c5d4af4627476439f5f1f849acf138, type: 2}
-    - {fileID: 11400000, guid: 567c199ff980546ca9c5dc15ccc466c0, type: 2}
   - Experience: 60
     Bonuses:
     - {fileID: 11400000, guid: 6dc5b4f6e1e14fb40b45b013479447c7, type: 2}

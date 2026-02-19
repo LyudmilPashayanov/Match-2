@@ -18,8 +18,8 @@ public class TutorialOverlayController : MonoBehaviour
     [SerializeField] private CanvasGroup canvasGroup;       
 
     [Header("Optional Settings")]
-    private Material _material;
-    private Color savedColor;
+    [SerializeField] private Material _material;
+    private Color savedColor = new Color();
     
     private void Awake()
     {
@@ -44,6 +44,8 @@ public class TutorialOverlayController : MonoBehaviour
 
     public void AnimateIn()
     {
+        if (!_material || !canvasGroup) return;
+
         gameObject.SetActive(true);
         canvasGroup.DOFade(1, SHOW_TUTORIAL_ANIMATION_DURATION);
         _material.DOColor(savedColor, SHOW_TUTORIAL_ANIMATION_DURATION);
@@ -51,8 +53,10 @@ public class TutorialOverlayController : MonoBehaviour
 
     public void AnimateOut(Action onComplete = null)
     {
+        if (!_material || !canvasGroup) return;
+        
         canvasGroup.DOFade(0, HIDE_TUTORIAL_ANIMATION_DURATION);
-        _material.DOColor(new Color(0, 0, 0, 0), HIDE_TUTORIAL_ANIMATION_DURATION).OnComplete(()=>
+        _material.DOColor(new Color(0, 0, 0, 0), HIDE_TUTORIAL_ANIMATION_DURATION).OnComplete(() =>
         {
             onComplete?.Invoke();
             gameObject.SetActive(false);

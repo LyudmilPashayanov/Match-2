@@ -10,16 +10,23 @@ public class FifthTutorialFirstLevelReward : Tutorial
     
     private IMessageBus _messageBus;
     private Tween _handTween;
-    private int _orderReadyId;
-    
+
+
+    private bool _tutorialStarted = false; 
     
     private void Start()
     {
         _messageBus = DiContainer.Get<IMessageBus>();
        _messageBus.AddListener<UpdateStockMessage>(OnStockUpdatedMessageHandler);
+       _messageBus.AddListener<StockNotEmptyMessage>(OnStockNotEmptyMessageHandler);
        _messageBus.AddListener<CreateElementMessage>(OnStockItemClickedMessageHandler);
     }
-    
+
+    private void OnStockNotEmptyMessageHandler(StockNotEmptyMessage obj)
+    {
+        StartTutorial();
+    }
+
     private void OnStockUpdatedMessageHandler(UpdateStockMessage obj)
     {
         StartTutorial();
@@ -27,6 +34,8 @@ public class FifthTutorialFirstLevelReward : Tutorial
     
     private void StartTutorial()
     {
+        _tutorialStarted = true;
+        
         DisableHints();
         
         _mainCanvasRaycaster.enabled = false;
@@ -38,8 +47,12 @@ public class FifthTutorialFirstLevelReward : Tutorial
     
     private void OnStockItemClickedMessageHandler(CreateElementMessage obj)
     {
-        _mainCanvasRaycaster.enabled = true;
-        HideTutorial(FinishTutorial);
+        if (_tutorialStarted)
+        {
+            _mainCanvasRaycaster.enabled = true;
+            _tutorialStarted = false;
+            HideTutorial(FinishTutorial);
+        }
     }
     
     private void DisableHints()
@@ -57,6 +70,7 @@ public class FifthTutorialFirstLevelReward : Tutorial
     private void OnDisable()
     {
         _messageBus.RemoveListener<UpdateStockMessage>(OnStockUpdatedMessageHandler);
+        _messageBus.RemoveListener<StockNotEmptyMessage>(OnStockNotEmptyMessageHandler);
         _messageBus.RemoveListener<CreateElementMessage>(OnStockItemClickedMessageHandler);
     }
 }
