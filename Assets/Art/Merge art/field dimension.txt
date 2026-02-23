@@ -1,0 +1,3 @@
+>>> FIELD BACKGROUND:
+WIDHT: dynamic- stretches its width based on the width of the device screen.
+HEIGHT: 1230
