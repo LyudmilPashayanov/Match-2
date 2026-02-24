@@ -24,7 +24,7 @@ public class ThirdTutorialGenerator : Tutorial
     {
         _messageBus = DiContainer.Get<IMessageBus>();
         _messageBus.AddListener<MergeElementsMessage>(OnMergeElementMessageHandler);
-        _messageBus.AddListener<CreateElementMessage>(OnFieldFullMessageHandler);
+        _messageBus.AddListener<CreateElementMessage>(OnItemGeneratedMessageHandler);
         _messageBus.AddListener<LoadedGameMessage>(OnLoadedGameMessageHandler);
     }
     
@@ -70,7 +70,7 @@ public class ThirdTutorialGenerator : Tutorial
         _handTween.SetLoops(-1, LoopType.Yoyo);
     }
     
-    private void OnFieldFullMessageHandler(CreateElementMessage message)
+    private void OnItemGeneratedMessageHandler(CreateElementMessage message)
     {
         _generates++;
 
@@ -103,7 +103,7 @@ public class ThirdTutorialGenerator : Tutorial
     private void OnDisable()
     {
         _messageBus.RemoveListener<MergeElementsMessage>(OnMergeElementMessageHandler);
-        _messageBus.RemoveListener<CreateElementMessage>(OnFieldFullMessageHandler);
+        _messageBus.RemoveListener<CreateElementMessage>(OnItemGeneratedMessageHandler);
         _messageBus.RemoveListener<LoadedGameMessage>(OnLoadedGameMessageHandler);
     }
 }

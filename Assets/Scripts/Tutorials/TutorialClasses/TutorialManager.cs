@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using MergeIt.Core.Messages;
 using MergeIt.SimpleDI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class TutorialManager : MonoBehaviour
    
    [SerializeField] private List<Tutorial> _tutorialsToSpawn; // Tutorials have to be in correct order from first to last!!!
    [SerializeField] private RectTransform _tutorialHand;
+   [SerializeField] private Image _tutorialHandImage;
 
    private List<string> _tutorialKeys = new List<string>() 
       { 
@@ -17,7 +19,7 @@ public class TutorialManager : MonoBehaviour
          "ClickGeneratorTutorial", // 2 
          "FirstOrderCompletedTutorial", // 3
          "LevelUpRewardsTutorials", // 4
-          //5
+         "MergeGeneratorsTutorial" //5
       };
    
    private IMessageBus _messageBus;
@@ -53,7 +55,10 @@ public class TutorialManager : MonoBehaviour
       message.TutorialFinished.gameObject.SetActive(false);
       PlayerPrefs.SetInt(message.TutorialFinished.TutorialName, 1);
 
-      if (message.TutorialFinished.TutorialName == _tutorialKeys[2] || message.TutorialFinished.TutorialName == _tutorialKeys[3] ||  message.TutorialFinished.TutorialName == _tutorialKeys[4])
+      if (message.TutorialFinished.TutorialName == _tutorialKeys[2] || 
+          message.TutorialFinished.TutorialName == _tutorialKeys[3] || 
+          message.TutorialFinished.TutorialName == _tutorialKeys[4] || 
+          message.TutorialFinished.TutorialName == _tutorialKeys[5])
       {
          EnableHandHints();
       }
@@ -61,13 +66,13 @@ public class TutorialManager : MonoBehaviour
 
    private void EnableHandHints()
    {
-      EnableTutorialHandMessage tutorialHandMessage = new EnableTutorialHandMessage { Enabled = true, TutorialHand = _tutorialHand};
+      EnableTutorialHandMessage tutorialHandMessage = new EnableTutorialHandMessage { Enabled = true, TutorialHand = _tutorialHand, TutorialHandImage = _tutorialHandImage};
       _messageBus.Fire(tutorialHandMessage);
    }
    
    private void DisableHandHints()
    {
-      EnableTutorialHandMessage tutorialHandMessage = new EnableTutorialHandMessage { Enabled = false, TutorialHand = _tutorialHand};
+      EnableTutorialHandMessage tutorialHandMessage = new EnableTutorialHandMessage { Enabled = false, TutorialHand = _tutorialHand, TutorialHandImage = _tutorialHandImage};
       _messageBus.Fire(tutorialHandMessage);
    }
    

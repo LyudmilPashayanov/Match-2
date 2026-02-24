@@ -10,13 +10,13 @@ using MergeIt.Core.Helpers;
 using MergeIt.Core.Messages;
 using MergeIt.Core.Services;
 using MergeIt.Game.Field;
-using MergeIt.Game.Field.Elements;
 using MergeIt.Game.Helpers;
 using MergeIt.Game.Messages;
 using MergeIt.Game.UI.InfoPanel;
 using MergeIt.SimpleDI;
 using MergeIt.SimpleDI.ReservedInterfaces;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace MergeIt.Game.Managers
 {
@@ -29,6 +29,7 @@ namespace MergeIt.Game.Managers
         [Introduce] private IConfigsService _configsService;
         
         private RectTransform _tutorialHand;
+        private Image _tutorialHandImage;
         private bool _useHand;
         
         private float _time;
@@ -42,7 +43,7 @@ namespace MergeIt.Game.Managers
         private IList<int> _randomWidth;
         private Dictionary<ElementConfig, List<IFieldElement>> _sameElements = new();
         
-        private Tween _handTween;
+        private Sequence _handTweenSeq;
         private const float HAND_ANIMATION_DURATION = 1f;
         private bool Available => _active && !_animationInProcess;
         private bool _fieldFull = false; 
@@ -105,6 +106,7 @@ namespace MergeIt.Game.Managers
                 if (!_tutorialHand)
                 {
                     _tutorialHand = message.TutorialHand;
+                    _tutorialHandImage = message.TutorialHandImage;
                 }
             }
             else
@@ -292,23 +294,28 @@ namespace MergeIt.Game.Managers
         {
             _tutorialHand.gameObject.SetActive(true);
             _tutorialHand.position = generatorCandidate.position;
-            _handTween = _tutorialHand.DOScale(1.2f, 0.4f);
-            _handTween.SetLoops(4, LoopType.Yoyo).OnComplete(StopHandLoop);
+            _handTweenSeq = DOTween.Sequence();
+            _handTweenSeq.Append(_tutorialHandImage.DOFade(1, 0.2f));
+            _handTweenSeq.Append(_tutorialHand.DOScale(1.2f, 0.4f).SetLoops(4, LoopType.Yoyo));
+            _handTweenSeq.Append(_tutorialHandImage.DOFade(0, 0.2f).OnComplete(StopHandLoop));
         }
 
         private void StartHandLoop(RectTransform cand1, RectTransform cand2)
         {
             _tutorialHand.gameObject.SetActive(true);
             _tutorialHand.position = cand1.position;
-            _handTween = _tutorialHand.DOMove(cand2.position, HAND_ANIMATION_DURATION).OnComplete(StopHandLoop);
+            _handTweenSeq = DOTween.Sequence();
+            _handTweenSeq.Append(_tutorialHandImage.DOFade(1, 0.2f));
+            _handTweenSeq.Append(_tutorialHand.DOMove(cand2.position, HAND_ANIMATION_DURATION));
+            _handTweenSeq.Append(_tutorialHandImage.DOFade(0, 0.2f).OnComplete(StopHandLoop));
             //_handTween.SetLoops(1, LoopType.Restart).OnComplete(StopHandLoop);
         }
 
         private void StopHandLoop()
         {
+            _handTweenSeq?.Kill();
+            _handTweenSeq = null;
             _tutorialHand.gameObject.SetActive(false);
-            _handTween?.Kill();
-            _handTween = null;
         }
     }
 }

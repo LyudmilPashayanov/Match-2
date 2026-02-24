@@ -117,7 +117,64 @@ public class TutorialOverlayController : MonoBehaviour
         _material.SetVector("_FocusSize", new Vector4(uvSize.x, uvSize.y, 0, 0));
     }
 
+    public void FocusOn(RectTransform targetA, RectTransform targetB, Vector2 padding)
+    {
+        Camera cam = canvas.renderMode == RenderMode.ScreenSpaceOverlay
+            ? null
+            : canvas.worldCamera;
 
+        Vector3[] cornersA = new Vector3[4];
+        Vector3[] cornersB = new Vector3[4];
+
+        targetA.GetWorldCorners(cornersA);
+        targetB.GetWorldCorners(cornersB);
+
+        // Convert all corners to screen space
+        Vector2 min = Vector2.positiveInfinity;
+        Vector2 max = Vector2.negativeInfinity;
+
+        void Encapsulate(Vector3 worldCorner)
+        {
+            Vector2 screen = RectTransformUtility.WorldToScreenPoint(cam, worldCorner);
+            min = Vector2.Min(min, screen);
+            max = Vector2.Max(max, screen);
+        }
+
+        for (int i = 0; i < 4; i++)
+        {
+            Encapsulate(cornersA[i]);
+            Encapsulate(cornersB[i]);
+        }
+
+        min -= padding;
+        max += padding;
+
+        // Convert screen → local overlay space
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            overlayImage.rectTransform, min, cam, out Vector2 localMin);
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            overlayImage.rectTransform, max, cam, out Vector2 localMax);
+
+        Vector2 localCenter = (localMin + localMax) * 0.5f;
+        Vector2 localSize = localMax - localMin;
+
+        Rect overlayRect = overlayImage.rectTransform.rect;
+
+        // Normalize to UV space (0–1)
+        Vector2 uvCenter = new Vector2(
+            (localCenter.x - overlayRect.xMin) / overlayRect.width,
+            (localCenter.y - overlayRect.yMin) / overlayRect.height
+        );
+
+        Vector2 uvSize = new Vector2(
+            localSize.x / overlayRect.width,
+            localSize.y / overlayRect.height
+        );
+
+        _material.SetVector("_FocusCenter", new Vector4(uvCenter.x, uvCenter.y, 0, 0));
+        _material.SetVector("_FocusSize", new Vector4(uvSize.x, uvSize.y, 0, 0));
+    }
     /// <summary>
     /// Clear the focus (remove highlight)
     /// </summary>
