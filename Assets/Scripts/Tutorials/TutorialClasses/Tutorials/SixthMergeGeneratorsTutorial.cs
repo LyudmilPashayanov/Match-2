@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using MergeIt.Core.Configs.Types;
 using MergeIt.Core.Messages;
+using MergeIt.Game;
 using MergeIt.Game.Field;
 using MergeIt.Game.Messages;
 using MergeIt.SimpleDI;
@@ -28,12 +29,10 @@ public class SixthMergeGeneratorsTutorial : Tutorial
     private void Start()
     {
         _messageBus = DiContainer.Get<IMessageBus>();
-        _messageBus.AddListener<MergeElementsMessage>(OnMergeElementMessageHandler);
-        _messageBus.AddListener<CreateElementMessage>(OnElementCreatedMessageHandler);
         _messageBus.AddListener<LoadedGameMessage>(OnLoadedGameMessageHandler);
     }
 
-    private void OnElementCreatedMessageHandler(CreateElementMessage obj)
+    private void OnElementOnBoardMessageHandler(ElementOnBoardMessage obj)
     {
         CheckToStart();
     }
@@ -41,13 +40,15 @@ public class SixthMergeGeneratorsTutorial : Tutorial
     private void OnLoadedGameMessageHandler(LoadedGameMessage message)
     {
         _fieldLogicModel = DiContainer.Get<FieldLogicModel>();
+        _messageBus.AddListener<MergeElementsMessage>(OnMergeElementMessageHandler);
+        _messageBus.AddListener<ElementOnBoardMessage>(OnElementOnBoardMessageHandler);
         CheckToStart();
     }
     
     private void CheckToStart()
     {
         int generatorsFound = 0;
-        
+        generatorsOnBoard.Clear();
         foreach (var pair in _fieldLogicModel.FieldElements)
         {
             if (pair.Value.InfoParameters.Type == ElementType.Generator)
@@ -81,13 +82,14 @@ public class SixthMergeGeneratorsTutorial : Tutorial
         ShowTutorial();
 
         DisableHints();
-        _tutorialStarted = true;
 
         TutorialOverlay.FocusOn(generatorsOnBoard[0],generatorsOnBoard[1], Vector2.zero);
         
         Vector3 objectPos_1 = generatorsOnBoard[0].position;
         Vector3 objectPos_2 = generatorsOnBoard[1].position;
         StartHandLoop(objectPos_1, objectPos_2);
+        _tutorialStarted = true;
+
     }
 
     private void EndTutorial()
@@ -131,7 +133,7 @@ public class SixthMergeGeneratorsTutorial : Tutorial
     private void OnDisable()
     {
         _messageBus.RemoveListener<MergeElementsMessage>(OnMergeElementMessageHandler);
-        _messageBus.RemoveListener<CreateElementMessage>(OnElementCreatedMessageHandler);
+        _messageBus.RemoveListener<ElementOnBoardMessage>(OnElementOnBoardMessageHandler);
         _messageBus.RemoveListener<LoadedGameMessage>(OnLoadedGameMessageHandler);
     }
 }

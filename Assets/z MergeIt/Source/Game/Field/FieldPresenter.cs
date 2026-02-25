@@ -327,7 +327,16 @@ namespace MergeIt.Game.Field
                 transform.position = message.FromPosition.Value;
 
                 var parameters = new MoveEffectParameters(transform.position, toCell.ObjectContainer.position);
-                _effectsFactory.CreateEffect<MoveEffectWithPresenter>(fieldElementPresenter, parameters);
+                _effectsFactory.CreateEffect<MoveEffectWithPresenter>(fieldElementPresenter, parameters, () =>
+                {
+                    ElementOnBoardMessage elementOnBoardMessage = new ElementOnBoardMessage()
+                    {
+                        FromPosition = message.FromPosition,
+                        NewElement = message.NewElement,
+                        ToPoint = message.ToPoint
+                    };
+                    _messageBus.Fire(elementOnBoardMessage);
+                });
             }
         }
 

@@ -102,6 +102,7 @@ namespace MergeIt.Game.Managers
         {
             if (message.Enabled)
             {
+                Debug.Log("HandTutorialEnableMessageHandler TRUE");
                 _useHand = true;
                 if (!_tutorialHand)
                 {
@@ -111,6 +112,7 @@ namespace MergeIt.Game.Managers
             }
             else
             {
+                Debug.Log("HandTutorialEnableMessageHandler FALSE");
                 _useHand = false;
             }
         }

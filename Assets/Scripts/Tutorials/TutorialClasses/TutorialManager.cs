@@ -63,7 +63,7 @@ public class TutorialManager : MonoBehaviour
          EnableHandHints();
       }
    }
-
+   
    private void EnableHandHints()
    {
       EnableTutorialHandMessage tutorialHandMessage = new EnableTutorialHandMessage { Enabled = true, TutorialHand = _tutorialHand, TutorialHandImage = _tutorialHandImage};
