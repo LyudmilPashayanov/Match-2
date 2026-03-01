@@ -65,13 +65,14 @@ namespace MergeIt.Game.ElementsStock
             }
             else
             {
-                Hide();
                 StopHandLoop();
+                Hide();
             }
         }
 
         private void StartHandLoop()
         {         
+            _hand.gameObject.SetActive(true);
             _hand.localScale = Vector3.one;
             _handLoopSequence = DOTween.Sequence();
             _handLoopSequence.Append(_handImage.DOFade(1,0.4f));
@@ -85,7 +86,7 @@ namespace MergeIt.Game.ElementsStock
         {
             _handLoopSequence?.Kill();
             _handLoopSequence = null;
-            _handImage.DOFade(0, 0.1f);
+            _hand.gameObject.SetActive(false);
         }
         
         public void PopElement()

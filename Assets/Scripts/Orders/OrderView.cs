@@ -7,9 +7,6 @@ using MergeIt.Core.Helpers;
 using MergeIt.Core.Messages;
 using MergeIt.Core.Saves;
 using MergeIt.Core.Services;
-using MergeIt.Game.Effects.Controllers;
-using MergeIt.Game.Effects.Parameters;
-using MergeIt.Game.Enums;
 using MergeIt.Game.Messages;
 using MergeIt.Game.Services;
 using MergeIt.SimpleDI;
@@ -21,7 +18,7 @@ namespace MergeIt.Game
 {
     public class OrderView : MonoBehaviour
     {
-        private const float ITEM_WIDTH = 200;
+        private const float ITEM_WIDTH = 120;
         [SerializeField] private OrderItemView _orderItemPrefab;
         [SerializeField] private RectTransform _itemsSpawnPoint;
         [SerializeField] private RectTransform _backgroundInProgress;

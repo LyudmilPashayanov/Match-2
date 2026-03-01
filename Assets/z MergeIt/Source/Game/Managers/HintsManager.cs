@@ -59,8 +59,14 @@ namespace MergeIt.Game.Managers
             _messageBus.AddListener<MergeElementsMessage>(MergeElementsMessageHandler);
             _messageBus.AddListener<ElementActionMessage>(ElementSoldMessageHandler);
             _messageBus.AddListener<OrderReadyMessage>(OrderReadyMessageHandler);
+            _messageBus.AddListener<CreateElementMessage>(CreateElementMessageHandler);
         }
-        
+
+        private void CreateElementMessageHandler(CreateElementMessage obj)
+        {
+            ResetHint();
+        }
+
         public void Dispose()
         {
             _messageBus.RemoveListener<LoadedGameMessage>(OnLoadedGameMessageHandler);
@@ -72,6 +78,7 @@ namespace MergeIt.Game.Managers
             _messageBus.RemoveListener<ElementActionMessage>(ElementSoldMessageHandler);
             _messageBus.RemoveListener<ElementActionMessage>(ElementSoldMessageHandler);
             _messageBus.RemoveListener<OrderReadyMessage>(OrderReadyMessageHandler);
+            _messageBus.RemoveListener<CreateElementMessage>(CreateElementMessageHandler);
         }
         
         private void OrderReadyMessageHandler(OrderReadyMessage obj)

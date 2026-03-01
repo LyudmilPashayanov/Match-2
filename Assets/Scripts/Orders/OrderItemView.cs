@@ -14,6 +14,7 @@ namespace MergeIt.Game
     public class OrderItemView : MonoBehaviour
     {
         [SerializeField] private Image _itemIcon;
+        [SerializeField] private RectTransform _checkMark;
         [SerializeField] private TextMeshProUGUI _itemCurrentAmountText;
         [SerializeField] private TextMeshProUGUI _itemRequiredAmountText;
         [SerializeField] private Button _infoButton;
@@ -53,6 +54,7 @@ namespace MergeIt.Game
             {
                 IsDone = false;
             }
+            _checkMark.gameObject.SetActive(IsDone);
         }
 
         private void ItemClicked()
