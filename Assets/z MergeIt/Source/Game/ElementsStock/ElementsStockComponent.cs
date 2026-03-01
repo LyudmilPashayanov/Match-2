@@ -120,6 +120,7 @@ namespace MergeIt.Game.ElementsStock
                     else
                     {
                         Hide();
+                        StopHandLoop();
                     }
                 }
             }

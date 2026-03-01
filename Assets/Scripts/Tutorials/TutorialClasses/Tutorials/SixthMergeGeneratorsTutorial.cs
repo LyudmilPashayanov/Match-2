@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using MergeIt.Core.Configs.Types;
+using MergeIt.Core.FieldElements;
 using MergeIt.Core.Messages;
 using MergeIt.Game;
 using MergeIt.Game.Field;
@@ -16,6 +17,8 @@ public class SixthMergeGeneratorsTutorial : Tutorial
     private IMessageBus _messageBus;
 
     [SerializeField] private RectTransform _hand;
+    [SerializeField] private RectTransform story_1;
+    [SerializeField] private RectTransform story_2;
     [SerializeField] private Image _handImage;
     private Sequence _handTweenSeq;
 
@@ -24,8 +27,9 @@ public class SixthMergeGeneratorsTutorial : Tutorial
     private const int generatesToFinish = 3;
     private bool _tutorialStarted = false;
     
-    [SerializeField] private List<RectTransform> generatorsOnBoard = new List<RectTransform>(); 
-
+    private List<RectTransform> generatorsOnBoard = new List<RectTransform>();
+    private bool _lastStepTutorial = false;
+    
     private void Start()
     {
         _messageBus = DiContainer.Get<IMessageBus>();
@@ -42,9 +46,18 @@ public class SixthMergeGeneratorsTutorial : Tutorial
         _fieldLogicModel = DiContainer.Get<FieldLogicModel>();
         _messageBus.AddListener<MergeElementsMessage>(OnMergeElementMessageHandler);
         _messageBus.AddListener<ElementOnBoardMessage>(OnElementOnBoardMessageHandler);
+        _messageBus.AddListener<CreateElementMessage>(OnCreateElementMessageHandler);
         CheckToStart();
     }
-    
+
+    private void OnCreateElementMessageHandler(CreateElementMessage obj)
+    {
+        if (_lastStepTutorial)
+        {
+            EndTutorial();
+        }
+    }
+
     private void CheckToStart()
     {
         int generatorsFound = 0;
@@ -53,6 +66,13 @@ public class SixthMergeGeneratorsTutorial : Tutorial
         {
             if (pair.Value.InfoParameters.Type == ElementType.Generator)
             {
+                if (pair.Value.ConfigParameters.ElementConfig.CommonSettings.Name == "MagicTree")
+                {
+                    ShowTutorial();
+                    DisableHints();
+                    MoveNextStory(pair.Value.InfoParameters.LogicPosition);
+                    return;
+                }
                 generatorsFound++;
                 _fieldLogicModel.CellComponents.TryGetValue(pair.Value.InfoParameters.LogicPosition, out FieldCellComponent generatorObject);
                 if (pair.Value.InfoParameters.IsBlocked == false && pair.Value.InfoParameters.IsInvisibleBlocked == false && generatorObject)
@@ -73,8 +93,30 @@ public class SixthMergeGeneratorsTutorial : Tutorial
     { 
         if (_tutorialStarted && message.NewElement.InfoParameters.Type == ElementType.Generator)
         {
-            EndTutorial();
+            MoveNextStory(message.NewElement.InfoParameters.LogicPosition);
         }
+    }
+
+    private void MoveNextStory(GridPoint newElementPosition)
+    {
+        story_1.gameObject.SetActive(false);
+        story_2.gameObject.SetActive(true);
+        StopHandLoop();
+        _fieldLogicModel.CellComponents.TryGetValue(newElementPosition, out FieldCellComponent generatorObject);
+        RectTransform generator = generatorObject.FieldElementPresenter.RectTransform;
+        if (generatorObject)
+        {
+            TutorialOverlay.FocusOn(generator, Vector2.zero);
+        }
+        _hand.gameObject.SetActive(true);
+        _hand.position = generator.position;
+        _handTweenSeq = DOTween.Sequence();
+        _handTweenSeq.Append(_handImage.DOFade(1, 0.2f));
+        _handTweenSeq.Append(_hand.DOScale(1.2f, 0.5f).SetLoops(6, LoopType.Yoyo));
+        _handTweenSeq.Append(_handImage.DOFade(0, 0.2f));
+        _handTweenSeq.AppendInterval(1f);
+        _handTweenSeq.SetLoops(-1, LoopType.Restart);
+        _lastStepTutorial = true;
     }
     
     private void StartTutorial()
