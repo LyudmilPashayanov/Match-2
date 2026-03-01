@@ -73,17 +73,23 @@ public class SixthMergeGeneratorsTutorial : Tutorial
                     MoveNextStory(pair.Value.InfoParameters.LogicPosition);
                     return;
                 }
-                generatorsFound++;
-                _fieldLogicModel.CellComponents.TryGetValue(pair.Value.InfoParameters.LogicPosition, out FieldCellComponent generatorObject);
-                if (pair.Value.InfoParameters.IsBlocked == false && pair.Value.InfoParameters.IsInvisibleBlocked == false && generatorObject)
+                if (pair.Value.ConfigParameters.ElementConfig.CommonSettings.Name == "Seed")
                 {
-                    generatorsOnBoard.Add(generatorObject.FieldElementPresenter.RectTransform);
-                }
-                
-                if (generatorsFound == GENERATORS_NEEDED)
-                {
-                    StartTutorial();
-                    return;
+
+                    generatorsFound++;
+                    _fieldLogicModel.CellComponents.TryGetValue(pair.Value.InfoParameters.LogicPosition,
+                        out FieldCellComponent generatorObject);
+                    if (pair.Value.InfoParameters.IsBlocked == false &&
+                        pair.Value.InfoParameters.IsInvisibleBlocked == false && generatorObject)
+                    {
+                        generatorsOnBoard.Add(generatorObject.FieldElementPresenter.RectTransform);
+                    }
+
+                    if (generatorsFound == GENERATORS_NEEDED)
+                    {
+                        StartTutorial();
+                        return;
+                    }
                 }
             }
         }
