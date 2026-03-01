@@ -54,9 +54,9 @@ MonoBehaviour:
     _generateBlocked: 0
     _generateItems:
     - Element: {fileID: 11400000, guid: 445c56fd5ec82fa4998b68d1ea52a3df, type: 2}
-      Possibility: 70
+      Possibility: 50
+    - Element: {fileID: 11400000, guid: 266ec194cea807e4aab147aa79ec3499, type: 2}
+      Possibility: 30
     - Element: {fileID: 11400000, guid: 675abfb64c05e62449a40f784616e67e, type: 2}
       Possibility: 20
-    - Element: {fileID: 11400000, guid: 266ec194cea807e4aab147aa79ec3499, type: 2}
-      Possibility: 10
   _id: e1b843d8-61cb-434d-9688-889d7c6218a1

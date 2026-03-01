@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1b72332746789b41a27a405378028f3, type: 3}
-  m_Name: MagicHat
+  m_Name: Magic Seashell
   m_EditorClassIdentifier: 
   _type: 1
   _commonSettings:
     _expanded: 1
-    _description: Magic Hat of different gifts
+    _description: Magic Seashell for energy gifts
     _splitCostSettings:
       _currencyType: 0
       _amount: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
     _unlockCostSettings:
       _currencyType: 0
       _amount: 0
-    _name: Magic Hat
+    _name: Magic Seashell
     _icon: {fileID: 8196838751629904819, guid: 8761110319b454c83bf8882e69d20ae5, type: 3}
     _isConsumable: 0
     _consumableSettings:
@@ -35,10 +35,10 @@ MonoBehaviour:
   _generatorSettings:
     _expanded: 1
     _stack: 1
-    _minDrop: 2
-    _maxDrop: 10
+    _minDrop: 1
+    _maxDrop: 5
     _chargeTime: 0
-    _dropCount: 1
+    _dropCount: 5
     _skipChargeCostSettings:
       _currencyType: 0
       _amount: 0
@@ -46,21 +46,19 @@ MonoBehaviour:
     _charged: 1
     _energyCost: 0
     _isUnlimited: 0
-    _needOpen: 1
+    _needOpen: 0
     _openTime: 30
     _skipOpenCostSettings:
       _currencyType: 1
       _amount: 8
     _generateBlocked: 0
     _generateItems:
-    - Element: {fileID: 11400000, guid: 3bdc20ced63fa4e6ebfd23c11795ccc6, type: 2}
-      Possibility: 30
-    - Element: {fileID: 11400000, guid: 5e23aceca344043c7912575859359f3e, type: 2}
-      Possibility: 20
     - Element: {fileID: 11400000, guid: 7197123a8239a4a01a7bb7ddd9249263, type: 2}
+      Possibility: 40
+    - Element: {fileID: 11400000, guid: c891021dfb2cc446eb4d345dd1971e5c, type: 2}
       Possibility: 30
-    - Element: {fileID: 11400000, guid: 0d7c75d27458841ecbb95d37a4e63d95, type: 2}
-      Possibility: 30
-    - Element: {fileID: 11400000, guid: 3446cb3cf173a45468c1b1d67186c8e5, type: 2}
-      Possibility: 30
+    - Element: {fileID: 11400000, guid: 30ff5c06b88cc4478b60b1f33f645196, type: 2}
+      Possibility: 20
+    - Element: {fileID: 11400000, guid: 5760dd4047af04fc190d6163a238d68c, type: 2}
+      Possibility: 10
   _id: 7a2d32b1-cf1c-40b2-9473-cd7309450018

@@ -118,14 +118,6 @@ MonoBehaviour:
         y: -376
         width: 230
         height: 713
-    - _id: 07bf3ed0-66ff-4ccf-9b1b-729df4b3fb20
-      _elementConfig: {fileID: 11400000, guid: 5f2cc1f5044324d06b159ae09e8b41a1, type: 2}
-      _position:
-        serializedVersion: 2
-        x: 2747
-        y: -621
-        width: 230
-        height: 1325
     - _id: 8b59b33e-8802-4f8e-9298-65e7d5f41053
       _elementConfig: {fileID: 11400000, guid: 378a57755deac4d569ee77f9436fa8f0, type: 2}
       _position:
@@ -326,6 +318,14 @@ MonoBehaviour:
         y: -1842
         width: 230
         height: 632
+    - _id: 07bf3ed0-66ff-4ccf-9b1b-729df4b3fb20
+      _elementConfig: {fileID: 11400000, guid: 5f2cc1f5044324d06b159ae09e8b41a1, type: 2}
+      _position:
+        serializedVersion: 2
+        x: 2747
+        y: -621
+        width: 230
+        height: 1187
     EvolutionsNodesData:
     - _id: 12ee418a-5166-45b9-87a9-d82aa47cb90f
       _name: Time
