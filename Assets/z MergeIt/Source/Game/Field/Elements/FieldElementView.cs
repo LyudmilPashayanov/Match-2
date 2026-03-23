@@ -1,5 +1,6 @@
 // Copyright (c) 2024, Awessets
 
+using System.Collections.Generic;
 using MergeIt.Core.Animations;
 using MergeIt.Core.Configs.Elements;
 using MergeIt.Core.FieldElements;
@@ -18,7 +19,13 @@ namespace MergeIt.Game.Field.Elements
         private GameObject _blocker;
         
         [SerializeField]
-        private GameObject _invisibleBlocker;
+        private GameObject _invisibleBlocker;   
+        
+        [SerializeField]
+        private Image _invisibleBlockerImage;
+        
+        [SerializeField]
+        private List<Sprite> _invisibleBlockerSprites ;
 
         private IAnimationController _animationController;
         
@@ -83,7 +90,13 @@ namespace MergeIt.Game.Field.Elements
             {
                 _iconComponent = GetComponentInChildren<FieldElementIconComponent>();
             }
-            
+
+            if (isInvisibleLocked)
+            {
+                int randomSpriteIndex = Random.Range(0, _invisibleBlockerSprites.Count);
+                _invisibleBlockerImage.sprite = _invisibleBlockerSprites[randomSpriteIndex];
+            }
+
             _iconComponent.SetInvisibleBlocked(isInvisibleLocked);
             _invisibleBlocker.SetActive(isInvisibleLocked);
         }

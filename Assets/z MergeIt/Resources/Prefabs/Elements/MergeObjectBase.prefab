@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6d160296e6d404e42aa675bde233e299, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09fa686ecb07d2a46b5ce9614b1b47ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -292,6 +292,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _blocker: {fileID: 4053511275068394321}
   _invisibleBlocker: {fileID: 6256289650603008822}
+  _invisibleBlockerImage: {fileID: 899976363384069777}
+  _invisibleBlockerSprites:
+  - {fileID: 21300000, guid: 901fb340b61f79146aa631ef5c593973, type: 3}
+  - {fileID: 21300000, guid: 52c046d4cc8da2c458494f408c5672cc, type: 3}
+  - {fileID: 21300000, guid: 9bd59c6995d5afe4f8a193598a18a9f2, type: 3}
+  - {fileID: 21300000, guid: 0bccc94a90e3c944bb15a4cb37078868, type: 3}
 --- !u!114 &8810618007416476817
 MonoBehaviour:
   m_ObjectHideFlags: 0
