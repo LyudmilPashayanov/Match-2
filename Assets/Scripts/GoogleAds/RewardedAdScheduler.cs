@@ -4,7 +4,7 @@ public class RewardedAdScheduler : MonoBehaviour
 {
     private const string PendingAdKey = "PendingRewardedAd";
 
-    [SerializeField] private float _intervalSeconds = 7f;
+    [SerializeField] private float _intervalSeconds = 180f;
     [SerializeField] private RewardedAdGatePanel _panel;
 
     private float _timeSinceLastTrigger;
