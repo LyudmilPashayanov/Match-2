@@ -5,7 +5,9 @@ public class AdsBootstrapper : MonoBehaviour
 {
     public static AdMobRewardedAdService RewardedService { get; private set; }
 
-    [SerializeField] private string _adUnitId = "ca-app-pub-7237372029635198/8986768802";
+    [SerializeField] private string _adUnitId = "ca-app-pub-7237372029635198/2691145153";
+
+    [SerializeField] private RewardedAdGatePanel RewardedAdPanel;
 
     private void Awake()
     {

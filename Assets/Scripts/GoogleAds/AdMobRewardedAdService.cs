@@ -9,6 +9,11 @@ public class AdMobRewardedAdService
 
     private int _retryAttempt;
 
+    public event Action<string> OnAdFailedToLoad;
+    public event Action<string> OnAdFailedToShow;
+    public event Action OnAdClosed;
+    public event Action OnAdNotReady;
+
     public AdMobRewardedAdService(string adUnitId)
     {
         _adUnitId = adUnitId;
@@ -30,7 +35,10 @@ public class AdMobRewardedAdService
             {
                 _retryAttempt++;
                 float delay = Mathf.Pow(2, _retryAttempt);
-
+        
+                string errorMsg = error?.ToString() ?? "Unknown load error";
+				OnAdFailedToLoad?.Invoke(errorMsg); // 🔥 ADD THIS
+                Debug.LogError($"Ad failed to load: {error?.GetCode()} - {error?.GetMessage()}");
                 Debug.LogError($"Ad failed to load. Retrying in {delay}s");
                 TimerRunner.Instance.RunAfter(delay, Load); // we'll define this
                 return;
@@ -55,6 +63,7 @@ public class AdMobRewardedAdService
         if (!IsReady())
         {
             Debug.LogWarning("Ad not ready.");
+            OnAdNotReady?.Invoke(); // 🔥 ADD THIS
             return;
         }
 
@@ -70,12 +79,15 @@ public class AdMobRewardedAdService
         ad.OnAdFullScreenContentClosed += () =>
         {
             Debug.Log("Ad closed → reloading");
+            OnAdClosed?.Invoke(); // 🔥 ADD THIS
             Load();
         };
 
         ad.OnAdFullScreenContentFailed += error =>
         {
             Debug.LogError($"Ad failed to show: {error}");
+            string errorMsg = error.ToString();
+            OnAdFailedToShow?.Invoke(errorMsg); // 🔥 ADD THIS
             Load();
         };
     }
