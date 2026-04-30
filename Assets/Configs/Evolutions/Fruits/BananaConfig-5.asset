@@ -25,7 +25,7 @@ MonoBehaviour:
     _unlockCostSettings:
       _currencyType: 0
       _amount: 10
-    _name: Banana
+    _name: Watermelon
     _icon: {fileID: 8196838751629904819, guid: 1f4480f97df7edb4586747f0ba2229b5, type: 3}
     _isConsumable: 0
     _consumableSettings:
